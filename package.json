@@ -1,0 +1,22 @@
+{
+  "author": "Thomas Fritz <fritztho@gmail.com> (http://fritzthomas.com)",
+  "name": "sparql-client",
+  "description": "Simple SPARQL Client for node.js",
+  "version": "0.0.1",
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/thomasfr/node-sparql-client.git"
+  },
+  "main": "index.js",
+	"keywords": ["sparql","rdf"],
+  "engines": {
+    "node": ">=0.6.0"
+  },
+  "dependencies": {
+		"request":"latest",
+		"underscore":"latest",
+		"querystring":"latest"
+	},
+  "devDependencies": {},
+  "optionalDependencies": {}
+}
