@@ -1,8 +1,11 @@
 var util = require('util');
 
 var SparqlClient = require('../');
-var client = new SparqlClient('http://dbpedia.org/sparql');
-client.query("select distinct ?Concept from <http://dbpedia.org> where {[] a ?Concept} limit 100", function(err, response) {
-	console.log("Error", err);
-	process.stdout.write(util.inspect(response, null, 20, true)+"\n");
+var endpoint = 'http://dbpedia.org/sparql';
+var query = 'select distinct ?Concept from <http://dbpedia.org> where {[] a ?Concept} limit 10';
+var client = new SparqlClient(endpoint);
+console.log("Query to " + endpoint);
+console.log("Query: " + query);
+client.query(query, function (error, results) {
+  process.stdout.write(util.inspect(arguments, null, 20, true) + "\n");
 });
