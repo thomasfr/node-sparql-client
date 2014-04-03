@@ -1,11 +1,20 @@
 {
-  "author": "Thomas Fritz <fritztho@gmail.com> (http://fritzthomas.com)",
+  "author":
+    { "name" : "Thomas Fritz"
+      , "email" : "fritztho@gmail.com"
+      , "url" : "http://fritzthomas.com"
+    },
+    { "name" : "Maritn Franke"
+      , "email" : "martin@semiwa.org"
+      , "url" : "http://semiwa.org"
+    }
+  ,
   "name": "sparql-client",
   "description": "Simple SPARQL Client for node.js",
   "version": "0.0.3",
   "repository": {
     "type": "git",
-    "url": "git://github.com/thomasfr/node-sparql-client.git"
+    "url": "git://github.com/MtnFranke/node-sparql-client.git"
   },
   "main": "index.js",
   "keywords": ["sparql", "rdf"],
