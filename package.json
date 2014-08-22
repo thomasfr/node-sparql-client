@@ -1,36 +1,34 @@
 {
-    "author": {
-        "email": "fritztho@gmail.com",
-        "name": "Thomas Fritz",
-        "url": "http://fritzthomas.com"
-    },
-    "contributors": [
-        {
-            "email": "martin@semiwa.org",
-            "name": "Martin Franke",
-            "url": "http://semiwa.org"
-        }
-    ],
-    "dependencies": {
-        "querystring": "*",
-        "request": "*",
-        "underscore": "*"
-    },
-    "description": "Simple SPARQL Client for node.js",
-    "devDependencies": {},
-    "engines": {
-        "node": "~0.8.0"
-    },
-    "keywords": [
-        "sparql",
-        "rdf"
-    ],
-    "main": "index.js",
-    "name": "sparql-client",
-    "optionalDependencies": {},
-    "repository": {
-        "type": "git",
-        "url": "git://github.com/MtnFranke/node-sparql-client.git"
-    },
-    "version": "0.0.3"
+  "author": {
+    "email": "fritztho@gmail.com",
+    "name": "Thomas Fritz",
+    "url": "http://fritzthomas.com"
+  },
+  "contributors": [
+    {
+      "email": "martin@semiwa.org",
+      "name": "Martin Franke",
+      "url": "http://semiwa.org"
+    }
+  ],
+  "dependencies": {
+    "lodash": "^2.4.1",
+    "request": "^2.40.0"
+  },
+  "description": "Simple SPARQL Client for node.js",
+  "devDependencies": {},
+  "engines": {
+    "node": ">= 0.10.0"
+  },
+  "keywords": [
+    "sparql",
+    "rdf"
+  ],
+  "main": "index.js",
+  "name": "sparql-client",
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/thomasfr/node-sparql-client.git"
+  },
+  "version": "0.1.0"
 }
