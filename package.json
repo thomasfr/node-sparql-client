@@ -1,22 +1,36 @@
 {
-  "author": "Thomas Fritz <fritztho@gmail.com> (http://fritzthomas.com)",
-  "name": "sparql-client",
-  "description": "Simple SPARQL Client for node.js",
-  "version": "0.0.2",
-  "repository": {
-    "type": "git",
-    "url": "git://github.com/thomasfr/node-sparql-client.git"
-  },
-  "main": "index.js",
-  "keywords": ["sparql", "rdf"],
-  "engines": {
-    "node": "~0.8.0"
-  },
-  "dependencies": {
-    "request": "latest",
-    "underscore": "latest",
-    "querystring": "latest"
-  },
-  "devDependencies": {},
-  "optionalDependencies": {}
+    "author": {
+        "email": "fritztho@gmail.com",
+        "name": "Thomas Fritz",
+        "url": "http://fritzthomas.com"
+    },
+    "contributors": [
+        {
+            "email": "martin@semiwa.org",
+            "name": "Martin Franke",
+            "url": "http://semiwa.org"
+        }
+    ],
+    "dependencies": {
+        "querystring": "*",
+        "request": "*",
+        "underscore": "*"
+    },
+    "description": "Simple SPARQL Client for node.js",
+    "devDependencies": {},
+    "engines": {
+        "node": "~0.8.0"
+    },
+    "keywords": [
+        "sparql",
+        "rdf"
+    ],
+    "main": "index.js",
+    "name": "sparql-client",
+    "optionalDependencies": {},
+    "repository": {
+        "type": "git",
+        "url": "git://github.com/MtnFranke/node-sparql-client.git"
+    },
+    "version": "0.0.3"
 }

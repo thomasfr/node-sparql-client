@@ -1,7 +1,7 @@
 sparql-client
 =============
 
-A simple sparql client written for node.js
+A simple sparql client written for node.js (with compatibility for Apache Fuseki).
 
 Usage
 =====
@@ -29,13 +29,14 @@ client.query(query)
 
 ```
 
-
-
 License
 =======
 The MIT License
 
 Copyright (c) 2012 Thomas Fritz
+
+Contributors
+  - Martin Franke (@MtnFranke)
 
 Permission is hereby granted, free of charge, to any person obtaining
 a copy of this software and associated documentation files (the
