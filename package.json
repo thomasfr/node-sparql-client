@@ -1,15 +1,7 @@
 {
-  "author": {
-    "email": "fritztho@gmail.com",
-    "name": "Thomas Fritz",
-    "url": "http://fritzthomas.com"
-  },
+  "author": "Thomas Fritz <fritztho@gmail.com> (http://fritzthomas.com)",
   "contributors": [
-    {
-      "email": "martin@semiwa.org",
-      "name": "Martin Franke",
-      "url": "http://semiwa.org"
-    }
+    "Martin Franke <martin@semiwa.org> (http://semiwa.org)"
   ],
   "dependencies": {
     "lodash": "^2.4.1",
@@ -28,7 +20,18 @@
   "name": "sparql-client",
   "repository": {
     "type": "git",
-    "url": "git://github.com/thomasfr/node-sparql-client.git"
+    "url": "https://github.com/thomasfr/node-sparql-client.git"
   },
-  "version": "0.1.0"
+  "version": "0.1.0",
+  "bugs": {
+    "url": "https://github.com/thomasfr/node-sparql-client/issues"
+  },
+  "homepage": "https://github.com/thomasfr/node-sparql-client",
+  "directories": {
+    "test": "tests"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "license": "MIT"
 }
