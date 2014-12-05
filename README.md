@@ -43,20 +43,20 @@ The *default* formatting (when no options are provided) results, for the binding
 [{ x :
     {
         type: 'uri',
-        value: 'http://www.example.com/res1
+        value: 'http://www.example.com/res1'
     },
     y : {
         type: 'uri',
-        value: 'http://www.example.com/res2
+        value: 'http://www.example.com/res2'
     }
 }, { x :
     {
         type: 'uri',
-        value: 'http://www.example.com/res1
+        value: 'http://www.example.com/res1'
     },
     y : {
         type: 'uri',
-        value: 'http://www.example.com/res3
+        value: 'http://www.example.com/res3'
     }
 }]
 ```
@@ -66,14 +66,14 @@ Using the format option *resource* with the resource option set to *x* results i
 [{ x :
     {
         type: 'uri',
-        value: 'http://www.example.com/res1
+        value: 'http://www.example.com/res1'
     },
     y : [{
         type: 'uri',
-        value: 'http://www.example.com/res2
+        value: 'http://www.example.com/res2'
     }, {
         type: 'uri',
-        value: 'http://www.example.com/res3
+        value: 'http://www.example.com/res3'
     }]
 }]
 ```
