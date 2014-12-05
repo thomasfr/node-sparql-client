@@ -3,9 +3,12 @@ sparql-client
 
 A simple sparql client written for node.js (with compatibility for Apache Fuseki).
 
+Version 0.1.1
+
 Usage
 =====
 
+###Querying###
 ```javascript
 
 var SparqlClient = require('sparql-client');
@@ -14,7 +17,9 @@ var endpoint = 'http://dbpedia.org/sparql';
 
 // Get the leaderName(s) of the given citys
 // if you do not bind any city, it returns 10 random leaderNames
-var query = "SELECT * FROM <http://dbpedia.org> WHERE { ?city <http://dbpedia.org/property/leaderName> ?leaderName } LIMIT 10";
+var query = "SELECT * FROM <http://dbpedia.org> WHERE { 
+    ?city <http://dbpedia.org/property/leaderName> ?leaderName 
+} LIMIT 10";
 var client = new SparqlClient(endpoint);
 console.log("Query to " + endpoint);
 console.log("Query: " + query);
@@ -29,14 +34,67 @@ client.query(query)
 
 ```
 
+###Formatting###
+
+From version 0.1.1 it is possible to add options regarding the formating of the results.
+The *default* formatting results, for the bindings, in 
+
+```javascript
+[{ x :
+    {
+        type: 'uri',
+        value: 'http://www.example.com/res1
+    },
+    y : {
+        type: 'uri',
+        value: 'http://www.example.com/res2
+    }
+}, { x :
+    {
+        type: 'uri',
+        value: 'http://www.example.com/res1
+    },
+    y : {
+        type: 'uri',
+        value: 'http://www.example.com/res3
+    }
+}]
+```
+Using the format option *resource* with the resource option set to *x* results in 
+
+```javascript
+[{ x :
+    {
+        type: 'uri',
+        value: 'http://www.example.com/res1
+    },
+    y : [{
+        type: 'uri',
+        value: 'http://www.example.com/res2
+    }, {
+        type: 'uri',
+        value: 'http://www.example.com/res3
+    }]
+}]
+```
+
+Calling the *execute* function will look something like this
+
+```javascript
+execute({format: 'resource', resource: 'x'}, function(error, results) {
+  process.stdout.write(util.inspect(arguments, null, 20, true)+"\n");
+});
+```
+
 License
 =======
 The MIT License
 
-Copyright (c) 2012 Thomas Fritz
+Copyright (c) 2014 Thomas Fritz
 
 Contributors
-  - Martin Franke (@MtnFranke)
+    - Martin Franke (@MtnFranke)
+    - Pieter Heyvaert (@PHaDventure)
 
 Permission is hereby granted, free of charge, to any person obtaining
 a copy of this software and associated documentation files (the
