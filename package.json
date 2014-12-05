@@ -2,7 +2,7 @@
   "author": "Thomas Fritz <fritztho@gmail.com> (http://fritzthomas.com)",
   "contributors": [
     "Martin Franke <martin@semiwa.org> (http://semiwa.org)", 
-    "Pieter Heyvaert <pheyvaer.heyvaert@ugent.be>"
+    "Pieter Heyvaert <pheyvaer.heyvaert@ugent.be> (http://semweb.mmlab.be/)"
   ],
   "dependencies": {
     "lodash": "^2.4.1",
