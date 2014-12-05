@@ -1,7 +1,7 @@
 sparql-client
 =============
 
-A simple sparql client written for node.js (with compatibility for Apache Fuseki).
+A simple sparql client written for [Node.js](http://nodejs.org/) (with compatibility for [Apache Fuseki](http://jena.apache.org/documentation/serving_data/)).
 
 Version 0.1.1
 
@@ -93,8 +93,9 @@ The MIT License
 Copyright (c) 2014 Thomas Fritz
 
 Contributors
-    - Martin Franke (@MtnFranke)
-    - Pieter Heyvaert (@PHaDventure)
+
+- Martin Franke (@MtnFranke)
+- Pieter Heyvaert ([@PHaDventure](https://twitter.com/PHaDventure))
 
 Permission is hereby granted, free of charge, to any person obtaining
 a copy of this software and associated documentation files (the
