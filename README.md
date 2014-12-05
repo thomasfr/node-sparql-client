@@ -37,7 +37,7 @@ client.query(query)
 ###Formatting###
 
 From version 0.1.1 it is possible to add options regarding the formating of the results.
-The *default* formatting results, for the bindings, in 
+The *default* formatting (when no options are provided) results, for the bindings, in 
 
 ```javascript
 [{ x :
