@@ -1,7 +1,8 @@
 {
   "author": "Thomas Fritz <fritztho@gmail.com> (http://fritzthomas.com)",
   "contributors": [
-    "Martin Franke <martin@semiwa.org> (http://semiwa.org)"
+    "Martin Franke <martin@semiwa.org> (http://semiwa.org)", 
+    "Pieter Heyvaert <pheyvaer.heyvaert@ugent.be> (http://semweb.mmlab.be/)"
   ],
   "dependencies": {
     "lodash": "^2.4.1",
@@ -22,7 +23,7 @@
     "type": "git",
     "url": "https://github.com/thomasfr/node-sparql-client.git"
   },
-  "version": "0.1.0",
+  "version": "0.2.0",
   "bugs": {
     "url": "https://github.com/thomasfr/node-sparql-client/issues"
   },

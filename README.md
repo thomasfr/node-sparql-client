@@ -1,11 +1,14 @@
 sparql-client
 =============
 
-A simple sparql client written for node.js (with compatibility for Apache Fuseki).
+A simple sparql client written for [Node.js](http://nodejs.org/) (with compatibility for [Apache Fuseki](http://jena.apache.org/documentation/serving_data/)).
+
+Version 0.2.0
 
 Usage
 =====
 
+###Querying###
 ```javascript
 
 var SparqlClient = require('sparql-client');
@@ -14,7 +17,9 @@ var endpoint = 'http://dbpedia.org/sparql';
 
 // Get the leaderName(s) of the given citys
 // if you do not bind any city, it returns 10 random leaderNames
-var query = "SELECT * FROM <http://dbpedia.org> WHERE { ?city <http://dbpedia.org/property/leaderName> ?leaderName } LIMIT 10";
+var query = "SELECT * FROM <http://dbpedia.org> WHERE { 
+    ?city <http://dbpedia.org/property/leaderName> ?leaderName 
+} LIMIT 10";
 var client = new SparqlClient(endpoint);
 console.log("Query to " + endpoint);
 console.log("Query: " + query);
@@ -29,14 +34,76 @@ client.query(query)
 
 ```
 
+###Formatting###
+
+From version 0.1.1 it is possible to add options regarding the formating of the results.
+For example, we execute the following query (to retrieve all books and their genres).
+```
+PREFIX dbpedia-owl: <http://dbpedia.org/owl/>
+SELECT ?book ?genre WHERE {
+    ?book dbpedia-owl:literaryGenre ?genre
+}
+```
+The *default* formatting (when no options are provided) results, for the bindings (limited to two results in our example), in
+
+```javascript
+[{ book :
+    {
+        type: 'uri',
+        value: 'http://live.dbpedia.org/page/A_Game_of_Thrones'
+    },
+    genre : {
+        type: 'uri',
+        value: 'http://live.dbpedia.org/page/Fantasy'
+    }
+}, { book :
+    {
+        type: 'uri',
+        value: 'http://live.dbpedia.org/page/A_Game_of_Thrones'
+    },
+    genre : {
+        type: 'uri',
+        value: 'http://live.dbpedia.org/page/Political_strategy'
+    }
+}]
+```
+Using the format option *resource* with the resource option set to *book* results in 
+
+```javascript
+[{ book :
+    {
+        type: 'uri',
+        value: 'http://live.dbpedia.org/page/A_Game_of_Thrones'
+    },
+    genre : [{
+        type: 'uri',
+        value: 'http://live.dbpedia.org/page/Fantasy'
+    }, {
+        type: 'uri',
+        value: 'http://live.dbpedia.org/page/Political_strategy'
+    }]
+}]
+```
+
+This makes it easier to process the results later (in the callback), because all the genres are connected to one book (in one binding), and not spread over several bindings.
+Calling the *execute* function will look something like this
+
+```javascript
+execute({format: 'resource', resource: 'book'}, function(error, results) {
+  process.stdout.write(util.inspect(arguments, null, 20, true)+"\n");
+});
+```
+
 License
 =======
 The MIT License
 
-Copyright (c) 2012 Thomas Fritz
+Copyright &copy; 2014 Thomas Fritz
 
 Contributors
-  - Martin Franke (@MtnFranke)
+
+- Martin Franke (@MtnFranke)
+- Pieter Heyvaert ([@PHaDventure](https://twitter.com/PHaDventure))
 
 Permission is hereby granted, free of charge, to any person obtaining
 a copy of this software and associated documentation files (the
