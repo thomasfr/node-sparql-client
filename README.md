@@ -85,7 +85,7 @@ Using the format option *resource* with the resource option set to *book* result
 }]
 ```
 
-This makes it easier to process later (in the callback), because all the genres the are connected to one book (in one binding), and not spread over several bindings.
+This makes it easier to process the results later (in the callback), because all the genres are connected to one book (in one binding), and not spread over several bindings.
 Calling the *execute* function will look something like this
 
 ```javascript
