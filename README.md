@@ -37,51 +37,59 @@ client.query(query)
 ###Formatting###
 
 From version 0.1.1 it is possible to add options regarding the formating of the results.
-The *default* formatting (when no options are provided) results, for the bindings, in 
+For example, we execute the following query (to retrieve all books and their genres).
+```
+PREFIX dbpedia-owl: <http://dbpedia.org/owl/>
+SELECT ?book ?genre WHERE {
+    ?book dbpedia-owl:literaryGenre ?genre
+}
+```
+The *default* formatting (when no options are provided) results, for the bindings (limited to two results in our example), in
 
 ```javascript
-[{ x :
+[{ book :
     {
         type: 'uri',
-        value: 'http://www.example.com/res1'
+        value: 'http://live.dbpedia.org/page/A_Game_of_Thrones'
     },
-    y : {
+    genre : {
         type: 'uri',
-        value: 'http://www.example.com/res2'
+        value: 'http://live.dbpedia.org/page/Fantasy'
     }
-}, { x :
+}, { book :
     {
         type: 'uri',
-        value: 'http://www.example.com/res1'
+        value: 'http://live.dbpedia.org/page/A_Game_of_Thrones'
     },
-    y : {
+    genre : {
         type: 'uri',
-        value: 'http://www.example.com/res3'
+        value: 'http://live.dbpedia.org/page/Political_strategy'
     }
 }]
 ```
-Using the format option *resource* with the resource option set to *x* results in 
+Using the format option *resource* with the resource option set to *book* results in 
 
 ```javascript
-[{ x :
+[{ book :
     {
         type: 'uri',
-        value: 'http://www.example.com/res1'
+        value: 'http://live.dbpedia.org/page/A_Game_of_Thrones'
     },
-    y : [{
+    genre : [{
         type: 'uri',
-        value: 'http://www.example.com/res2'
+        value: 'http://live.dbpedia.org/page/Fantasy'
     }, {
         type: 'uri',
-        value: 'http://www.example.com/res3'
+        value: 'http://live.dbpedia.org/page/Political_strategy'
     }]
 }]
 ```
 
+This makes it easier to process later (in the callback), because all the genres the are connected to one book (in one binding), and not spread over several bindings.
 Calling the *execute* function will look something like this
 
 ```javascript
-execute({format: 'resource', resource: 'x'}, function(error, results) {
+execute({format: 'resource', resource: 'book'}, function(error, results) {
   process.stdout.write(util.inspect(arguments, null, 20, true)+"\n");
 });
 ```
