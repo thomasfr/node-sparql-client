@@ -1,3 +1,8 @@
+0.2.0 / 2014-12-09
+==================
+
+ * Added formatting feature
+ * Fixed error when sparql endpoint is not reachable
 
 0.1.0 / 2014-08-22
 ==================

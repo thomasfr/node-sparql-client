@@ -17,8 +17,8 @@ var endpoint = 'http://dbpedia.org/sparql';
 
 // Get the leaderName(s) of the given citys
 // if you do not bind any city, it returns 10 random leaderNames
-var query = "SELECT * FROM <http://dbpedia.org> WHERE { 
-    ?city <http://dbpedia.org/property/leaderName> ?leaderName 
+var query = "SELECT * FROM <http://dbpedia.org> WHERE {
+    ?city <http://dbpedia.org/property/leaderName> ?leaderName
 } LIMIT 10";
 var client = new SparqlClient(endpoint);
 console.log("Query to " + endpoint);
@@ -29,14 +29,14 @@ client.query(query)
   //.bind('city', 'db:Casablanca')
   .bind('city', '<http://dbpedia.org/resource/Vienna>')
   .execute(function(error, results) {
-  process.stdout.write(util.inspect(arguments, null, 20, true)+"\n");
+  process.stdout.write(util.inspect(arguments, null, 20, true)+"\n");1
 });
 
 ```
 
 ###Formatting###
 
-From version 0.1.1 it is possible to add options regarding the formating of the results.
+From version 0.2.0 it is possible to add options regarding the formating of the results.
 For example, we execute the following query (to retrieve all books and their genres).
 ```
 PREFIX dbpedia-owl: <http://dbpedia.org/owl/>
@@ -67,7 +67,7 @@ The *default* formatting (when no options are provided) results, for the binding
     }
 }]
 ```
-Using the format option *resource* with the resource option set to *book* results in 
+Using the format option *resource* with the resource option set to *book* results in
 
 ```javascript
 [{ book :
