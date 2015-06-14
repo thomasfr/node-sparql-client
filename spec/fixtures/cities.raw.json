@@ -1,0 +1,12 @@
+{ "head": { "link": [], "vars": ["city", "leaderName"] },
+  "results": { "distinct": false, "ordered": true, "bindings": [
+    { "city": { "type": "uri", "value": "http://dbpedia.org/resource/Gwynedd_(fictional)" }	, "leaderName": { "type": "uri", "value": "http://dbpedia.org/resource/Kelson_Haldane" }},
+    { "city": { "type": "uri", "value": "http://dbpedia.org/resource/Ixhuatl%C3%A1n_de_Madero" }	, "leaderName": { "type": "literal", "xml:lang": "en", "value": "El\u00EDas Ben\u00EDtez Hern\u00E1ndez" }},
+    { "city": { "type": "uri", "value": "http://dbpedia.org/resource/L%C3%A9ry,_Quebec" }	, "leaderName": { "type": "uri", "value": "http://dbpedia.org/resource/Ch%C3%A2teauguay_(provincial_electoral_district)" }},
+    { "city": { "type": "uri", "value": "http://dbpedia.org/resource/L%C3%A9ry,_Quebec" }	, "leaderName": { "type": "uri", "value": "http://dbpedia.org/resource/Ch%C3%A2teauguay%E2%80%94Saint-Constant" }},
+    { "city": { "type": "uri", "value": "http://dbpedia.org/resource/L%C3%A9ry,_Quebec" }	, "leaderName": { "type": "literal", "xml:lang": "en", "value": "Yvon Mailhot" }},
+    { "city": { "type": "uri", "value": "http://dbpedia.org/resource/Nelson_Township,_Lee_County,_Illinois" }	, "leaderName": { "type": "literal", "xml:lang": "en", "value": "Marlin Jensen" }},
+    { "city": { "type": "uri", "value": "http://dbpedia.org/resource/Osh" }	, "leaderName": { "type": "uri", "value": "http://dbpedia.org/resource/Aitmamat_Kadyrbaev" }},
+    { "city": { "type": "uri", "value": "http://dbpedia.org/resource/Pineda_Trasmonte" }	, "leaderName": { "type": "literal", "xml:lang": "en", "value": "Basi N\u00FA\u00F1ez Angulo" }},
+    { "city": { "type": "uri", "value": "http://dbpedia.org/resource/Pineda_de_Mar" }	, "leaderName": { "type": "literal", "xml:lang": "en", "value": "Xavier Amor i Mart\u00EDn" }},
+    { "city": { "type": "uri", "value": "http://dbpedia.org/resource/Santa_Rosa_District,_Chiclayo" }	, "leaderName": { "type": "literal", "xml:lang": "en", "value": "Andres Palma Gordillo" }} ] } }
