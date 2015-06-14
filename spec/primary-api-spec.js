@@ -3,6 +3,10 @@ var SparqlClient = require('../');
 describe('SPARQL API', function () {
   'use strict';
 
+  beforeEach(function () {
+    jasmine.addMatchers(customMatchers);
+  });
+
   describe('SparqlClient', function () {
     describe('constructor', function () {
       it('should connect to an endpoint via a URL', function () {
@@ -24,10 +28,6 @@ describe('SPARQL API', function () {
     });
 
     describe('#register()', function () {
-      beforeEach(function () {
-        jasmine.addMatchers(customMatchers);
-      });
-
       it('should test my tester...', function () {
         expect('PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>')
           .toHavePrefix({rdfs: 'http://www.w3.org/2000/01/rdf-schema#'});
@@ -99,10 +99,6 @@ describe('SPARQL API', function () {
     });
 
     describe('#registerCommon()', function () {
-      beforeEach(function () {
-        jasmine.addMatchers(customMatchers);
-      });
-
       it('should register at least one prefix', function (done) {
         var scope = nockEndpoint();
         var client = new SparqlClient(scope.endpoint);
@@ -136,7 +132,7 @@ describe('SPARQL API', function () {
         });
       });
 
-      it('should register at all prefixes found in the SPARQL 1.1 query spec.', function () {
+      it('should register at all prefixes found in the SPARQL 1.1 query spec.', function (done) {
         // http://www.w3.org/TR/2013/REC-sparql11-query-20130321/#docConventions
         var scope = nockEndpoint();
         var client = new SparqlClient(scope.endpoint);
@@ -287,6 +283,7 @@ describe('SPARQL API', function () {
       });
 
       it('should return a promise', function (done) {
+        pending('Promises not yet implemented');
         var scope = nockEndpoint(400);
         var promise = new SparqlClient(scope.endpoint)
           .query('SELECT ("hello" as ?var) { }')
@@ -300,6 +297,7 @@ describe('SPARQL API', function () {
       });
 
       it('should handle return a failed promise', function (done) {
+        pending('Promises not yet implemented');
         var scope = nockEndpoint(400);
         var promise = new SparqlClient(scope.endpoint)
           .query('SELECT ("hello" as ?var) { }')
