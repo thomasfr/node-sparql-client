@@ -28,14 +28,7 @@ describe('SPARQL API', function () {
     });
 
     describe('#register()', function () {
-      it('should test my tester...', function () {
-        expect('PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>')
-          .toHavePrefix({rdfs: 'http://www.w3.org/2000/01/rdf-schema#'});
-        expect('PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>')
-          .not.toHavePrefix({rdf: 'http://www.w3.org/1999/02/22-rdf-syntax-ns#'});
-      });
-
-      it('should register a single prefixes for use in all new queries', function (done) {
+      it('should register a single prefix for use in all new queries', function (done) {
         var scope = nockEndpoint();
         var client = new SparqlClient(scope.endpoint);
         client.register('rdfs', 'http://www.w3.org/2000/01/rdf-schema#');
@@ -164,9 +157,53 @@ describe('SPARQL API', function () {
 
   describe('SPARQLQuery', function () {
     describe('#register()', function() {
-      it('should register the given prefix');
-      it('should override prefixes in inherited from SparqlClient');
-      it('should affect only this query');
+      it('should register the given prefix', function (done) {
+        var scope = nockEndpoint();
+        var client = new SparqlClient(scope.endpoint);
+        var query = client.query('SELECT ?s ?o WHERE { ?s rdfs:label ?o }');
+        query.register('rdfs', 'http://www.w3.org/2000/01/rdf-schema#');
+
+        query.execute(function (err, data) {
+          var rawQuery = data.request.query;
+          expect(rawQuery).toHavePrefix({rdfs: 'http://www.w3.org/2000/01/rdf-schema#'});
+          done();
+        });
+      });
+
+      it('should override prefixes in inherited from SparqlClient', function (done) {
+        var newPrefix = 'http://example.org/fake#dummy';
+        var scope = nockEndpoint();
+        var client = new SparqlClient(scope.endpoint);
+        client.registerCommon('rdfs');
+        var query = client.query('SELECT ?s ?o WHERE { ?s rdfs:label ?o }');
+        query.register('rdfs', newPrefix);
+
+        query.execute(function (err, data) {
+          var rawQuery = data.request.query;
+          expect(rawQuery).not.toHavePrefix({rdfs: 'http://www.w3.org/2000/01/rdf-schema#'});
+          expect(rawQuery).toHavePrefix({rdfs: newPrefix});
+          done();
+        });
+      });
+
+      it('should affect only this query', function (done) {
+        var newPrefix = 'http://example.org/fake#dummy';
+        var scope = nockEndpoint();
+        var client = new SparqlClient(scope.endpoint);
+        client.registerCommon('rdfs');
+        var query = client.query('SELECT ?s ?o WHERE { ?s rdfs:label ?o }');
+        query.register('dc', 'http://purl.org/dc/elements/1.1/');
+        query.register('rdfs', newPrefix);
+
+        var apresQuery = client.query('SELECT ?s ?o WHERE { ?s rdfs:label ?o }');
+
+        query.execute(function (err, data) {
+          var rawQuery = data.request.query;
+          expect(rawQuery).toHavePrefix({rdfs: 'http://www.w3.org/2000/01/rdf-schema#'});
+          expect(rawQuery).not.toHavePrefix({dc: true});
+          done();
+        });
+      });
     });
 
     describe('#bind() [single]', function() {
