@@ -24,6 +24,17 @@ describe('SPARQL API', function () {
     });
 
     describe('#register()', function () {
+      beforeEach(function () {
+        jasmine.addMatchers(customMatchers);
+      });
+
+      it('should test my tester...', function () {
+        expect('PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>')
+          .toHavePrefix({rdfs: 'http://www.w3.org/2000/01/rdf-schema#'});
+        expect('PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>')
+          .not.toHavePrefix({rdf: 'http://www.w3.org/1999/02/22-rdf-syntax-ns#'});
+      });
+
       it('should register a single prefixes for use in all new queries', function (done) {
         var scope = nockEndpoint();
         var client = new SparqlClient(scope.endpoint);
@@ -31,13 +42,14 @@ describe('SPARQL API', function () {
         var query = client.query('SELECT ?s ?o WHERE { ?s rdfs:label ?o }');
         query.execute(function (err, data) {
           var rawQuery = data.request.query;
-          expect(rawQuery).toMatch(/^PREFIX\s+rdfs:\s+<.+rdf-schema>/);
+          expect(rawQuery).toHavePrefix({rdfs: 'http://www.w3.org/2000/01/rdf-schema#'});
           done();
         });
       });
 
       it('should register a multiple prefixes for use in all new queries', function (done) {
-        var client = new SparqlClient('http://localhost:8080');
+        var scope = nockEndpoint();
+        var client = new SparqlClient(scope.endpoint);
         client.register({
           rdf:  'http://www.w3.org/1999/02/22-rdf-syntax-ns#',
           rdfs: 'http://www.w3.org/2000/01/rdf-schema#',
@@ -49,30 +61,32 @@ describe('SPARQL API', function () {
         query.execute(function (err, data) {
           var rawQuery = data.request.query;
 
-          expect(rawQuery).toMatch(/^PREFIX\s+rdf:\s+<.+rdf-syntax-ns#>/);
-          expect(rawQuery).toMatch(/^PREFIX\s+rdfs:\s+<.+rdf-schema>/);
-          expect(rawQuery).toMatch(/^PREFIX\s+xsd:\s+<.+XMLSchema#>/);
-          expect(rawQuery).toMatch(/^PREFIX\s+owl:\s+<.+owl#>/);
-          expect(rawQuery).toMatch(/^PREFIX\s+dc:\s+<.+dc.+>/);
+          expect(rawQuery).toHavePrefix({rdf: 'http://www.w3.org/1999/02/22-rdf-syntax-ns#'});
+          expect(rawQuery).toHavePrefix({rdfs: 'http://www.w3.org/2000/01/rdf-schema#'});
+          expect(rawQuery).toHavePrefix({xsd: 'http://www.w3.org/2001/XMLSchema#'});
+          expect(rawQuery).not.toHavePrefix({owl: true});
+          expect(rawQuery).toHavePrefix({dc: 'http://purl.org/dc/elements/1.1/'});
           done();
         });
       });
 
       it('should register the base prefix for use in all new queries', function (done) {
-        var client = new SparqlClient('http://localhost:8080');
+        var scope = nockEndpoint();
+        var client = new SparqlClient(scope.endpoint);
         client.register('http://dbpedia.org/resource/');
 
         var query = client.query('SELECT ?s ?o WHERE { ?s rdfs:label ?o }');
         query.execute(function (err, data) {
           var rawQuery = data.request.query;
 
-          expect(rawQuery).toMatch(/^BASE\s+<.+dbpedia.org.+>/);
+          expect(rawQuery).toMatch(/\bBASE\s+<.+dbpedia.org.+>/);
           done();
         });
       });
 
       it('should present a fluent interface', function () {
-        var client = new SparqlClient('http://localhost:8080');
+        var scope = nockEndpoint();
+        var client = new SparqlClient(scope.endpoint);
         var result = client.register({
           rdf:  'http://www.w3.org/1999/02/22-rdf-syntax-ns#',
           rdfs: 'http://www.w3.org/2000/01/rdf-schema#',
@@ -85,56 +99,65 @@ describe('SPARQL API', function () {
     });
 
     describe('#registerCommon()', function () {
+      beforeEach(function () {
+        jasmine.addMatchers(customMatchers);
+      });
+
       it('should register at least one prefix', function (done) {
-        var client = new SparqlClient('http://localhost:8080');
+        var scope = nockEndpoint();
+        var client = new SparqlClient(scope.endpoint);
         client.registerCommon('rdfs');
 
         var query = client.query('SELECT ?s ?o WHERE { ?s rdfs:label ?o }');
         query.execute(function (err, data) {
           var rawQuery = data.request.query;
 
-          expect(rawQuery).toMatch(/^PREFIX\s+rdfs:\s+<.+rdf-schema#>/);
-          expect(rawQuery).not.toMatch(/^PREFIX\s+rdf:/);
+          expect(rawQuery).toHavePrefix({rdfs: 'http://www.w3.org/2000/01/rdf-schema#'});
+          expect(rawQuery).not.toHavePrefix({rdf: true});
           done();
         });
       });
 
       it('should register at several prefixes simultaneously', function (done) {
-        var client = new SparqlClient('http://localhost:8080');
+        var scope = nockEndpoint();
+        var client = new SparqlClient(scope.endpoint);
         client.registerCommon('rdf', 'rdfs', 'xsd');
 
         var query = client.query('SELECT ?s ?o WHERE { ?s rdfs:label ?o }');
         query.execute(function (err, data) {
           var rawQuery = data.request.query;
 
-          expect(rawQuery).toMatch(/^PREFIX\s+xsd:\s+<.+XMLSchema#>/);
-          expect(rawQuery).toMatch(/^PREFIX\s+rdf:\s+<.+rdf-syntax-ns#>/);
-          expect(rawQuery).toMatch(/^PREFIX\s+rdfs:\s+<.+rdf-schema>/);
+          expect(rawQuery).toHavePrefix({xsd: 'http://www.w3.org/2001/XMLSchema#'});
+          expect(rawQuery).toHavePrefix({rdf: 'http://www.w3.org/1999/02/22-rdf-syntax-ns#'});
+          expect(rawQuery).toHavePrefix({rdfs: 'http://www.w3.org/2000/01/rdf-schema#'});
+          expect(rawQuery).not.toHavePrefix({fn: true});
+          expect(rawQuery).not.toHavePrefix({sfn: true});
           done();
         });
       });
 
       it('should register at all prefixes found in the SPARQL 1.1 query spec.', function () {
         // http://www.w3.org/TR/2013/REC-sparql11-query-20130321/#docConventions
-        var client = new SparqlClient('http://localhost:8080');
+        var scope = nockEndpoint();
+        var client = new SparqlClient(scope.endpoint);
         client.registerCommon();
 
         var query = client.query('SELECT ?s ?o WHERE { ?s rdfs:label ?o }');
         query.execute(function (err, data) {
           var rawQuery = data.request.query;
 
-          expect(rawQuery).toMatch(/^PREFIX\s+rdf:\s+<.+rdf-syntax-ns#>/);
-          expect(rawQuery).toMatch(/^PREFIX\s+rdfs:\s+<.+rdf-schema>/);
-          expect(rawQuery).toMatch(/^PREFIX\s+xsd:\s+<.+XMLSchema#>/);
-          expect(rawQuery).toMatch(/^PREFIX\s+fn:\s+<.+xpath-functions#>/);
-          expect(rawQuery).toMatch(/^PREFIX\s+sfn:\s+<.+sparql#>/);
+          expect(rawQuery).toHavePrefix({rdf: true});
+          expect(rawQuery).toHavePrefix({rdfs: true});
+          expect(rawQuery).toHavePrefix({xsd: true});
+          expect(rawQuery).toHavePrefix({fn: true});
+          expect(rawQuery).toHavePrefix({sfn: true});
           done();
         });
-
       });
 
       it('should present a fluent interface', function () {
-        var client = new SparqlClient('http://localhost:8080');
+        var scope = nockEndpoint();
+        var client = new SparqlClient(scope.endpoint);
         var result = client.registerCommon('rdf', 'rdfs');
 
         expect(result).toEqual(jasmine.any(SparqlClient));
