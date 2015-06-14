@@ -1,7 +1,5 @@
 var SparqlClient = require('../');
 
-var DUMMY_SERVER_PORT = +(process.env.TEST_SERVER_PORT || 3042);
-
 describe('SPARQL API', function () {
   'use strict';
 
@@ -16,7 +14,7 @@ describe('SPARQL API', function () {
 
     describe('#query()', function () {
       it('should return a new SPARQLQuery instance', function () {
-        var client = new SparqlClient('http://localhost:8080');
+        var client = new SparqlClient('http://example.org/sparql');
         var query = client.query('SELECT ("Hello, World" as ?unused) {}');
 
         /* Check that it has some core methods. */
@@ -26,18 +24,19 @@ describe('SPARQL API', function () {
     });
 
     describe('#register()', function () {
-      it('should register a single prefixes for use in all new queries', function () {
-        var client = new SparqlClient('http://localhost:8080');
+      it('should register a single prefixes for use in all new queries', function (done) {
+        var scope = nockEndpoint();
+        var client = new SparqlClient(scope.endpoint);
         client.register('rdfs', 'http://www.w3.org/2000/01/rdf-schema#');
-
-        var rawQuery = client
-               .query('SELECT ?s ?o WHERE { ?s rdfs:label ?o }')
-               .raw();
-
-        expect(rawQuery).toMatch(/^PREFIX\s+rdfs:\s+<.+rdf-schema>/);
+        var query = client.query('SELECT ?s ?o WHERE { ?s rdfs:label ?o }');
+        query.execute(function (err, data) {
+          var rawQuery = data.request.query;
+          expect(rawQuery).toMatch(/^PREFIX\s+rdfs:\s+<.+rdf-schema>/);
+          done();
+        });
       });
 
-      it('should register a multiple prefixes for use in all new queries', function () {
+      it('should register a multiple prefixes for use in all new queries', function (done) {
         var client = new SparqlClient('http://localhost:8080');
         client.register({
           rdf:  'http://www.w3.org/1999/02/22-rdf-syntax-ns#',
@@ -46,26 +45,30 @@ describe('SPARQL API', function () {
           dc:   'http://purl.org/dc/elements/1.1/'
         });
 
-        var rawQuery = client
-               .query('SELECT ?s ?o WHERE { ?s rdfs:label ?o }')
-               .raw();
+        var query = client.query('SELECT ?s ?o WHERE { ?s rdfs:label ?o }');
+        query.execute(function (err, data) {
+          var rawQuery = data.request.query;
 
-        expect(rawQuery).toMatch(/^PREFIX\s+rdf:\s+<.+rdf-syntax-ns#>/);
-        expect(rawQuery).toMatch(/^PREFIX\s+rdfs:\s+<.+rdf-schema>/);
-        expect(rawQuery).toMatch(/^PREFIX\s+xsd:\s+<.+XMLSchema#>/);
-        expect(rawQuery).toMatch(/^PREFIX\s+owl:\s+<.+owl#>/);
-        expect(rawQuery).toMatch(/^PREFIX\s+dc:\s+<.+dc.+>/);
+          expect(rawQuery).toMatch(/^PREFIX\s+rdf:\s+<.+rdf-syntax-ns#>/);
+          expect(rawQuery).toMatch(/^PREFIX\s+rdfs:\s+<.+rdf-schema>/);
+          expect(rawQuery).toMatch(/^PREFIX\s+xsd:\s+<.+XMLSchema#>/);
+          expect(rawQuery).toMatch(/^PREFIX\s+owl:\s+<.+owl#>/);
+          expect(rawQuery).toMatch(/^PREFIX\s+dc:\s+<.+dc.+>/);
+          done();
+        });
       });
 
-      it('should register the base prefix for use in all new queries', function () {
+      it('should register the base prefix for use in all new queries', function (done) {
         var client = new SparqlClient('http://localhost:8080');
         client.register('http://dbpedia.org/resource/');
 
-        var rawQuery = client
-               .query('SELECT ?s ?o WHERE { ?s rdfs:label ?o }')
-               .raw();
+        var query = client.query('SELECT ?s ?o WHERE { ?s rdfs:label ?o }');
+        query.execute(function (err, data) {
+          var rawQuery = data.request.query;
 
-        expect(rawQuery).toMatch(/^BASE\s+<.+dbpedia.org.+>/);
+          expect(rawQuery).toMatch(/^BASE\s+<.+dbpedia.org.+>/);
+          done();
+        });
       });
 
       it('should present a fluent interface', function () {
@@ -81,36 +84,58 @@ describe('SPARQL API', function () {
       });
     });
 
-
     describe('#registerCommon()', function () {
-      it('should register at least one prefix', function () {
+      it('should register at least one prefix', function (done) {
         var client = new SparqlClient('http://localhost:8080');
         client.registerCommon('rdfs');
 
-        var rawQuery = client
-               .query('SELECT ?s ?o WHERE { ?s rdfs:label ?o }')
-               .raw();
+        var query = client.query('SELECT ?s ?o WHERE { ?s rdfs:label ?o }');
+        query.execute(function (err, data) {
+          var rawQuery = data.request.query;
 
-        expect(rawQuery).toMatch(/^PREFIX\s+rdfs:\s+<.+owl#>/);
-        expect(rawQuery).not.toMatch(/^PREFIX\s+rdf:/);
+          expect(rawQuery).toMatch(/^PREFIX\s+rdfs:\s+<.+rdf-schema#>/);
+          expect(rawQuery).not.toMatch(/^PREFIX\s+rdf:/);
+          done();
+        });
       });
 
-      it('should register at several prefixes simultaneously', function () {
+      it('should register at several prefixes simultaneously', function (done) {
         var client = new SparqlClient('http://localhost:8080');
         client.registerCommon('rdf', 'rdfs', 'xsd');
 
-        var rawQuery = client
-               .query('SELECT ?s ?o WHERE { ?s rdfs:label ?o }')
-               .raw();
+        var query = client.query('SELECT ?s ?o WHERE { ?s rdfs:label ?o }');
+        query.execute(function (err, data) {
+          var rawQuery = data.request.query;
 
-        expect(rawQuery).toMatch(/^PREFIX\s+owl:\s+<.+owl#>/);
-        expect(rawQuery).toMatch(/^PREFIX\s+rdf:\s+<.+rdf-syntax-ns#>/);
-        expect(rawQuery).toMatch(/^PREFIX\s+rdfs:\s+<.+rdf-schema>/);
+          expect(rawQuery).toMatch(/^PREFIX\s+xsd:\s+<.+XMLSchema#>/);
+          expect(rawQuery).toMatch(/^PREFIX\s+rdf:\s+<.+rdf-syntax-ns#>/);
+          expect(rawQuery).toMatch(/^PREFIX\s+rdfs:\s+<.+rdf-schema>/);
+          done();
+        });
+      });
+
+      it('should register at all prefixes found in the SPARQL 1.1 query spec.', function () {
+        // http://www.w3.org/TR/2013/REC-sparql11-query-20130321/#docConventions
+        var client = new SparqlClient('http://localhost:8080');
+        client.registerCommon();
+
+        var query = client.query('SELECT ?s ?o WHERE { ?s rdfs:label ?o }');
+        query.execute(function (err, data) {
+          var rawQuery = data.request.query;
+
+          expect(rawQuery).toMatch(/^PREFIX\s+rdf:\s+<.+rdf-syntax-ns#>/);
+          expect(rawQuery).toMatch(/^PREFIX\s+rdfs:\s+<.+rdf-schema>/);
+          expect(rawQuery).toMatch(/^PREFIX\s+xsd:\s+<.+XMLSchema#>/);
+          expect(rawQuery).toMatch(/^PREFIX\s+fn:\s+<.+xpath-functions#>/);
+          expect(rawQuery).toMatch(/^PREFIX\s+sfn:\s+<.+sparql#>/);
+          done();
+        });
+
       });
 
       it('should present a fluent interface', function () {
         var client = new SparqlClient('http://localhost:8080');
-        var result = client.registerCommon('rdf', 'rdfs', 'owl');
+        var result = client.registerCommon('rdf', 'rdfs');
 
         expect(result).toEqual(jasmine.any(SparqlClient));
       });
@@ -119,9 +144,7 @@ describe('SPARQL API', function () {
 
 
   describe('SPARQLQuery', function () {
-    var ENDPOINT = 'http://localhost:' + DUMMY_SERVER_PORT;
-
-    describe('#registerPrefixes()', function() {
+    describe('#register()', function() {
       it('should register the given prefix');
       it('should override prefixes in inherited from SparqlClient');
       it('should affect only this query');
@@ -129,8 +152,9 @@ describe('SPARQL API', function () {
 
     describe('#bind() [single]', function() {
       // Binds variables in the pattern
-      xit('should bind a string literal', function () {
-        var query = new SparqlClient(ENDPOINT)
+      it('should bind a string literal', function () {
+        var scope = nockEndpoint();
+        var query = new SparqlClient(scope.endpoint)
           .registerCommon('rdfs')
           .query('SELECT ?s { ?s rdfs:label ?label }')
           .bind('label', 'chat');
@@ -138,7 +162,8 @@ describe('SPARQL API', function () {
       });
 
       it('should bind a string literal with a language tag', function () {
-        var query = new SparqlClient(ENDPOINT)
+        var scope = nockEndpoint();
+        var query = new SparqlClient(scope.endpoint)
           .registerCommon('rdfs')
           .query('ASK { ?article rdfs:label ?label }')
           .bind('label', 'chat', {lang: 'fr'})
@@ -147,14 +172,16 @@ describe('SPARQL API', function () {
       });
 
       it('should bind a literal with an arbitrary datatype, expressed as a URI', function () {
-        var query = new SparqlClient(ENDPOINT)
+        var scope = nockEndpoint();
+        var query = new SparqlClient(scope.endpoint)
           .query('SELECT ?s { [] ?p ?literal }')
           .bind('literal', 'xyz', {type: 'http://example.org/ns/userDatatype'});
         pending('Assert binding worked as required');
       });
 
       it('should bind a literal with an arbitrary datatype, expressed as a prefixed URI', function () {
-        var query = new SparqlClient(ENDPOINT)
+        var scope = nockEndpoint();
+        var query = new SparqlClient(scope.endpoint)
           .register({appNS: 'http://example.org/ns/'})
           .query('SELECT ?s { [] ?p ?literal }')
           .bind('literal', 'xyz', {type: {appNS: 'appDataType'}});
@@ -168,7 +195,8 @@ describe('SPARQL API', function () {
       it('should bind a prefixed-URI to a query');
 
       it('should bind booleans to a query', function () {
-        var query = new SparqlClient(ENDPOINT)
+        var scope = nockEndpoint();
+        var query = new SparqlClient(scope.endpoint)
           .register({dinder: 'http://example.org/dinder/'})
           .query('SELECT ?s { ?s dinder:hasCats ?cats ; dinder:likesMichaelBolton ?bolton }')
           .bind('cats', true)
@@ -180,7 +208,8 @@ describe('SPARQL API', function () {
       it('should properly escape simple strings');
 
       it('should properly escape multi-line strings', function () {
-        var query = new SparqlClient(ENDPOINT)
+        var scope = nockEndpoint();
+        var query = new SparqlClient(scope.endpoint)
           .query('SELECT ?s {?s ?p ?value}')
           .bind('value', '"""' + "'''" + "\n" + "\\");
         pending('Assert binding worked as required');
@@ -192,7 +221,8 @@ describe('SPARQL API', function () {
 
     describe('#bind() [multiple]', function () {
       it('should bind an object of single bindings', function () {
-        var query = new SparqlClient(ENDPOINT)
+        var scope = nockEndpoint();
+        var query = new SparqlClient(scope.endpoint)
           .register('dbpedia-fr', 'http://fr.dbpedia.org/')
           .query('SELECT DISTINCT ?type { [] a ?type ; rdf:label ?p }')
           .bind({
@@ -207,30 +237,25 @@ describe('SPARQL API', function () {
     });
 
     describe('#execute()', function() {
-      /* Create a dummy SPARQL endpoint! */
-      beforeAll(function (done) {
-        this.server = new DummyServer()
-          .start(DUMMY_SERVER_PORT, done);
-      });
+      it('should execute a simple query', function(done) {
+        var scope = nockEndpoint();
+        var originalQuery = 'SELECT DISTINCT ?type { [] a ?type ; rdf:label ?p }';
 
-      /* Tear down the dummy endpoint after each test. */
-      afterAll(function (done) {
-        this.server.stop(done);
-        this.server = null;
-      });
-
-      xit('should execute a simple query', function(done) {
-        new SparqlClient(ENDPOINT)
-          .query('SELECT DISTINCT ?type { [] a ?type ; rdf:label ?p }')
-          .execute(function (errors, results) {
+        new SparqlClient(scope.endpoint)
+          .query(originalQuery)
+          .execute(function (error, results) {
+            expect(error).toBeFalsy();
+            expect(results).toBeTruthy();
+            expect(results.request.query).toBe(originalQuery);
             done();
           });
       });
 
       it('should execute a query with bindings');
 
-      xit('should accept arbitrary options', function (done) {
-        var query = new SparqlClient(ENDPOINT)
+      it('should accept arbitrary options', function (done) {
+        var scope = nockEndpoint();
+        var query = new SparqlClient(scope.endpoint)
           .query('SELECT ("hello" as ?var) { }')
           .execute({format: {resource: 'book'}}, function (err, data) {
             done();
@@ -239,10 +264,8 @@ describe('SPARQL API', function () {
       });
 
       it('should return a promise', function (done) {
-        this.server.nextBody = {'hello': 'world'};
-        pending('Implementation of promises');
-
-        var promise = new SparqlClient(ENDPOINT)
+        var scope = nockEndpoint(400);
+        var promise = new SparqlClient(scope.endpoint)
           .query('SELECT ("hello" as ?var) { }')
           .execute();
 
@@ -254,10 +277,8 @@ describe('SPARQL API', function () {
       });
 
       it('should handle return a failed promise', function (done) {
-        this.server.nextStatus = 400;
-        pending('Implementation of promises');
-
-        var promise = new SparqlClient(ENDPOINT)
+        var scope = nockEndpoint(400);
+        var promise = new SparqlClient(scope.endpoint)
           .query('SELECT ("hello" as ?var) { }')
           .execute();
 
