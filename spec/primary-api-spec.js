@@ -220,7 +220,7 @@ describe('SPARQL API', function () {
         query.execute(function (error, data) {
           var query = data.request.query;
           expect(query).toMatch(/\?s\s+rdfs:label/);
-          /* Match any kind of string delimiter: ('|"|'''|""") ... \n */
+          /* Match any kind of string delimiter: ('|"|'''|""") ... \1 */
           expect(query).toMatch(/rdfs:label\s+('|"|'''|""")chat\1/);
           done();
         });
@@ -236,15 +236,15 @@ describe('SPARQL API', function () {
 
         query.execute(function (error, data) {
           var query = data.request.query;
-          /* Match any kind of string delimiter: ('|"|'''|""") ... \n */
-          expect(query).toMatch(/('|"|'''|""")die\1@de\2\s+rdfs:label/);
+          /* Match any kind of string delimiter: ('|"|'''|""") ... \1 */
+          expect(query).toMatch(/('|"|'''|""")die\1@de\s+rdfs:label/);
           expect(query).toMatch(/rdfs:label\s+('|"|'''|""")chat\1@fr/);
           done();
         });
       });
 
       it('should reject invalid langauge tags', function () {
-        var query = new SparqlClient(scope.endpoint)
+        var query = new SparqlClient('http://example.org/sparql')
           .registerCommon('rdfs')
           .query('ASK { ?article rdfs:label ?label }');
         expect(function () {
@@ -264,7 +264,7 @@ describe('SPARQL API', function () {
 
         query.execute(function (error, data) {
           var query = data.request.query;
-          /* Match any kind of string delimiter: ('|"|'''|""") ... \n */
+          /* Match any kind of string delimiter: ('|"|'''|""") ... \1 */
           expect(query).toMatch(/ex:v1\s+('|"|'''|""")xyz\1\^\^.+userDatatype\b/);
           expect(query).toMatch(/ex:v2\s+('|"|'''|""")abc\1\^\^.+userDatatype\b/);
           done();
@@ -280,7 +280,7 @@ describe('SPARQL API', function () {
 
         query.execute(function (error, data) {
           var query = data.request.query;
-          /* Match any kind of string delimiter: ('|"|'''|""") ... \n */
+          /* Match any kind of string delimiter: ('|"|'''|""") ... \1 */
           expect(query).toMatch(/\?p\s+('|"|'''|""")xyz\1\^\^appNS:appDataType\b/);
           done();
         });
@@ -311,7 +311,6 @@ describe('SPARQL API', function () {
 
         query.execute(function (error, data) {
           var query = data.request.query;
-          /* Match any kind of string delimiter: ('|"|'''|""") ... \n */
           done();
         });
       });
@@ -338,7 +337,6 @@ describe('SPARQL API', function () {
 
         query.execute(function (error, data) {
           var query = data.request.query;
-          /* Match any kind of string delimiter: ('|"|'''|""") ... \n */
           expect(query).toMatch(/ex:v1\s+<.+#thing>/);
           expect(query).toMatch(/ex:v2\s+<.+#thang>/);
           done();
@@ -370,7 +368,6 @@ describe('SPARQL API', function () {
 
         query.execute(function (error, data) {
           var query = data.request.query;
-          /* Match any kind of string delimiter: ('|"|'''|""") ... \n */
           expect(query).toMatch(/dinder:hasCats\s+true/);
           expect(query).toMatch(/dinder:likesMichaelBolton\s+false/);
           // Swiping right is left as an exercise for the reader.
