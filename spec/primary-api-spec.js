@@ -193,13 +193,13 @@ describe('SPARQL API', function () {
         var scope = nockEndpoint();
         var client = new SparqlClient(scope.endpoint);
         client.registerCommon('rdfs');
+
         var query = client.query('SELECT ?s ?o WHERE { ?s rdfs:label ?o }');
         query.register('dc', 'http://purl.org/dc/elements/1.1/');
         query.register('rdfs', newPrefix);
 
         var apresQuery = client.query('SELECT ?s ?o WHERE { ?s rdfs:label ?o }');
-
-        query.execute(function (err, data) {
+        apresQuery.execute(function (err, data) {
           var rawQuery = data.request.query;
           expect(rawQuery).toHavePrefix({rdfs: 'http://www.w3.org/2000/01/rdf-schema#'});
           expect(rawQuery).not.toHavePrefix({dc: true});
