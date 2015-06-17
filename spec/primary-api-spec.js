@@ -418,8 +418,8 @@ describe('SPARQL API', function () {
           var query = data.request.query;
           /* Match any kind of string delimiter: ('|"|'''|""") ... \1 */
           expect(query).not.toMatch(/a\s+((?:'|"|'''|""")?)false\1/);
-          expect(query).toMatch(/\ba\s+('|"|'''|""")\?b\1s/);
-          expect(query).toMatch(/rdfs:label\s+false\1s/);
+          expect(query).toMatch(/\ba\s+('|"|'''|""")\?b\1/);
+          expect(query).toMatch(/rdfs:label\s+false\b/);
           done();
         });
       });
