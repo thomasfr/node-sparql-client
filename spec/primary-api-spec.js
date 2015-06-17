@@ -5,6 +5,7 @@ describe('SPARQL API', function () {
 
   beforeEach(function () {
     jasmine.addMatchers(customMatchers);
+    require('nock').cleanAll();
   });
 
   describe('SparqlClient', function () {
@@ -157,7 +158,7 @@ describe('SPARQL API', function () {
   });
 
 
-  describe('SPARQLQuery', function () {
+  describe('Query', function () {
     describe('#register()', function() {
       it('should register the given prefix', function (done) {
         var scope = nockEndpoint();
@@ -375,17 +376,63 @@ describe('SPARQL API', function () {
         });
       });
 
-      it('should properly escape simple strings');
-
-      it('should properly escape multi-line strings', function (done) {
+      it('should properly escape simple strings', function (done) {
         var scope = nockEndpoint();
         var query = new SparqlClient(scope.endpoint)
+          .registerCommon('rdfs')
+          .query('ASK { ?s rdfs:label ?value }')
+          .bind('value', '"' + "\\" + "'");
+
+        query.execute(function (error, data) {
+          var query = data.request.query;
+          /* Match any kind of string delimiter: ('|"|'''|""") ... \1 */
+          expect(query).toMatch(/rdfs:label\s+('|"|'''|""")\\"\\\\\'\1/);
+          done();
+        });
+      });
+
+      it('should properly escape multi-line strings', function (done) {
+        var query = new SparqlClient(scope.endpoint);
+        var scope = nockEndpoint()
           .query('SELECT ?s {?s ?p ?value}')
           .bind('value', '"""' + "'''" + "\n" + "\\");
-        pending('Assert binding worked as required');
+
+        query.execute(function (error, data) {
+          var query = data.request.query;
+          /* I applogize for this regex... */
+          expect(query).toMatch(/rdfs:label\s+('''|""")\\"\\"\\"\\'\\'\\'\n\\\\\1\s*}/);
+          done();
+        });
       });
 
       it('should properly escape URIs');
+
+      it('should not bind within already-bound strings', function (done) {
+        var scope = nockEndpoint();
+        var query = new SparqlClient(scope.endpoint)
+          .query('ASK WHERE { ?s a ?a ; rdfs:label ?b}')
+          .bind('a', '?b')
+          .bind('b', false);
+
+        query.execute(function (error, data) {
+          var query = data.request.query;
+          /* Match any kind of string delimiter: ('|"|'''|""") ... \1 */
+          expect(query).not.toMatch(/a\s+((?:'|"|'''|""")?)false\1/);
+          expect(query).toMatch(/\ba\s+('|"|'''|""")\?b\1s/);
+          expect(query).toMatch(/rdfs:label\s+false\1s/);
+          done();
+        });
+      });
+
+      it('should reject encoding a null-terminator in strings', function () {
+        var scope = nockEndpoint();
+        var query = new SparqlClient(scope.endpoint)
+          .query('SELECT ?s {?s ?p ?value}');
+
+        expect(function () {
+          query.bind('value', "Literally any\u0000where in the string");
+        }).toThrow();
+      });
 
       it('should present a fluent interface', function () {
         var query = new SparqlClient('http://example.org/sparql')
@@ -399,6 +446,7 @@ describe('SPARQL API', function () {
         }));
       });
     });
+
 
     describe('#bind() [multiple]', function () {
       it('should bind an object of single bindings', function (done) {
