@@ -290,41 +290,46 @@ describe('SPARQL API', function () {
       it('should bind an integer literal to a query', function (done) {
         var scope = nockEndpoint();
         var query = new SparqlClient(scope.endpoint)
-          .query('SELECT ?s { ?s :philsophy ?x ; :appendages ?y }')
+          .register('ns', 'http://example.org/ns#')
+          .query('SELECT ?s { ?s ns:philsophy ?x ; ns:appendages ?y }')
           .bind('x', {value: 42, type: 'integer' })
-          .bind('y', '13', {type: {xsd: 'integer'}});
+          .bind('y', '13', {datatype: {xsd: 'integer'}});
 
         query.execute(function (error, data) {
           var query = data.request.query;
-          expect(query).toMatch(/:philsophy\s+42\b/);
-          expect(query).toMatch(/:appendages\s+13\b/);
+          expect(query).toMatch(/ns:philsophy\s+42\b/);
+          expect(query).toMatch(/ns:appendages\s+13\b/);
           done();
         });
       });
 
       it('should bind an decimal literal to a query', function (done) {
-        pending('Have not figured this one out yet :/');
         var scope = nockEndpoint();
         var query = new SparqlClient(scope.endpoint)
-          .registerCommon('rdfs')
-          .query('')
-          .bind({});
+          .register('db', 'http://example.org/dragonball#')
+          .query('ASK WHERE { ?s db:powerLevel ?level . FILTER ( ?level > ?power )')
+          /* Note that decimals MUST be passed as strings! */
+          .bind('power', '9000.0', {type: 'decimal'});
 
         query.execute(function (error, data) {
           var query = data.request.query;
+
+          expect(query).toMatch(/\?level\s+>\s+9000.0\b/);
           done();
         });
       });
 
       it('should bind a double literal to a query', function (done) {
-        pending('Have not figured this one out yet :/');
         var scope = nockEndpoint();
         var query = new SparqlClient(scope.endpoint)
-          .query('')
-          .bind({});
+          .register('ns', 'http://example.org/ns#')
+          .query('ASK WHERE { ?s ns:favouriteConstant ?c')
+          .bind('c', 1e100);
 
         query.execute(function (error, data) {
           var query = data.request.query;
+
+          expect(query).toMatch(/ns:favouriteConstant\s+1e\+?100\b/);
           done();
         });
       });
@@ -386,7 +391,7 @@ describe('SPARQL API', function () {
         query.execute(function (error, data) {
           var query = data.request.query;
           /* Match any kind of string delimiter: ('|"|'''|""") ... \1 */
-          expect(query).toMatch(/rdfs:label\s+('|"|'''|""")\\"\\\\\'\1/);
+          expect(query).toMatch(/rdfs:label\s+('|"|'''|""")\\"\\\\\\'\1/);
           done();
         });
       });
@@ -394,13 +399,13 @@ describe('SPARQL API', function () {
       it('should properly escape multi-line strings', function (done) {
         var scope = nockEndpoint();
         var query = new SparqlClient(scope.endpoint)
-          .query('SELECT ?s {?s ?p ?value}')
+          .query('SELECT ?s {?s rdfs:label ?value}')
           .bind('value', '"""' + "'''" + "\n" + "\\");
 
         query.execute(function (error, data) {
           var query = data.request.query;
           /* I applogize for this regex... */
-          expect(query).toMatch(/rdfs:label\s+('''|""")\\"\\"\\"\\'\\'\\'\n\\\\\1\s*}/);
+          expect(query).toMatch(/rdfs:label\s+('''|""")\\"\\"\\"\\'\\'\\'\n\\\\\1/);
           done();
         });
       });
@@ -451,18 +456,40 @@ describe('SPARQL API', function () {
     describe('#bind() [multiple]', function () {
       it('should bind an object of single bindings', function (done) {
         var scope = nockEndpoint();
+        var originalQuery =  'SELECT DISTINCT ?type\n' +
+          ' WHERE {\n' +
+          ' [] rdfs:label ?creature ;\n' +
+          '    dbfr:paws ?paws ;\n' +
+          '    dbfr:netWorth ?netWorth ;\n' +
+          '    dbfr:weight ?weight ;\n' +
+          '    dbfr:grumpy ?grumpy ;\n' +
+          '    dbfr:derrivedFrom ?derrivedFrom .\n' +
+          '}';
         var query = new SparqlClient(scope.endpoint)
-          .register('dbpedia-fr', 'http://fr.dbpedia.org/')
-          .query('SELECT DISTINCT ?type { [] a ?type ; rdf:label ?p }')
+          .register('dbfr', 'http://fr.dbpedia.org/')
+          .query(originalQuery)
           .bind({
             creature: {value: 'chat', lang: 'fr'},
             paws: {value: 4, type: 'integer'},
             netWorth: {value: '16777216.25', type: 'decimal'}, // francs
             weight: 3.18, // kg
             grumpy: true,
-            derivedFrom: {value:'http://fr.wikipedia.org/wiki/Grumpy_Cat?oldid=94581698', type:'uri'},
+            derrivedFrom: {value:'http://fr.wikipedia.org/wiki/Grumpy_Cat?oldid=94581698', type:'uri'},
           });
-        pending('Assert binding worked as required');
+
+        query.execute(function (error, data) {
+          var query = data.request.query;
+
+          /* Match any kind of string delimiter: ('|"|'''|""") ... \1 */
+          expect(query).toMatch(/rdfs:label\s+('|"|'''|""")chat\1@fr\b/);
+          expect(query).toMatch(/dbfr:paws\s+4\b/);
+          expect(query).toMatch(/dbfr:netWorth\s+16777216.25\b/);
+          expect(query).toMatch(/dbfr:weight\s+3.18e\+?0\b/);
+          expect(query).toMatch(/dbfr:grumpy\s+true\b/);
+          expect(query).toMatch(/dbfr:derrivedFrom\s+<http:.+Grumpy_Cat.+>/);
+
+          done();
+        });
       });
     });
 
