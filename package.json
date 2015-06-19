@@ -1,4 +1,5 @@
 {
+  "name": "sparql-client",
   "author": "Thomas Fritz <fritztho@gmail.com> (http://fritzthomas.com)",
   "contributors": [
     "Martin Franke <martin@semiwa.org> (http://semiwa.org)",
@@ -7,7 +8,9 @@
   ],
   "dependencies": {
     "lodash": "^2.4.1",
-    "request": "^2.40.0"
+    "promise": "^7.0.1",
+    "request": "^2.40.0",
+    "sprintf-js": "^1.0.2"
   },
   "description": "Simple SPARQL Client for node.js",
   "devDependencies": {
@@ -22,7 +25,6 @@
     "rdf"
   ],
   "main": "index.js",
-  "name": "sparql-client",
   "repository": {
     "type": "git",
     "url": "https://github.com/thomasfr/node-sparql-client.git"
