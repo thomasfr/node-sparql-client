@@ -260,7 +260,7 @@ describe('SPARQL API', function () {
         var scope = nockEndpoint();
         var query = new SparqlClient(scope.endpoint)
           .query('ASK { [] ex:v1 ?literal ; ex:v2 ?lateral }');
-        query.bind('literal', 'xyz', {type: 'http://example.org/ns/userDatatype'});
+        query.bind('literal', 'xyz', {datatype: 'http://example.org/ns/userDatatype'});
         query.bind('lateral', {value: 'abc', datatype: 'http://example.org/ns/userDatatype'});
 
         query.execute(function (error, data) {
@@ -277,7 +277,7 @@ describe('SPARQL API', function () {
         var query = new SparqlClient(scope.endpoint)
           .register({appNS: 'http://example.org/ns/'})
           .query('SELECT ?s { [] ?p ?literal }')
-          .bind('literal', 'xyz', {type: {appNS: 'appDataType'}});
+          .bind('literal', 'xyz', {datatype: {appNS: 'appDataType'}});
 
         query.execute(function (error, data) {
           var query = data.request.query;
@@ -353,7 +353,7 @@ describe('SPARQL API', function () {
 
         query.execute(function (error, data) {
           var query = data.request.query;
-          expect(query).toMatch(/a\s+appNS:thang\n/);
+          expect(query).toMatch(/a\s+appNS:thang/);
           expect(query).toHavePrefix({appNS: 'http://example.org/ns/'});
           done();
         });
@@ -392,8 +392,8 @@ describe('SPARQL API', function () {
       });
 
       it('should properly escape multi-line strings', function (done) {
-        var query = new SparqlClient(scope.endpoint);
-        var scope = nockEndpoint()
+        var scope = nockEndpoint();
+        var query = new SparqlClient(scope.endpoint)
           .query('SELECT ?s {?s ?p ?value}')
           .bind('value', '"""' + "'''" + "\n" + "\\");
 
@@ -412,14 +412,14 @@ describe('SPARQL API', function () {
         var query = new SparqlClient(scope.endpoint)
           .query('ASK WHERE { ?s a ?a ; rdfs:label ?b}')
           .bind('a', '?b')
-          .bind('b', false);
+          .bind('b', 'foo');
 
         query.execute(function (error, data) {
           var query = data.request.query;
           /* Match any kind of string delimiter: ('|"|'''|""") ... \1 */
-          expect(query).not.toMatch(/a\s+((?:'|"|'''|""")?)false\1/);
+          expect(query).not.toMatch(/a\s+((?:'|"|'''|""")?)foo\1/);
           expect(query).toMatch(/\ba\s+('|"|'''|""")\?b\1/);
-          expect(query).toMatch(/rdfs:label\s+false\b/);
+          expect(query).toMatch(/rdfs:label\s+('|"|'''|""")foo\1/);
           done();
         });
       });
