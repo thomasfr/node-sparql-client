@@ -550,12 +550,12 @@ describe('SPARQL API', function () {
       });
 
       it('should return a promise', function (done) {
-        pending('Promises not yet implemented');
-        var scope = nockEndpoint(400);
+        var scope = nockEndpoint(200, {hello: 'world'});
         var promise = new SparqlClient(scope.endpoint)
           .query('SELECT ("hello" as ?var) { }')
           .execute();
 
+        expect(promise).toBeDefined();
         expect(promise.then).toBeDefined();
         promise.then(function (data) {
           expect(data.hello).toEqual('world');
@@ -564,13 +564,11 @@ describe('SPARQL API', function () {
       });
 
       it('should handle return a failed promise', function (done) {
-        pending('Promises not yet implemented');
         var scope = nockEndpoint(400);
         var promise = new SparqlClient(scope.endpoint)
           .query('SELECT ("hello" as ?var) { }')
           .execute();
 
-        expect(promise.then).toBeDefined();
         promise
           .then(function () {
             expect(false).toBe(true);
