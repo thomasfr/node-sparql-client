@@ -540,7 +540,6 @@ describe('SPARQL API', function () {
       });
 
       it('should accept arbitrary options', function (done) {
-        pending('Options not implemented yet.');
         var scope = nockEndpoint();
         var query = new SparqlClient(scope.endpoint)
           .query('SELECT ("hello" as ?var) { }')
@@ -571,10 +570,22 @@ describe('SPARQL API', function () {
 
         promise
           .then(function () {
-            expect(false).toBe(true);
+            expect('unreachable code').toBeFalsy();
             done();
           })
-          .then(null, function (error) {
+          .catch(function (error) {
+            done();
+          });
+      });
+
+      it('should accept arbitrary options when called as a promise', function (done) {
+        var scope = nockEndpoint();
+        var query = new SparqlClient(scope.endpoint)
+          .query('SELECT ("hello" as ?var) { }')
+          .execute({format: {resource: 'book'}})
+          .then(done)
+          .catch(function () {
+            expect('unreachable code').toBeFalsy();
             done();
           });
       });

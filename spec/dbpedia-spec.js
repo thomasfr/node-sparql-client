@@ -24,7 +24,7 @@ describe('Querying DBPedia', function () {
       "LIMIT 10";
 
     client.query(query)
-      .execute({format: 'default', resource: 'city'}, function (error, results) {
+      .execute({format: {resource: 'city'}}, function (error, results) {
         expect(results).toEqual(require('./fixtures/cities'));
         scope.done();
         done();
@@ -43,7 +43,7 @@ describe('Querying DBPedia', function () {
       "WHERE { ?city <http://dbpedia.org/property/postalCode> ?postalCode } ";
 
     client.query(query)
-      .bind('city', '<http://dbpedia.org/resource/Tokyo>')
+      .bind('city', 'http://dbpedia.org/resource/Tokyo', {type:'uri'})
       .execute(function (error, results) {
         expect(results).toEqual(require('./fixtures/tokyo'));
         scope.done();
@@ -65,7 +65,7 @@ describe('Querying DBPedia', function () {
       "WHERE { ?city dbpedia-owl:foundingDate ?foundingDate } ";
 
     client.query(query)
-      .bind('city', 'db:Chicago')
+      .bind('city', {db: 'Chicago'})
       .execute(function (error, results) {
         expect(results).toEqual(require('./fixtures/chicago'));
         scope.done();
