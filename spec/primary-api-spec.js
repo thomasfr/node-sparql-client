@@ -579,13 +579,13 @@ describe('SPARQL API', function () {
       });
 
       it('should accept arbitrary options when called as a promise', function (done) {
-        var scope = nockEndpoint();
+        var scope = nockEndpoint(200, require('./fixtures/got-genres'));
         var query = new SparqlClient(scope.endpoint)
-          .query('SELECT ("hello" as ?var) { }')
+          .query('SELECT ?book ?genre { }')
           .execute({format: {resource: 'book'}})
           .then(done)
-          .catch(function () {
-            expect('unreachable code').toBeFalsy();
+          .catch(function (error) {
+            expect(error).toBeFalsy();
             done();
           });
       });

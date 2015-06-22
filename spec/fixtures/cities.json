@@ -2,7 +2,6 @@
     "head": {
         "link": [],
         "vars": [
-            "city",
             "leaderName"
         ]
     },
@@ -15,106 +14,94 @@
                     "type": "uri",
                     "value": "http://dbpedia.org/resource/Gwynedd_(fictional)"
                 },
-                "leaderName": {
+                "leaderName": [{
                     "type": "uri",
                     "value": "http://dbpedia.org/resource/Kelson_Haldane"
-                }
+                }]
             },
             {
                 "city": {
                     "type": "uri",
                     "value": "http://dbpedia.org/resource/Ixhuatl%C3%A1n_de_Madero"
                 },
-                "leaderName": {
+                "leaderName": [{
                     "type": "literal",
                     "xml:lang": "en",
                     "value": "Elías Benítez Hernández"
-                }
+                }]
             },
             {
                 "city": {
                     "type": "uri",
                     "value": "http://dbpedia.org/resource/L%C3%A9ry,_Quebec"
                 },
-                "leaderName": {
+                "leaderName": [{
                     "type": "uri",
                     "value": "http://dbpedia.org/resource/Ch%C3%A2teauguay_(provincial_electoral_district)"
-                }
-            },
-            {
-                "city": {
-                    "type": "uri",
-                    "value": "http://dbpedia.org/resource/L%C3%A9ry,_Quebec"
                 },
-                "leaderName": {
+                {
                     "type": "uri",
                     "value": "http://dbpedia.org/resource/Ch%C3%A2teauguay%E2%80%94Saint-Constant"
-                }
-            },
-            {
-                "city": {
-                    "type": "uri",
-                    "value": "http://dbpedia.org/resource/L%C3%A9ry,_Quebec"
                 },
-                "leaderName": {
+                {
                     "type": "literal",
                     "xml:lang": "en",
                     "value": "Yvon Mailhot"
-                }
+                }]
             },
             {
                 "city": {
                     "type": "uri",
                     "value": "http://dbpedia.org/resource/Nelson_Township,_Lee_County,_Illinois"
                 },
-                "leaderName": {
+                "leaderName": [{
                     "type": "literal",
                     "xml:lang": "en",
                     "value": "Marlin Jensen"
-                }
+                }]
             },
             {
                 "city": {
                     "type": "uri",
                     "value": "http://dbpedia.org/resource/Osh"
                 },
-                "leaderName": {
+                "leaderName": [{
                     "type": "uri",
                     "value": "http://dbpedia.org/resource/Aitmamat_Kadyrbaev"
-                }
+                }]
             },
             {
                 "city": {
                     "type": "uri",
                     "value": "http://dbpedia.org/resource/Pineda_Trasmonte"
                 },
-                "leaderName": {
+                "leaderName": [{
                     "type": "literal",
                     "xml:lang": "en",
                     "value": "Basi Núñez Angulo"
-                }
+                }]
             },
             {
                 "city": {
                     "type": "uri",
                     "value": "http://dbpedia.org/resource/Pineda_de_Mar"
                 },
-                "leaderName": {
+                "leaderName": [{
                     "type": "literal",
                     "xml:lang": "en",
                     "value": "Xavier Amor i Martín"
-                }
+                }]
             },
             {
                 "city": {
                     "type": "uri",
                     "value": "http://dbpedia.org/resource/Santa_Rosa_District,_Chiclayo"
                 },
-                "leaderName": {
+                "leaderName": [{
                     "type": "literal",
                     "xml:lang": "en",
                     "value": "Andres Palma Gordillo"
-                }
+                }]
             }
         ]
     }
