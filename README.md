@@ -5,7 +5,7 @@ sparql-client
 
 A SPARQL client written for [Node.js](http://nodejs.org/) (with compatibility for [Apache Fuseki](http://jena.apache.org/documentation/serving_data/)).
 
-Version 0.3.0
+Version 0.3.1
 
 Usage
 =====
