@@ -21,6 +21,7 @@ global.nockEndpoint = function (status, data, options) {
         head: { link: [], vars: []},
         results: { distinct: false, ordered: true, bindings: [] },
       };
+      /* ...but append the request body. */
       data.request = querystring.parse(requestBody);
       return data;
     });

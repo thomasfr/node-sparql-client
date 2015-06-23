@@ -47,7 +47,7 @@ var query = "SELECT * FROM <http://dbpedia.org> WHERE { " +
 "    ?city <http://dbpedia.org/property/leaderName> ?leaderName " +
 "} LIMIT 10";
 var client = new SparqlClient(endpoint)
-  .register({db: 'http://dbpedia.org/resource/Vienna'});
+  .register({db: 'http://dbpedia.org/resource/'});
 
 client.query(query)
   .bind('city', {db: 'Vienna'})
@@ -65,7 +65,8 @@ client.query(query)
 
 From version 0.2.0 it is possible to add options regarding the formating of the results.
 For example, we execute the following query (to retrieve all books and their genres).
-```
+
+```sparql
 PREFIX dbpedia-owl: <http://dbpedia.org/owl/>
 SELECT ?book ?genre WHERE {
     ?book dbpedia-owl:literaryGenre ?genre

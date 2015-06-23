@@ -565,12 +565,12 @@ describe('SPARQL API', function () {
       it('should handle return a failed promise', function (done) {
         var scope = nockEndpoint(400);
         var promise = new SparqlClient(scope.endpoint)
-          .query('SELECT ("hello" as ?var) { }')
+          .query('SELECT ("hello" as ')
           .execute();
 
         promise
           .then(function () {
-            expect('unreachable code').toBeFalsy();
+            fail('Must not fulfill promise; should reject instead');
             done();
           })
           .catch(function (error) {
@@ -585,7 +585,7 @@ describe('SPARQL API', function () {
           .execute({format: {resource: 'book'}})
           .then(done)
           .catch(function (error) {
-            expect(error).toBeFalsy();
+            fail('Must not reject promise; must fulfill instead');
             done();
           });
       });
