@@ -12,7 +12,7 @@ global.nockEndpoint = function (status, data, options) {
     options = {};
   }
 
-  var endpoint = 'http://example.org/sparql';
+  var endpoint = options.endpoint || 'http://example.org/sparql';
   var scope = nock(host(endpoint))
     .post(path(endpoint))
     .reply(status, function (uri, requestBody) {

@@ -17,27 +17,17 @@
                 },
                 "genre": {
                     "type": "uri",
-                    "value": "http://dbpedia.org/resource/Political_strategy"
-                }
-            },
-            {
-                "book": {
-                    "type": "uri",
-                    "value": "http://dbpedia.org/resource/A_Game_of_Thrones"
-                },
-                "genre": {
-                    "type": "uri",
-                    "value": "http://dbpedia.org/resource/High_fantasy"
-                }
-            },
-            {
-                "book": {
-                    "type": "uri",
-                    "value": "http://dbpedia.org/resource/A_Game_of_Thrones"
-                },
-                "genre": {
-                    "type": "uri",
                     "value": "http://dbpedia.org/resource/Fantasy"
+                }
+            },
+            {
+                "book": {
+                    "type": "uri",
+                    "value": "http://dbpedia.org/resource/A_Game_of_Thrones"
+                },
+                "genre": {
+                    "type": "uri",
+                    "value": "http://dbpedia.org/resource/Political_strategy"
                 }
             }
         ]

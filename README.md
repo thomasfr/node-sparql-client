@@ -79,42 +79,52 @@ The *default* formatting (when no options are provided) results, for the binding
   {
     book: {
       type: 'uri',
-      value: 'http://live.dbpedia.org/page/A_Game_of_Thrones'
+      value: 'http://dbpedia.org/resource/A_Game_of_Thrones'
     },
     genre: {
       type: 'uri',
-      value: 'http://live.dbpedia.org/page/Fantasy'
+      value: 'http://dbpedia.org/resource/Fantasy'
     }
   },
   {
     book: {
       type: 'uri',
-      value: 'http://live.dbpedia.org/page/A_Game_of_Thrones'
+      value: 'http://dbpedia.org/resource/A_Game_of_Thrones'
     },
     genre: {
       type: 'uri',
-      value: 'http://live.dbpedia.org/page/Political_strategy'
+      value: 'http://dbpedia.org/resource/Political_strategy'
     }
   }
 ]
 ```
-Using the format option *resource* with the resource option set to *book* results in
+
+Using the format option *resource* with the resource option set to
+*book* like so:
+
+```javascript
+query.execute({format: {resource: 'book'}}, function(error, results) {
+  // ...
+});
+```
+
+Results in:
 
 ```javascript
 [
   {
     book: {
       type: 'uri',
-      value: 'http://live.dbpedia.org/page/A_Game_of_Thrones'
+      value: 'http://dbpedia.org/resource/A_Game_of_Thrones'
     },
     genre: [
       {
         type: 'uri',
-        value: 'http://live.dbpedia.org/page/Fantasy'
+        value: 'http://dbpedia.org/resource/Fantasy'
       },
       {
         type: 'uri',
-        value: 'http://live.dbpedia.org/page/Political_strategy'
+        value: 'http://dbpedia.org/resource/Political_strategy'
       }
     ]
   }
@@ -134,8 +144,8 @@ License
 =======
 The MIT License
 
-Copyright © 2015 Eddie Antonio Santos
 Copyright © 2014 Thomas Fritz
+Copyright © 2015 Eddie Antonio Santos
 
 Contributors
 
