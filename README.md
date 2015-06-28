@@ -145,7 +145,7 @@ License
 The MIT License
 
 Copyright © 2014 Thomas Fritz
-Copyright © 2015 Eddie Antonio Santos
+</br>Copyright © 2015 Eddie Antonio Santos
 
 Contributors
 
