@@ -415,7 +415,25 @@ describe('SPARQL API', function () {
         });
       });
 
-      it('should properly escape URIs');
+      it('should reject malformed IRIs', function () {
+        var scope = nockEndpoint();
+        var query = new SparqlClient(scope.endpoint)
+          .query('SELECT ?s {?s rdfs:label ?value}');
+
+        /* There are A LOT of things that are not allowed in IRIs. */
+        expect(function () {
+          query.bind('value', {rdfs: 'herp derp'});
+        }).toThrow();
+
+        expect(function () {
+          query.bind('value', 'http://example.org/hello world', {type: 'uri'});
+        }).toThrow();
+
+        expect(function () {
+          query.bind('value', encodeURIComponent('http://example.org/hello world'));
+          query.bind('value', encodeURIComponent('http://example.org/💩'));
+        }).not.toThrow();
+      });
 
       it('should not bind within already-bound strings', function (done) {
         var scope = nockEndpoint();
