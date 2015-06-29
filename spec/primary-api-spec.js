@@ -323,13 +323,18 @@ describe('SPARQL API', function () {
         var scope = nockEndpoint();
         var query = new SparqlClient(scope.endpoint)
           .register('ns', 'http://example.org/ns#')
-          .query('ASK WHERE { ?s ns:favouriteConstant ?c')
-          .bind('c', 1e100);
+          .query('ASK WHERE { ?s ns:favouriteConstant ' +
+                 ' ?google | ?pi_trunc | ?NaN ; }')
+          .bind('google', 1e100)
+          .bind('pi_trunc', 3.1415)
+          .bind('NaN', NaN);
 
         query.execute(function (error, data) {
           var query = data.request.query;
 
           expect(query).toMatch(/ns:favouriteConstant\s+1e\+?100\b/);
+          expect(query).toMatch(/\|\s+3.1415e\+?0\b/);
+          expect(query).toMatch(/\|\s('|")NaN\1\^\^xsd:double\b/);
           done();
         });
       });
