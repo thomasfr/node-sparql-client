@@ -207,6 +207,31 @@ describe('SPARQL API', function () {
           done();
         });
       });
+
+      it('should throw an error when binding suspicious URIs', function () {
+        var client = new SparqlClient('http://example.org/sparql');
+        var query = client.query('SELECT ?s ?o WHERE { ?s rdfs:label ?o }');
+
+        /* This one is evil. */
+        expect(function () {
+          query.register('dc', 'http://purl.org/dc/\u0000elements/1.1/');
+        }).toThrow();
+
+        /* This is the same one, but less evil. */
+        expect(function () {
+          query.register('dc', 'http://purl.org/dc/elements/1.1/');
+        }).not.toThrow();
+
+        /* This is one is not a valid IRI: */
+        expect(function () {
+          query.register('hw', 'http://example.org/hello>world');
+        }).toThrow();
+
+        /* But the user can always explicitly encode it: */
+        expect(function () {
+          query.register('hw', encodeURIComponent('http://example.org/hello>world'));
+        }).not.toThrow();
+      });
     });
 
     describe('#bind() [single]', function() {
