@@ -316,30 +316,34 @@ describe('SPARQL API', function () {
         var scope = nockEndpoint();
         var query = new SparqlClient(scope.endpoint)
           .register('ns', 'http://example.org/ns#')
-          .query('SELECT ?s { ?s ns:philsophy ?x ; ns:appendages ?y }')
+          .query('SELECT ?s { ?s ns:philsophy ?x ; ns:appendages ?y ; ns:termites ?z }')
           .bind('x', {value: 42, type: 'integer' })
-          .bind('y', '13', {datatype: {xsd: 'integer'}});
+          .bind('y', '13', {datatype: {xsd: 'integer'}})
+          .bind('z', -7, {type: 'integer'});
 
         query.execute(function (error, data) {
           var query = data.request.query;
           expect(query).toMatch(/ns:philsophy\s+42\b/);
           expect(query).toMatch(/ns:appendages\s+13\b/);
+          expect(query).toMatch(/ns:termites\s+-7\b/);
           done();
         });
       });
 
-      it('should bind an decimal literal to a query', function (done) {
+      it('should bind decimal literals to a query', function (done) {
         var scope = nockEndpoint();
         var query = new SparqlClient(scope.endpoint)
           .register('db', 'http://example.org/dragonball#')
-          .query('ASK WHERE { ?s db:powerLevel ?level . FILTER ( ?level > ?power )')
+          .query('ASK WHERE { ?s db:powerLevel ?level ; db:frappuchinoCost ?frap . FILTER ( ?level > ?power )')
           /* Note that decimals MUST be passed as strings! */
-          .bind('power', '9000.0', {type: 'decimal'});
+          .bind('power', '9000.0', {datatype: {xsd: 'decimal'}})
+          .bind('frap', '-4.75', {type: 'decimal'});
 
         query.execute(function (error, data) {
           var query = data.request.query;
 
           expect(query).toMatch(/\?level\s+>\s+9000.0\b/);
+          expect(query).toMatch(/db:frappuchinoCost\s+-4.75\b/);
           done();
         });
       });
@@ -349,17 +353,21 @@ describe('SPARQL API', function () {
         var query = new SparqlClient(scope.endpoint)
           .register('ns', 'http://example.org/ns#')
           .query('ASK WHERE { ?s ns:favouriteConstant ' +
-                 ' ?google | ?pi_trunc | ?NaN ; }')
+                 ' ?google | ?pi_trunc | ?NaN | ?inf | ?unidentity ; }')
           .bind('google', 1e100)
           .bind('pi_trunc', 3.1415)
-          .bind('NaN', NaN);
+          .bind('unidentity', -1)
+          .bind('NaN', NaN)
+          .bind('inf', -Infinity);
 
         query.execute(function (error, data) {
           var query = data.request.query;
 
           expect(query).toMatch(/ns:favouriteConstant\s+1e\+?100\b/);
           expect(query).toMatch(/\|\s+3.1415e\+?0\b/);
+          expect(query).toMatch(/\|\s+-1e\+?0\b/);
           expect(query).toMatch(/\|\s('|")NaN\1\^\^xsd:double\b/);
+          expect(query).toMatch(/\|\s('|")-INF\1\^\^xsd:double\b/);
           done();
         });
       });
