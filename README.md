@@ -31,6 +31,24 @@ fetchCityLeader('Vienna')
   .then(leader => console.log(`${leader} is a leader of Vienna`));
 ```
 
+
+Table of Contents
+=================
+
+  * [sparql-client](#sparql-client)
+  * [Use](#use)
+    * [Using `SPARQL` Tagged Template and Promises (ECMAScript 2015/ES 6)](#using-sparql-tagged-template-and-promises-ecmascript-2015es-6)
+    * [Using "Traditional" Node Callbacks](#using-traditional-node-callbacks)
+    * [Registering URI Prefixes](#registering-uri-prefixes)
+      * [Registering common prefixes](#registering-common-prefixes)
+      * [Registering custom prefixes](#registering-custom-prefixes)
+    * [Binding variables](#binding-variables)
+      * [Explicitly, using `#bind()`](#explicitly-using-bind)
+      * [Using the <code>SPARQL</code> template tag](#using-the-sparql-template-tag)
+    * [Updates](#updates)
+    * [Result Formatting](#result-formatting)
+  * [License](#license)
+
 Use
 ===
 
@@ -82,10 +100,7 @@ Results in:
    { distinct: false,
      ordered: true,
      bindings:
-      [ { leaderName:
-           { type: 'literal',
-             'xml:lang': 'en',
-             value: 'Maria Vassilakou ,' } },
+      [ { leaderName: { type: 'literal', 'xml:lang': 'en', value: 'Maria Vassilakou ,' } },
         { leaderName: { type: 'literal', 'xml:lang': 'en', value: 'Michael Häupl' } },
         { leaderName: { type: 'literal', 'xml:lang': 'en', value: 'Renate Brauner ;' } } ] } }
 ```
@@ -96,7 +111,8 @@ Results in:
 ## Using "Traditional" Node Callbacks
 
 You are not forced to use promises; traditional `(err, results)`
-callbacks work too:
+callbacks work too. You may also use `#bind()` to replace `?variables`
+in the query with sanitized values:
 
 ```javascript
 // Get the leaderName(s) of the 10 cities
@@ -168,7 +184,95 @@ var client = new SparqlClient(endpoint)
   .register('http://example.org/books/');
 ```
 
-## Formatting
+## Binding variables
+
+### Explicitly, using `#bind()`
+
+It's inadvisable to concatenate strings in order to write a query,
+especially if data is coming from untrusted sources. `#bind()` allows
+you to pass values to queries that will be converted into a safe SPARQL
+term.
+
+Say you have a statement like this:
+
+```javascript
+var text = 'INSERT DATA {' +
+  ' [] rdfs:label ?creature ;' +
+  '    dbfr:paws ?paws ;' +
+  '    dbfr:netWorth ?netWorth ;' +
+  '    dbfr:weight ?weight ;' +
+  '    dbfr:grumpy ?grumpy ;' +
+  '    dbfr:derrivedFrom ?derrivedFrom .' +
+  '}';
+```
+
+Each of the `?questionMarked` fields can be bound to JavaScript
+values while querying using `#bind()`:
+
+```javascript
+client.query(text)
+  // Bind one at a time...
+  .bind('grumpy', true)
+  // Use a third argument to provide options.
+  .bind('derrivedFrom', 'http://fr.wikipedia.org/wiki/Grumpy_Cat?oldid=94581698', {type:'uri'})
+  // Or bind multiple values at once using an object:
+  .bind({
+    creature: {value: 'chat', lang: 'fr'},
+    paws: {value: 4, type: 'integer'},
+    netWorth: {value: '16777216.25', type: 'decimal'}, // francs
+    weight: 3.18, // kg
+  });
+```
+
+### Using the `SPARQL` template tag
+
+Any value that can be bound using `#bind()` can equally be interpolated
+using the `SPARQL` template tag: URIs, strings, booleans, language
+tagged strings, doubles, literals with custom types­anything! Note the
+doubled curly-braces (`${{value: ...}}`) when passing an object.
+
+```javascript
+var text = SPARQL`
+  INSERT DATA {
+    ${{dc: 'eddieantonio'}} ns:favouriteGame ${{db: 'Super_Metroid'}} ;
+                rdfs:label ${'@eddieantonio'} ;
+                ns:prettyCheekyM8 ${true} ;
+                rdfs:label ${{value: 'エディ', lang: 'jp'}} ;
+                ns:favoriteConstant ${Math.PI} ;
+                ns:favoriteColor ${{value: 'blue', datatype: {ns: 'Color'}}} .
+  }`;
+```
+
+Then `text` would be the string:
+
+```
+  INSERT DATA {
+    dc:eddieantonio ns:favouriteGame db:Super_Metroid ;
+                rdfs:label '@eddieantonio' ;
+                ns:prettyCheekyM8 true ;
+                rdfs:label 'エディ'@jp ;
+                ns:favoriteConstant 3.141592653589793e0 ;
+                ns:favoriteColor 'blue'^^ns:Color .
+  }
+```
+
+## Updates
+
+There's no need to specify anything special; `LOAD`, `CLEAR`, `DROP`,
+`ADD`, `MOVE`, `COPY`, `INSERT DATA`, and `DELETE DATA` are
+automatically requested as updates. Just write these statements like any
+other:
+
+```javascript
+new SparqlClient(endpoint).query(SPARQL`
+  INSERT DATA {
+    ${{pkmn: 'Lotad'}} pkdx:evolvesTo ${{pkmn: 'Lombre'}}
+    ${{pkmn: 'Lombre'}} pkdx:evolvesTo ${{pkmn: 'Ludicolo'}}
+  }`)
+  .execute();
+```
+
+## Result Formatting
 
 We may want to execute the following query (to retrieve all books and
 their genres).
