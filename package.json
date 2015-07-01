@@ -1,6 +1,6 @@
 {
   "name": "sparql-client",
-  "version": "0.3.1",
+  "version": "0.4.0",
   "author": "Thomas Fritz <fritztho@gmail.com> (http://fritzthomas.com)",
   "contributors": [
     "Martin Franke <martin@semiwa.org> (http://semiwa.org)",

@@ -1,3 +1,12 @@
+0.4.0 / 2015-07-01 🍁
+====================
+
+ * Query mechanism refactored.
+ * `Query#bind()` is very exception happy method; the opinion of this module is anything that _looks_ unsafe should be dealt with immediately.
+ * Tried darnedest not to throw weird errors on `execute()` from within the module.
+ * Better mapping of JavaScript numbers to SPARQL doubles (or `xsd:double`).
+ * Added `SPARQL` template tag (ECMAScript 2015).
+
 0.3.0 / 2015-06-20
 ==================
 
