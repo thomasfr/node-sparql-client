@@ -15,7 +15,8 @@
   "description": "Simple SPARQL Client for node.js",
   "devDependencies": {
     "jasmine": "^2.3.1",
-    "nock": "^2.5.0"
+    "nock": "^2.5.0",
+    "traceur": "0.0.90"
   },
   "engines": {
     "node": ">= 0.10.0"
