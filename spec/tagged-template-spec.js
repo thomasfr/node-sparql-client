@@ -1,14 +1,18 @@
 /**
- * Note: This is an ECMAScript 2015 (ES6) source!
+ * Note: This source is meant to work on the current version of io.js (2.3.1,
+ * as of July 1, 2015). That is, this should run without a transpiler (like
+ * traceur). As of now, this means no object destructuring:
+ *
+ * const {SPARQL} = require('sparql-client');
  */
 
-const {SPARQL} = require('../');
+const SPARQL = require('../').SPARQL;
 
 describe('SPARQL (tagged templates)', function () {
 
   it('should not change a standard query', function () {
     var query;
-    expect(() => {
+    expect(function () {
       query = SPARQL`BASE <http://example.org/books/>
                      PREFIX ns: <http://example.org/ns#>
 
@@ -40,9 +44,11 @@ describe('SPARQL (tagged templates)', function () {
                 :book ns:quote ${reasonableInput} ;
                       ns:author ${{auth: 'Some_Dude_I_guess'}}
                       ns:price ${{value: '4.60', type: 'decimal'}}
+                      ns:rating ${-Infinity}
              }`;
     expect(query).toMatch(/ns:quote\s+('''|""").+?\\"Howdy, y\\'all.\\"\1/);
     expect(query).toMatch(/ns:author\s+auth:Some_Dude_I_guess\b/);
     expect(query).toMatch(/ns:price\s+4.60\b/);
+    expect(query).toMatch(/ns:rating\s+(['"])-INF\1/);
   });
 });
