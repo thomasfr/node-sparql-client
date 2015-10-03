@@ -1,11 +1,11 @@
 {
-  "name": "sparql-client",
+  "name": "sparql-client-2",
   "version": "0.4.0",
-  "author": "Thomas Fritz <fritztho@gmail.com> (http://fritzthomas.com)",
+  "author": "Eddie Antonio Santos <easantos@ualberta.ca> (http://eddieantonio.ca/)",
   "contributors": [
     "Martin Franke <martin@semiwa.org> (http://semiwa.org)",
     "Pieter Heyvaert <pheyvaer.heyvaert@ugent.be> (http://semweb.mmlab.be/)",
-    "Eddie Antonio Santos <easantos@ualberta.ca> (http://eddieantonio.ca/)"
+    "Thomas Fritz <fritztho@gmail.com> (http://fritzthomas.com)"
   ],
   "dependencies": {
     "lodash": "^2.4.1",
