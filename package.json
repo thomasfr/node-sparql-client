@@ -28,12 +28,12 @@
   "main": "index.js",
   "repository": {
     "type": "git",
-    "url": "https://github.com/thomasfr/node-sparql-client.git"
+    "url": "git@github.com:eddieantonio/node-sparql-client.git"
   },
   "bugs": {
-    "url": "https://github.com/thomasfr/node-sparql-client/issues"
+    "url": "https://github.com/eddieantonio/node-sparql-client/issues"
   },
-  "homepage": "https://github.com/thomasfr/node-sparql-client",
+  "homepage": "https://github.com/eddieantonio/node-sparql-client",
   "directories": {
     "test": "spec"
   },
