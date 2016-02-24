@@ -604,6 +604,28 @@ describe('SPARQL API', function () {
           });
       });
 
+      it('should return a error message on request failure', function (done) {
+        /* Based on
+         * https://www.w3.org/TR/rdf-sparql-protocol/#select-malformed
+         */
+        var errorStatus = 400;
+        var content = "4:syntax error, unexpected ORDER, expecting '}'";
+        var scope = nockEndpoint(errorStatus);
+
+        var query = new SparqlClient(scope.endpoint)
+          .query('SELECT ?name WHERE { ?x foaf:name ?name ORDER BY ?name }')
+          .execute(function (err, data) {
+            expect(err).toBeDefined();
+            expect(err.message).toMatch(/\b400\b/);
+            /* Current version on Nock doesn't do this right... */
+            //expect(err.message).toMatch(/\bBad Result\b/i);
+
+            /* It should also return the http status. */
+            expect(err.httpStatus).toBe(400);
+            done();
+          });
+      });
+
       it('should return a promise', function (done) {
         var scope = nockEndpoint(200, {hello: 'world'});
         var promise = new SparqlClient(scope.endpoint)
@@ -648,3 +670,4 @@ describe('SPARQL API', function () {
     });
   });
 });
+/*globals it,expect,describe,nockEndpoint*/

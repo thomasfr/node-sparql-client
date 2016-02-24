@@ -46,6 +46,7 @@ Table of Contents
       * [Explicitly, using `#bind()`](#explicitly-using-bind)
       * [Using the <code>SPARQL</code> template tag](#using-the-sparql-template-tag)
     * [Updates](#updates)
+    * [Errors](#errors)
     * [Result Formatting](#result-formatting)
   * [License](#license)
 
@@ -272,6 +273,10 @@ new SparqlClient(endpoint).query(SPARQL`
   .execute();
 ```
 
+## Errors
+
+[to be written...]
+
 ## Result Formatting
 
 We may want to execute the following query (to retrieve all books and
@@ -356,7 +361,7 @@ License
 The MIT License
 
 Copyright © 2014 Thomas Fritz
-</br>Copyright © 2015 Eddie Antonio Santos
+</br>Copyright © 2015, 2016 Eddie Antonio Santos
 
 Contributors
 
