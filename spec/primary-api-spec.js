@@ -650,6 +650,7 @@ describe('SPARQL API', function () {
             done();
           })
           .catch(function (error) {
+            expect(error.httpStatus).toBe(400);
             done();
           });
       });
