@@ -1,3 +1,9 @@
+0.4.2 / 2016-02-24
+==================
+
+ * Added explicit support for HTTP Error messages. Errors are patched
+   with `.httpStatus` to indicate status code.
+
 0.4.0 / 2015-07-01 🍁
 ====================
 
