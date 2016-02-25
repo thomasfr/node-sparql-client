@@ -275,7 +275,46 @@ new SparqlClient(endpoint).query(SPARQL`
 
 ## Errors
 
-[to be written...]
+If an error occurs, such as when submitting a query with a syntax error,
+the first argument to the `execute()` will be an `Error` object and have
+the `.httpStatus` attribute with the associated HTTP status code.
+Usually this is `400` when there is a syntax error, or `500` when the
+server refuses to process the request (such as when a timeout occurs).
+This status code is defined by the particular SPARQL server used.
+
+```javascript
+new SparqlCLient(endpoint).query(`
+    SELECT ?name
+    WHERE { ?x foaf:name ?name
+    ORDER BY ?name
+  `)
+  .execute(function (err, data) {
+    console.log(err.httpStatus);
+    // logs '400'
+    console.log(err);
+    // logs 'HTTP Error: 400 Bad Request'
+  });
+```
+
+This also works with promises:
+
+```javascript
+new SparqlCLient(endpoint).query(``
+    SELECT ?name
+    WHERE { ?x foaf:name ?name
+    ORDER BY ?name
+  `)
+  .execute()
+  .then(function () {
+    // will never reach here!
+  })
+  .catch(function (err) {
+    console.log(err.httpStatus);
+    // logs '400'
+    console.log(err);
+    // logs 'HTTP Error: 400 Bad Request'
+  });
+```
 
 ## Result Formatting
 
