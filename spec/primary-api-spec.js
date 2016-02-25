@@ -1,7 +1,6 @@
 var SparqlClient = require('../');
 
 describe('SPARQL API', function () {
-  'use strict';
 
   beforeEach(function () {
     jasmine.addMatchers(customMatchers);
@@ -612,13 +611,12 @@ describe('SPARQL API', function () {
         var content = "4:syntax error, unexpected ORDER, expecting '}'";
         var scope = nockEndpoint(errorStatus);
 
-        var query = new SparqlClient(scope.endpoint)
+        new SparqlClient(scope.endpoint)
           .query('SELECT ?name WHERE { ?x foaf:name ?name ORDER BY ?name }')
           .execute(function (err, data) {
             expect(err).toBeDefined();
             expect(err.message).toMatch(/\b400\b/);
-            /* Current version on Nock doesn't do this right... */
-            //expect(err.message).toMatch(/\bBad Result\b/i);
+            expect(err.message).toMatch(/\bBad Request\b/i);
 
             /* It should also return the http status. */
             expect(err.httpStatus).toBe(400);
@@ -670,4 +668,5 @@ describe('SPARQL API', function () {
     });
   });
 });
-/*globals it,expect,describe,nockEndpoint*/
+/*globals jasmine,describe,it,expect,beforeEach,fail*/
+/*globals nockEndpoint*/
