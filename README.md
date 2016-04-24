@@ -47,6 +47,7 @@ Table of Contents
       * [Explicitly, using `#bind()`](#explicitly-using-bind)
       * [Using the <code>SPARQL</code> template tag](#using-the-sparql-template-tag)
     * [Updates](#updates)
+      * [Specifying a different update endpoint](#specifying-a-different-update-endpoint)
     * [Errors](#errors)
     * [Result Formatting](#result-formatting)
   * [License](#license)
@@ -59,8 +60,6 @@ Use
 You may use the `SPARQL` template tag to interpolate variables into the
 query. All values are automatically converted into their SPARQL literal
 form, and any unsafe strings are escaped.
-
-> June 2015: This works in [iojs](https://iojs.org/) right now!
 
 ```javascript
 const SparqlClient = require('sparql-client');
@@ -274,17 +273,51 @@ new SparqlClient(endpoint).query(SPARQL`
   .execute();
 ```
 
+### Specifying a different update endpoint
+
+Some servers have different endpoints for queries and updates. Specify
+the alternate options when starting the client:
+
+```javascript
+var client = new SparqlClient('http://example.org/query', {
+  updateEndpoint: 'http://example.org/update'
+});
+```
+
+You may use the client subsequently:
+
+```javascript
+// Will be sent to http://example.org/update
+client.query(SPARQL`
+  INSERT DATA {
+    ${{pkmn: 'Lotad'}} pkdx:evolvesTo ${{pkmn: 'Lombre'}}
+    ${{pkmn: 'Lombre'}} pkdx:evolvesTo ${{pkmn: 'Ludicolo'}}
+  }`)
+  .execute();
+
+// Will be sent to http://example.org/query
+client.query(SPARQL`
+  SELECT {
+    ${{pkmn: 'Lombre'}} pkdx:evolvesTo ?evolution
+  }`)
+  .execute()
+  .then(response => {
+    // Prints Ludicolo
+    console.log(response.results.bindings[0].evolution.value)
+  });
+```
+
 ## Errors
 
 If an error occurs, such as when submitting a query with a syntax error,
-the first argument to the `execute()` will be an `Error` object and have
+the first argument to `execute()` will be an `Error` object and have
 the `.httpStatus` attribute with the associated HTTP status code.
 Usually this is `400` when there is a syntax error, or `500` when the
 server refuses to process the request (such as when a timeout occurs).
 This status code is defined by the particular SPARQL server used.
 
 ```javascript
-new SparqlCLient(endpoint).query(`
+new SparqlClient(endpoint).query(`
     SELECT ?name
     WHERE { ?x foaf:name ?name
     ORDER BY ?name
@@ -300,7 +333,7 @@ new SparqlCLient(endpoint).query(`
 This also works with promises:
 
 ```javascript
-new SparqlCLient(endpoint).query(`
+new SparqlClient(endpoint).query(`
     SELECT ?name
     WHERE { ?x foaf:name ?name
     ORDER BY ?name

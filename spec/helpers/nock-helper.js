@@ -5,12 +5,9 @@ global.nockEndpoint = function (status, data, options) {
   var nock = require('nock');
   var querystring = require('querystring');
 
-  if (status === undefined) {
-    status = 200;
-  }
-  if (options === undefined) {
-    options = {};
-  }
+  // Assuming no-one will need status 0 (non-existent)
+  status = status || 200;
+  options = options || {};
 
   var endpoint = options.endpoint || 'http://example.org/sparql';
   var scope = nock(host(endpoint))

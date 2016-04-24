@@ -1,5 +1,7 @@
 var SparqlClient = require('../');
 
+jasmine.getEnv().defaultTimeoutInterval = Infinity;
+
 describe('SPARQL API', function () {
 
   beforeEach(function () {
@@ -600,6 +602,40 @@ describe('SPARQL API', function () {
           .query('SELECT ("hello" as ?var) { }')
           .execute({format: {resource: 'book'}}, function (err, data) {
             done();
+          });
+      });
+
+      it('should allow for alternate query and update endpoints', function (done) {
+        var queryScope = nockEndpoint();
+        var updateScope = nockEndpoint(null, null, {
+          endpoint: 'http://example.org/update'
+        });
+
+        var client = new SparqlClient(queryScope.endpoint, {
+          updateEndpoint: updateScope.endpoint
+        });
+
+        // The query
+        client.query('SELECT ("""INSERT DATA and DELETE""" as ?update) { }')
+          .execute()
+          .then(function (results) {
+            expect(results.request.update).toBeUndefined();
+          })
+          .catch(function (err) {
+            fail(err);
+          })
+          // The update
+          .then(function () {
+            return client
+              .query('INSERT DATA { pkmn:Lotad pkdx:evolvesTo pkmn:Lombre }')
+              .execute();
+          })
+          .then(function (results) {
+            expect(results.request.update).toBeTruthy();
+            done();
+          })
+          .catch(function (err) {
+            fail(err);
           });
       });
 
