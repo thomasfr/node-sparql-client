@@ -1,3 +1,9 @@
+0.5.0 / 2016-04-24
+==================
+
+ * Added support for alternate query and update endpoints
+   (specified on the client as `{ updateEndpoint: '...' }`
+
 0.4.2 / 2016-02-24
 ==================
 
