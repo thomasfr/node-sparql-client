@@ -1,7 +1,5 @@
 var SparqlClient = require('../');
 
-jasmine.getEnv().defaultTimeoutInterval = Infinity;
-
 describe('SPARQL API', function () {
 
   beforeEach(function () {
