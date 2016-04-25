@@ -1,3 +1,8 @@
+0.5.1 / 2016-04-24
+==================
+
+ * Fixed crash when response contains empty body.
+
 0.5.0 / 2016-04-24
 ==================
 
