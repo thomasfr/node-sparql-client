@@ -637,6 +637,23 @@ describe('SPARQL API', function () {
           });
       });
 
+      it('should allow for empty response bodies', function (done) {
+        var queryScope = nockEndpoint(204, ' ');
+
+        var client = new SparqlClient(queryScope.endpoint);
+
+        // The query
+        client.query('INSERT DATA { pkmn:Lotad pkdx:evolvesTo pkmn:Lombre }')
+          .execute()
+          .then(function (results) {
+            expect(results).toBeNull();
+            done();
+          })
+          .catch(function (err) {
+            fail(err);
+          });
+      });
+
       it('should return a error message on request failure', function (done) {
         /* Based on
          * https://www.w3.org/TR/rdf-sparql-protocol/#select-malformed
