@@ -12,7 +12,7 @@
     "promise": "^7.0.1",
     "request": "^2.40.0"
   },
-  "description": "Simple SPARQL Client for node.js",
+  "description": "SPARQL Client for JavaScript",
   "devDependencies": {
     "jasmine": "^2.3.1",
     "nock": "^2.5.0",

@@ -4,8 +4,7 @@ sparql-client
 [![Build Status](https://travis-ci.org/eddieantonio/node-sparql-client.svg?branch=master)](https://travis-ci.org/eddieantonio/node-sparql-client)
 [![npr Version](https://img.shields.io/npm/v/sparql-client-2.svg)](https://www.npmjs.com/package/sparql-client-2)
 
-A SPARQL 1.1 client for Node.js with ECMAScript 2015 (ECMAScript 6,
-Harmony) features.
+A SPARQL 1.1 client for JavaScript.
 
 ```javascript
 const {SparqlClient, SPARQL} = require('sparql-client');
