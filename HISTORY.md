@@ -1,3 +1,14 @@
+0.7.0 / <current>
+=================
+
+ * No longer depend on a Promise implementation (either use the ES6
+ Promises or polyfill your own).
+
+0.6.0 / 2016-04-25
+==================
+
+ * Add `defaultParams` and `requestDefaults` options
+
 0.5.1 / 2016-04-24
 ==================
 

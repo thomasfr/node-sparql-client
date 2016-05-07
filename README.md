@@ -308,9 +308,15 @@ client.query(SPARQL`
 
 ### Overriding request defaults
 
-You can override the request defaults by passing them in the options object of the constructor. `defaultParams` are the default parameters in the request, and `requestsDefaults` are the default _request options_. This distinction is a little confusing, so here're some examples:
+You can override the request defaults by passing them in the options
+object of the constructor. `defaultParams` are the default parameters in
+the request, and `requestsDefaults` are the default _request options_.
+This distinction is a little confusing, so here are some examples:
 
-For example, say you have a graph database that expects `format: 'json'` as a param rather than the default `format: 'application/sparql-results+json'`. You can override the default when constructing your client like so:
+For example, say you have a graph database that expects `format: 'json'`
+as a param rather than the default `format:
+'application/sparql-results+json'`. You can override the default when
+constructing your client like so:
 
 ```js
 var client = new SparqlClient('http://example.org/query', {
@@ -320,7 +326,9 @@ var client = new SparqlClient('http://example.org/query', {
 });
 ```
 
-Similarly, let's say you want to specify your client's user agent string. You can pass this, and other headers, as part of a `requestsDefaults` option.
+Similarly, let's say you want to specify your client's user agent
+string. You can pass this, and other headers, as part of
+a `requestsDefaults` option.
 
 ```js
 var client = new SparqlClient('http://example.org/query', {
