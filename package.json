@@ -10,6 +10,7 @@
   "dependencies": {
     "lodash": "^4.0.1",
     "promise": "^7.0.1",
+    "promise-nodeify": "^0.1.0",
     "request": "^2.40.0"
   },
   "description": "SPARQL Client for JavaScript",
