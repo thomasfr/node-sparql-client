@@ -8,7 +8,7 @@
     "Thomas Fritz <fritztho@gmail.com> (http://fritzthomas.com)"
   ],
   "dependencies": {
-    "lodash": "^2.4.1",
+    "lodash": "^4.0.1",
     "promise": "^7.0.1",
     "request": "^2.40.0"
   },
