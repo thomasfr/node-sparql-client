@@ -8,8 +8,8 @@
     "Thomas Fritz <fritztho@gmail.com> (http://fritzthomas.com)"
   ],
   "dependencies": {
+    "denodeify": "^1.2.1",
     "lodash": "^4.0.1",
-    "promise": "^7.0.1",
     "promise-nodeify": "^0.1.0",
     "request": "^2.40.0"
   },
