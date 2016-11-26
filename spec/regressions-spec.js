@@ -3,7 +3,6 @@ var nock = require('nock');
 var SparqlClient = require('../');
 
 describe('GitHub Issues', function () {
-
   describe('thomasfr/node-sparql-client#6', function () {
     it('should not crash on HTTP response error', function (done) {
       var host = 'http://example.org';
@@ -80,7 +79,4 @@ describe('GitHub Issues', function () {
         });
     });
   });
-
-
 });
-/*global expect, describe, it */

@@ -24,5 +24,13 @@ module.exports = {
       'error',
       'always'
     ]
+  },
+  'globals': {
+    describe: false,
+    it: false,
+    beforeEach: false,
+    afterEach: false,
+    expect: false,
+    fail: false,
   }
 };
