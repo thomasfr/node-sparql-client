@@ -52,7 +52,7 @@ describe('GitHub Issues', function () {
             });
         });
 
-      function replyWithArgsPresent (uri, body) {
+      function replyWithArgsPresent(uri, body) {
         return {
           update: !!body.match(/update=/),
           query: !!body.match(/query=/)
@@ -62,21 +62,23 @@ describe('GitHub Issues', function () {
   });
 
   describe('#8', function () {
-    it('should not crash on HTTP response error', function (done) {
-      var host = 'http://example.org';
-      var endpoint = 'http://example.org/sparql';
+    it('should accept dashes in IRIs', function (done) {
+      var scope = nockEndpoint();
+      var query = new SparqlClient(scope.endpoint)
+        .query('ASK { [] ex:v1 ?literal ; [] ex:v1 ?lateral }');
 
-      nock(host)
-        .post('/sparql')
-        .reply(503, { result: {} });
+      // This IRI has a dash in it:
+      query.bind('literal', 'http://example.org/this-is-valid', {type: 'uri'});
+      // This is an internationalized URI, with dashes!
+      query.bind('literal', 'http://💩.la/this-is-valid', {type: 'uri'});
 
-      var client = new SparqlClient(endpoint);
-      client
-        .query('SELECT ("hello" as ?var) { }')
-        .execute(function (err, _response) {
-          expect(err).toBeTruthy();
-          done();
-        });
+      query.execute(function (error, data) {
+        expect(error).toBeFalsy();
+        expect(data).toBeTruthy();
+        done();
+      });
     });
   });
 });
+
+/* global nockEndpoint */
