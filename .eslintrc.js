@@ -6,10 +6,6 @@ module.exports = {
       "promise"
   ],
   'rules': {
-    'indent': [
-      'error',
-      2
-    ],
     'linebreak-style': [
       'error',
       'unix'
@@ -23,7 +19,14 @@ module.exports = {
     'semi': [
       'error',
       'always'
-    ]
+    ],
+    'space-before-function-paren': [
+      'error', {
+        'named': 'never',
+        'anonymous': 'always',
+        'asyncArrow': 'always'
+      }
+    ],
   },
   'globals': {
     describe: false,
