@@ -15,6 +15,10 @@
   },
   "description": "SPARQL Client for JavaScript",
   "devDependencies": {
+    "eslint": "^3.11.0",
+    "eslint-config-standard": "^6.2.1",
+    "eslint-plugin-promise": "^3.4.0",
+    "eslint-plugin-standard": "^2.0.1",
     "jasmine": "^2.3.1",
     "nock": "^2.5.0",
     "traceur": "0.0.90"

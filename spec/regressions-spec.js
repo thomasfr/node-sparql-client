@@ -4,7 +4,7 @@ var SparqlClient = require('../');
 
 describe('GitHub Issues', function () {
 
-  describe('#6', function () {
+  describe('thomasfr/node-sparql-client#6', function () {
     it('should not crash on HTTP response error', function (done) {
       var host = 'http://example.org';
       var endpoint = 'http://example.org/sparql';
@@ -16,14 +16,14 @@ describe('GitHub Issues', function () {
       var client = new SparqlClient(endpoint);
       client
         .query('SELECT ("hello" as ?var) { }')
-        .execute(function (err, response) {
+        .execute(function (err, _response) {
           expect(err).toBeTruthy();
           done();
         });
     });
   });
 
-  describe('#11', function () {
+  describe('thomasfr/node-sparql-client#11', function () {
     it('should not maintain state after doing an update', function (done) {
       var host = 'http://example.org';
       var endpoint = 'http://example.org/sparql';
@@ -62,4 +62,25 @@ describe('GitHub Issues', function () {
     });
   });
 
+  describe('#8', function () {
+    it('should not crash on HTTP response error', function (done) {
+      var host = 'http://example.org';
+      var endpoint = 'http://example.org/sparql';
+
+      nock(host)
+        .post('/sparql')
+        .reply(503, { result: {} });
+
+      var client = new SparqlClient(endpoint);
+      client
+        .query('SELECT ("hello" as ?var) { }')
+        .execute(function (err, _response) {
+          expect(err).toBeTruthy();
+          done();
+        });
+    });
+  });
+
+
 });
+/*global expect, describe, it */
