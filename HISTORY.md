@@ -1,8 +1,7 @@
-0.7.0 / <current>
-=================
+0.6.1 / 2016-11-16
+==================
 
- * No longer depend on a Promise implementation (either use the ES6
- Promises or polyfill your own).
+ * Fixed erroneous IRIREF production [#8](https://github.com/thomasfr/node-sparql-client/issues/6)—thanks [paulwilton](https://github.com/paulwilton)!
 
 0.6.0 / 2016-04-25
 ==================
