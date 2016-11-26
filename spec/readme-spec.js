@@ -32,7 +32,10 @@ describe('The README examples', function () {
       .execute(function(error, results) {
         expect(error).toBeFalsy();
 
-        expect(results).toEqual(require('./fixtures/leader-names'));
+        expect(results.head)
+          .toEqual(require('./fixtures/leader-names').head);
+        expect(results.results)
+          .toEqual(require('./fixtures/leader-names').results);
 
         done();
       });
@@ -54,7 +57,10 @@ describe('The README examples', function () {
         .bind('city', {db: 'Vienna'})
         .execute()
         .then(function (results) {
-          expect(results).toEqual(require('./fixtures/leader-names'));
+          expect(results.head)
+            .toEqual(require('./fixtures/leader-names').head);
+          expect(results.results)
+            .toEqual(require('./fixtures/leader-names').results);
 
           done();
         })
