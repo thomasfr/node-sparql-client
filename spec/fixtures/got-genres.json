@@ -1,0 +1,35 @@
+{
+    "head": {
+        "link": [],
+        "vars": [
+            "book",
+            "genre"
+        ]
+    },
+    "results": {
+        "distinct": false,
+        "ordered": true,
+        "bindings": [
+            {
+                "book": {
+                    "type": "uri",
+                    "value": "http://dbpedia.org/resource/A_Game_of_Thrones"
+                },
+                "genre": {
+                    "type": "uri",
+                    "value": "http://dbpedia.org/resource/Fantasy"
+                }
+            },
+            {
+                "book": {
+                    "type": "uri",
+                    "value": "http://dbpedia.org/resource/A_Game_of_Thrones"
+                },
+                "genre": {
+                    "type": "uri",
+                    "value": "http://dbpedia.org/resource/Political_strategy"
+                }
+            }
+        ]
+    }
+}

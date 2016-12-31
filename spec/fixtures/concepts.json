@@ -1,0 +1,614 @@
+{
+    "head": {
+        "link": [],
+        "vars": [
+            "Concept"
+        ]
+    },
+    "results": {
+        "distinct": false,
+        "ordered": true,
+        "bindings": [
+            {
+                "Concept": {
+                    "type": "uri",
+                    "value": "http://www.w3.org/2004/02/skos/core#Concept"
+                }
+            },
+            {
+                "Concept": {
+                    "type": "uri",
+                    "value": "http://xmlns.com/foaf/0.1/Person"
+                }
+            },
+            {
+                "Concept": {
+                    "type": "uri",
+                    "value": "http://schema.org/Person"
+                }
+            },
+            {
+                "Concept": {
+                    "type": "uri",
+                    "value": "http://wikidata.dbpedia.org/resource/Q215627"
+                }
+            },
+            {
+                "Concept": {
+                    "type": "uri",
+                    "value": "http://www.w3.org/2002/07/owl#Thing"
+                }
+            },
+            {
+                "Concept": {
+                    "type": "uri",
+                    "value": "http://wikidata.dbpedia.org/resource/Q5"
+                }
+            },
+            {
+                "Concept": {
+                    "type": "uri",
+                    "value": "http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#Agent"
+                }
+            },
+            {
+                "Concept": {
+                    "type": "uri",
+                    "value": "http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#NaturalPerson"
+                }
+            },
+            {
+                "Concept": {
+                    "type": "uri",
+                    "value": "http://dbpedia.org/ontology/Agent"
+                }
+            },
+            {
+                "Concept": {
+                    "type": "uri",
+                    "value": "http://dbpedia.org/ontology/Athlete"
+                }
+            },
+            {
+                "Concept": {
+                    "type": "uri",
+                    "value": "http://dbpedia.org/ontology/Person"
+                }
+            },
+            {
+                "Concept": {
+                    "type": "uri",
+                    "value": "http://dbpedia.org/ontology/TennisPlayer"
+                }
+            },
+            {
+                "Concept": {
+                    "type": "uri",
+                    "value": "http://schema.org/CreativeWork"
+                }
+            },
+            {
+                "Concept": {
+                    "type": "uri",
+                    "value": "http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#InformationEntity"
+                }
+            },
+            {
+                "Concept": {
+                    "type": "uri",
+                    "value": "http://dbpedia.org/ontology/Software"
+                }
+            },
+            {
+                "Concept": {
+                    "type": "uri",
+                    "value": "http://dbpedia.org/ontology/VideoGame"
+                }
+            },
+            {
+                "Concept": {
+                    "type": "uri",
+                    "value": "http://dbpedia.org/ontology/Work"
+                }
+            },
+            {
+                "Concept": {
+                    "type": "uri",
+                    "value": "http://umbel.org/umbel/rc/ComputerGameProgram"
+                }
+            },
+            {
+                "Concept": {
+                    "type": "uri",
+                    "value": "http://umbel.org/umbel/rc/SoftwareObject"
+                }
+            },
+            {
+                "Concept": {
+                    "type": "uri",
+                    "value": "http://dbpedia.org/ontology/Train"
+                }
+            },
+            {
+                "Concept": {
+                    "type": "uri",
+                    "value": "http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#DesignedArtifact"
+                }
+            },
+            {
+                "Concept": {
+                    "type": "uri",
+                    "value": "http://dbpedia.org/ontology/MeanOfTransportation"
+                }
+            },
+            {
+                "Concept": {
+                    "type": "uri",
+                    "value": "http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#PhysicalBody"
+                }
+            },
+            {
+                "Concept": {
+                    "type": "uri",
+                    "value": "http://dbpedia.org/ontology/CelestialBody"
+                }
+            },
+            {
+                "Concept": {
+                    "type": "uri",
+                    "value": "http://dbpedia.org/ontology/Planet"
+                }
+            },
+            {
+                "Concept": {
+                    "type": "uri",
+                    "value": "http://umbel.org/umbel/rc/Planet"
+                }
+            },
+            {
+                "Concept": {
+                    "type": "uri",
+                    "value": "http://dbpedia.org/ontology/Asteroid"
+                }
+            },
+            {
+                "Concept": {
+                    "type": "uri",
+                    "value": "http://schema.org/Organization"
+                }
+            },
+            {
+                "Concept": {
+                    "type": "uri",
+                    "value": "http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#SocialPerson"
+                }
+            },
+            {
+                "Concept": {
+                    "type": "uri",
+                    "value": "http://dbpedia.org/ontology/MilitaryUnit"
+                }
+            },
+            {
+                "Concept": {
+                    "type": "uri",
+                    "value": "http://dbpedia.org/ontology/Organisation"
+                }
+            },
+            {
+                "Concept": {
+                    "type": "uri",
+                    "value": "http://www.w3.org/2003/01/geo/wgs84_pos#SpatialThing"
+                }
+            },
+            {
+                "Concept": {
+                    "type": "uri",
+                    "value": "http://schema.org/Place"
+                }
+            },
+            {
+                "Concept": {
+                    "type": "uri",
+                    "value": "http://www.ontologydesignpatterns.org/ont/d0.owl#Location"
+                }
+            },
+            {
+                "Concept": {
+                    "type": "uri",
+                    "value": "http://dbpedia.org/ontology/Place"
+                }
+            },
+            {
+                "Concept": {
+                    "type": "uri",
+                    "value": "http://dbpedia.org/ontology/PopulatedPlace"
+                }
+            },
+            {
+                "Concept": {
+                    "type": "uri",
+                    "value": "http://dbpedia.org/ontology/Settlement"
+                }
+            },
+            {
+                "Concept": {
+                    "type": "uri",
+                    "value": "http://dbpedia.org/ontology/Village"
+                }
+            },
+            {
+                "Concept": {
+                    "type": "uri",
+                    "value": "http://dbpedia.org/ontology/Wikidata:Q532"
+                }
+            },
+            {
+                "Concept": {
+                    "type": "uri",
+                    "value": "http://dbpedia.org/class/yago/AdministrativeDistrict108491826"
+                }
+            },
+            {
+                "Concept": {
+                    "type": "uri",
+                    "value": "http://dbpedia.org/class/yago/District108552138"
+                }
+            },
+            {
+                "Concept": {
+                    "type": "uri",
+                    "value": "http://dbpedia.org/class/yago/Location100027167"
+                }
+            },
+            {
+                "Concept": {
+                    "type": "uri",
+                    "value": "http://dbpedia.org/class/yago/Object100002684"
+                }
+            },
+            {
+                "Concept": {
+                    "type": "uri",
+                    "value": "http://dbpedia.org/class/yago/Region108630985"
+                }
+            },
+            {
+                "Concept": {
+                    "type": "uri",
+                    "value": "http://dbpedia.org/class/yago/Site108651247"
+                }
+            },
+            {
+                "Concept": {
+                    "type": "uri",
+                    "value": "http://dbpedia.org/class/yago/Tract108673395"
+                }
+            },
+            {
+                "Concept": {
+                    "type": "uri",
+                    "value": "http://dbpedia.org/class/yago/YagoGeoEntity"
+                }
+            },
+            {
+                "Concept": {
+                    "type": "uri",
+                    "value": "http://dbpedia.org/class/yago/YagoLegalActorGeo"
+                }
+            },
+            {
+                "Concept": {
+                    "type": "uri",
+                    "value": "http://dbpedia.org/class/yago/GeographicalArea108574314"
+                }
+            },
+            {
+                "Concept": {
+                    "type": "uri",
+                    "value": "http://dbpedia.org/class/yago/PhysicalEntity100001930"
+                }
+            },
+            {
+                "Concept": {
+                    "type": "uri",
+                    "value": "http://dbpedia.org/class/yago/YagoPermanentlyLocatedEntity"
+                }
+            },
+            {
+                "Concept": {
+                    "type": "uri",
+                    "value": "http://dbpedia.org/class/yago/PopulatedPlacesInFriesland"
+                }
+            },
+            {
+                "Concept": {
+                    "type": "uri",
+                    "value": "http://www.opengis.net/gml/_Feature"
+                }
+            },
+            {
+                "Concept": {
+                    "type": "uri",
+                    "value": "http://dbpedia.org/class/yago/PopulatedPlacesInGroningen(province)"
+                }
+            },
+            {
+                "Concept": {
+                    "type": "uri",
+                    "value": "http://schema.org/MusicGroup"
+                }
+            },
+            {
+                "Concept": {
+                    "type": "uri",
+                    "value": "http://dbpedia.org/ontology/Artist"
+                }
+            },
+            {
+                "Concept": {
+                    "type": "uri",
+                    "value": "http://dbpedia.org/ontology/MusicalArtist"
+                }
+            },
+            {
+                "Concept": {
+                    "type": "uri",
+                    "value": "http://dbpedia.org/class/yago/306RecordsArtists"
+                }
+            },
+            {
+                "Concept": {
+                    "type": "uri",
+                    "value": "http://dbpedia.org/class/yago/Artist109812338"
+                }
+            },
+            {
+                "Concept": {
+                    "type": "uri",
+                    "value": "http://dbpedia.org/class/yago/CanadianCountryGuitarists"
+                }
+            },
+            {
+                "Concept": {
+                    "type": "uri",
+                    "value": "http://dbpedia.org/class/yago/CanadianCountrySingers"
+                }
+            },
+            {
+                "Concept": {
+                    "type": "uri",
+                    "value": "http://dbpedia.org/class/yago/CanadianMaleSingers"
+                }
+            },
+            {
+                "Concept": {
+                    "type": "uri",
+                    "value": "http://dbpedia.org/class/yago/CausalAgent100007347"
+                }
+            },
+            {
+                "Concept": {
+                    "type": "uri",
+                    "value": "http://dbpedia.org/class/yago/Creator109614315"
+                }
+            },
+            {
+                "Concept": {
+                    "type": "uri",
+                    "value": "http://dbpedia.org/class/yago/Entertainer109616922"
+                }
+            },
+            {
+                "Concept": {
+                    "type": "uri",
+                    "value": "http://dbpedia.org/class/yago/Guitarist110151760"
+                }
+            },
+            {
+                "Concept": {
+                    "type": "uri",
+                    "value": "http://dbpedia.org/class/yago/LivingThing100004258"
+                }
+            },
+            {
+                "Concept": {
+                    "type": "uri",
+                    "value": "http://dbpedia.org/class/yago/Musician110339966"
+                }
+            },
+            {
+                "Concept": {
+                    "type": "uri",
+                    "value": "http://dbpedia.org/class/yago/Musician110340312"
+                }
+            },
+            {
+                "Concept": {
+                    "type": "uri",
+                    "value": "http://dbpedia.org/class/yago/Organism100004475"
+                }
+            },
+            {
+                "Concept": {
+                    "type": "uri",
+                    "value": "http://dbpedia.org/class/yago/Performer110415638"
+                }
+            },
+            {
+                "Concept": {
+                    "type": "uri",
+                    "value": "http://dbpedia.org/class/yago/Person100007846"
+                }
+            },
+            {
+                "Concept": {
+                    "type": "uri",
+                    "value": "http://dbpedia.org/class/yago/Singer110599806"
+                }
+            },
+            {
+                "Concept": {
+                    "type": "uri",
+                    "value": "http://dbpedia.org/class/yago/Whole100003553"
+                }
+            },
+            {
+                "Concept": {
+                    "type": "uri",
+                    "value": "http://dbpedia.org/class/yago/MusiciansFromAlberta"
+                }
+            },
+            {
+                "Concept": {
+                    "type": "uri",
+                    "value": "http://dbpedia.org/class/yago/PeopleFromWoodBuffalo,Alberta"
+                }
+            },
+            {
+                "Concept": {
+                    "type": "uri",
+                    "value": "http://dbpedia.org/class/yago/YagoLegalActor"
+                }
+            },
+            {
+                "Concept": {
+                    "type": "uri",
+                    "value": "http://dbpedia.org/class/yago/LivingPeople"
+                }
+            },
+            {
+                "Concept": {
+                    "type": "uri",
+                    "value": "http://dbpedia.org/class/yago/Sculptor110566072"
+                }
+            },
+            {
+                "Concept": {
+                    "type": "uri",
+                    "value": "http://dbpedia.org/class/yago/FrenchSculptors"
+                }
+            },
+            {
+                "Concept": {
+                    "type": "uri",
+                    "value": "http://dbpedia.org/class/yago/Commune108541609"
+                }
+            },
+            {
+                "Concept": {
+                    "type": "uri",
+                    "value": "http://dbpedia.org/class/yago/CommunesOfPas-de-Calais"
+                }
+            },
+            {
+                "Concept": {
+                    "type": "uri",
+                    "value": "http://dbpedia.org/ontology/PoliticalParty"
+                }
+            },
+            {
+                "Concept": {
+                    "type": "uri",
+                    "value": "http://dbpedia.org/class/yago/Abstraction100002137"
+                }
+            },
+            {
+                "Concept": {
+                    "type": "uri",
+                    "value": "http://dbpedia.org/class/yago/Group100031264"
+                }
+            },
+            {
+                "Concept": {
+                    "type": "uri",
+                    "value": "http://dbpedia.org/class/yago/Organization108008335"
+                }
+            },
+            {
+                "Concept": {
+                    "type": "uri",
+                    "value": "http://dbpedia.org/class/yago/Party108256968"
+                }
+            },
+            {
+                "Concept": {
+                    "type": "uri",
+                    "value": "http://dbpedia.org/class/yago/SocialGroup107950920"
+                }
+            },
+            {
+                "Concept": {
+                    "type": "uri",
+                    "value": "http://dbpedia.org/class/yago/MunicipalPoliticalPartiesInQuebecCity"
+                }
+            },
+            {
+                "Concept": {
+                    "type": "uri",
+                    "value": "http://dbpedia.org/class/yago/UnitedReligiousFrontPoliticians"
+                }
+            },
+            {
+                "Concept": {
+                    "type": "uri",
+                    "value": "http://dbpedia.org/class/yago/Women'sInternationalZionistOrganizationPoliticians"
+                }
+            },
+            {
+                "Concept": {
+                    "type": "uri",
+                    "value": "http://dbpedia.org/class/yago/Adult109605289"
+                }
+            },
+            {
+                "Concept": {
+                    "type": "uri",
+                    "value": "http://dbpedia.org/class/yago/Educator110045713"
+                }
+            },
+            {
+                "Concept": {
+                    "type": "uri",
+                    "value": "http://dbpedia.org/class/yago/Leader109623038"
+                }
+            },
+            {
+                "Concept": {
+                    "type": "uri",
+                    "value": "http://dbpedia.org/class/yago/Politician110451263"
+                }
+            },
+            {
+                "Concept": {
+                    "type": "uri",
+                    "value": "http://dbpedia.org/class/yago/Professional110480253"
+                }
+            },
+            {
+                "Concept": {
+                    "type": "uri",
+                    "value": "http://dbpedia.org/class/yago/Woman110787470"
+                }
+            },
+            {
+                "Concept": {
+                    "type": "uri",
+                    "value": "http://dbpedia.org/class/yago/PeopleFromFlore%C5%9FtiDistrict"
+                }
+            },
+            {
+                "Concept": {
+                    "type": "uri",
+                    "value": "http://dbpedia.org/class/yago/Female109619168"
+                }
+            },
+            {
+                "Concept": {
+                    "type": "uri",
+                    "value": "http://dbpedia.org/class/yago/IsraeliEducators"
+                }
+            }
+        ]
+    }
+}

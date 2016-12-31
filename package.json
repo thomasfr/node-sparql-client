@@ -1,15 +1,23 @@
 {
+  "name": "sparql-client",
+  "version": "0.3.1",
   "author": "Thomas Fritz <fritztho@gmail.com> (http://fritzthomas.com)",
   "contributors": [
-    "Martin Franke <martin@semiwa.org> (http://semiwa.org)", 
-    "Pieter Heyvaert <pheyvaer.heyvaert@ugent.be> (http://semweb.mmlab.be/)"
+    "Martin Franke <martin@semiwa.org> (http://semiwa.org)",
+    "Pieter Heyvaert <pheyvaer.heyvaert@ugent.be> (http://semweb.mmlab.be/)",
+    "Eddie Antonio Santos <easantos@ualberta.ca> (http://eddieantonio.ca/)"
   ],
   "dependencies": {
     "lodash": "^2.4.1",
-    "request": "^2.40.0"
+    "promise": "^7.0.1",
+    "request": "^2.40.0",
+    "sprintf-js": "^1.0.2"
   },
   "description": "Simple SPARQL Client for node.js",
-  "devDependencies": {},
+  "devDependencies": {
+    "jasmine": "^2.3.1",
+    "nock": "^2.5.0"
+  },
   "engines": {
     "node": ">= 0.10.0"
   },
@@ -18,21 +26,19 @@
     "rdf"
   ],
   "main": "index.js",
-  "name": "sparql-client",
   "repository": {
     "type": "git",
     "url": "https://github.com/thomasfr/node-sparql-client.git"
   },
-  "version": "0.2.0",
   "bugs": {
     "url": "https://github.com/thomasfr/node-sparql-client/issues"
   },
   "homepage": "https://github.com/thomasfr/node-sparql-client",
   "directories": {
-    "test": "tests"
+    "test": "spec"
   },
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "jasmine"
   },
   "license": "MIT"
 }

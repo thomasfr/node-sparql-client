@@ -1,0 +1,21 @@
+{
+    "head": {
+        "link": [],
+        "vars": [
+            "postalCode"
+        ]
+    },
+    "results": {
+        "distinct": false,
+        "ordered": true,
+        "bindings": [
+            {
+                "postalCode": {
+                    "type": "literal",
+                    "xml:lang": "en",
+                    "value": "JP-13"
+                }
+            }
+        ]
+    }
+}

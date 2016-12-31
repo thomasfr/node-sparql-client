@@ -1,0 +1,35 @@
+{
+    "head": {
+        "link": [],
+        "vars": [
+            "leaderName"
+        ]
+    },
+    "results": {
+        "distinct": false,
+        "ordered": true,
+        "bindings": [
+            {
+                "leaderName": {
+                    "type": "literal",
+                    "xml:lang": "en",
+                    "value": "Maria Vassilakou ,"
+                }
+            },
+            {
+                "leaderName": {
+                    "type": "literal",
+                    "xml:lang": "en",
+                    "value": "Michael Häupl"
+                }
+            },
+            {
+                "leaderName": {
+                    "type": "literal",
+                    "xml:lang": "en",
+                    "value": "Renate Brauner ;"
+                }
+            }
+        ]
+    }
+}
