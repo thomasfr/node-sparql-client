@@ -7,7 +7,7 @@ sparql-client
 A SPARQL 1.1 client for JavaScript.
 
 ```javascript
-const {SparqlClient, SPARQL} = require('sparql-client');
+const {SparqlClient, SPARQL} = require('sparql-client-2');
 const client =
   new SparqlClient('http://dbpedia.org/sparql')
     .register({
@@ -61,7 +61,7 @@ query. All values are automatically converted into their SPARQL literal
 form, and any unsafe strings are escaped.
 
 ```javascript
-const SparqlClient = require('sparql-client');
+const SparqlClient = require('sparql-client-2');
 const SPARQL = SparqlClient.SPARQL;
 const endpoint = 'http://dbpedia.org/sparql';
 
