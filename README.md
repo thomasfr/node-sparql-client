@@ -2,7 +2,14 @@ sparql-client
 =============
 
 [![Build Status](https://travis-ci.org/eddieantonio/node-sparql-client.svg?branch=master)](https://travis-ci.org/eddieantonio/node-sparql-client)
-[![npr Version](https://img.shields.io/npm/v/sparql-client-2.svg)](https://www.npmjs.com/package/sparql-client-2)
+[![npm Version](https://img.shields.io/npm/v/sparql-client-2.svg)](https://www.npmjs.com/package/sparql-client-2)
+
+# THIS PACKAGE IS NO LONGER MAINTAINED
+
+This package is currently unmaintained. If you would like to adopt this
+package, feel free to [open an issue](https://github.com/eddieantonio/node-sparql-client/issues/new) and get in touch with me!
+
+---
 
 A SPARQL 1.1 client for JavaScript.
 
