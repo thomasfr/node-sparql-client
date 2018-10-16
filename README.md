@@ -12,7 +12,7 @@ const client =
   new SparqlClient('http://dbpedia.org/sparql')
     .register({
       db: 'http://dbpedia.org/resource/',
-      dbpedia: 'http://dbpedia.org/property/'
+      dbo: 'http://dbpedia.org/ontology/',
     });
 
 function fetchCityLeader(cityName) {
@@ -20,7 +20,7 @@ function fetchCityLeader(cityName) {
     .query(SPARQL`
            SELECT ?leaderName
            WHERE {
-             ${{db: cityName}} dbpedia:leaderName ?leaderName
+             ${{db: cityName}} dbo:leaderName ?leaderName
            }`)
     .execute()
     // Get the item we want.
