@@ -437,12 +437,13 @@ describe('SPARQL API', function () {
         var scope = nockEndpoint();
         var query = new SparqlClient(scope.endpoint)
           .query('SELECT ?s {?s rdfs:label ?value}')
-          .bind('value', '"""' + "'''" + "\n" + "\\");
+        // NOTE: Escaped characters list: https://www.w3.org/TR/sparql11-query/#grammarEscapes
+          .bind('value', '"""' + "'''" + "\t\n\r\b\f" + "\\");
 
         query.execute(function (error, data) {
           var query = data.request.query;
           /* I applogize for this regex... */
-          expect(query).toMatch(/rdfs:label\s+('''|""")\\"\\"\\"\\'\\'\\'\n\\\\\1/);
+          expect(query).toMatch(/rdfs:label\s+('''|""")\\"\\"\\"\\'\\'\\'\\t\\n\\r\\b\\f\\\\\1/);
           done();
         });
       });
