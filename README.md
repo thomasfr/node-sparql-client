@@ -310,7 +310,7 @@ client.query(SPARQL`
 
 You can override the request defaults by passing them in the options
 object of the constructor. `defaultParams` are the default parameters in
-the request, and `requestsDefaults` are the default _request options_.
+the request, and `requestDefaults` are the default _request options_.
 This distinction is a little confusing, so here are some examples:
 
 For example, say you have a graph database that expects `format: 'json'`
@@ -328,11 +328,11 @@ var client = new SparqlClient('http://example.org/query', {
 
 Similarly, let's say you want to specify your client's user agent
 string. You can pass this, and other headers, as part of
-a `requestsDefaults` option.
+a `requestDefaults` option.
 
 ```js
 var client = new SparqlClient('http://example.org/query', {
-  requestsDefaults: {
+  requestDefaults: {
     headers: {
       'Content-Type': 'application/x-www-form-urlencoded',
       'Accept': 'application/sparql-results+json,application/json',
