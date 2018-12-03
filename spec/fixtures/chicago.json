@@ -1,0 +1,21 @@
+{
+    "head": {
+        "link": [],
+        "vars": [
+            "foundingDate"
+        ]
+    },
+    "results": {
+        "distinct": false,
+        "ordered": true,
+        "bindings": [
+            {
+                "foundingDate": {
+                    "type": "typed-literal",
+                    "datatype": "http://www.w3.org/2001/XMLSchema#date",
+                    "value": "1837-03-04+02:00"
+                }
+            }
+        ]
+    }
+}

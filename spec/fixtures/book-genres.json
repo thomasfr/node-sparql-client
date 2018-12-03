@@ -1,0 +1,2022 @@
+{
+    "head": {
+        "link": [],
+        "vars": [
+            "book"
+        ]
+    },
+    "results": {
+        "distinct": false,
+        "ordered": true,
+        "bindings": [
+            {
+                "genre": {
+                    "type": "uri",
+                    "value": "http://dbpedia.org/resource/Novel"
+                },
+                "book": [
+                    {
+                        "type": "uri",
+                        "value": "http://dbpedia.org/resource/A_Glimpse_of_Tiger"
+                    },
+                    {
+                        "type": "uri",
+                        "value": "http://dbpedia.org/resource/About_Us_(novel)"
+                    },
+                    {
+                        "type": "uri",
+                        "value": "http://dbpedia.org/resource/Blood_Sisters"
+                    },
+                    {
+                        "type": "uri",
+                        "value": "http://dbpedia.org/resource/Dickon_(novel)"
+                    },
+                    {
+                        "type": "uri",
+                        "value": "http://dbpedia.org/resource/Grief_(novel)"
+                    },
+                    {
+                        "type": "uri",
+                        "value": "http://dbpedia.org/resource/Hey_Nostradamus!"
+                    },
+                    {
+                        "type": "uri",
+                        "value": "http://dbpedia.org/resource/Ignorance_(novel)"
+                    },
+                    {
+                        "type": "uri",
+                        "value": "http://dbpedia.org/resource/In_Custody_(novel)"
+                    },
+                    {
+                        "type": "uri",
+                        "value": "http://dbpedia.org/resource/Letty_Fox:_Her_Luck"
+                    },
+                    {
+                        "type": "uri",
+                        "value": "http://dbpedia.org/resource/Seizure_(Cook_novel)"
+                    },
+                    {
+                        "type": "uri",
+                        "value": "http://dbpedia.org/resource/Some_Like_It_Hot_(novel)"
+                    },
+                    {
+                        "type": "uri",
+                        "value": "http://dbpedia.org/resource/Suffer_the_Children_(novel)"
+                    },
+                    {
+                        "type": "uri",
+                        "value": "http://dbpedia.org/resource/The_Deceivers_(Aiello_novel)"
+                    },
+                    {
+                        "type": "uri",
+                        "value": "http://dbpedia.org/resource/The_Delivery_Man_(novel)"
+                    },
+                    {
+                        "type": "uri",
+                        "value": "http://dbpedia.org/resource/The_Flight_of_the_Phoenix"
+                    },
+                    {
+                        "type": "uri",
+                        "value": "http://dbpedia.org/resource/The_Help"
+                    },
+                    {
+                        "type": "uri",
+                        "value": "http://dbpedia.org/resource/The_Lost_Weekend_(novel)"
+                    },
+                    {
+                        "type": "uri",
+                        "value": "http://dbpedia.org/resource/The_Moths_(short_story)"
+                    },
+                    {
+                        "type": "uri",
+                        "value": "http://dbpedia.org/resource/Tough_Love_(novel)"
+                    },
+                    {
+                        "type": "uri",
+                        "value": "http://dbpedia.org/resource/Tuvalu_(novel)"
+                    },
+                    {
+                        "type": "uri",
+                        "value": "http://dbpedia.org/resource/Word_of_Honor_(novel)"
+                    },
+                    {
+                        "type": "uri",
+                        "value": "http://dbpedia.org/resource/Adolphe"
+                    },
+                    {
+                        "type": "uri",
+                        "value": "http://dbpedia.org/resource/Beautiful_Stranger_(novel)"
+                    },
+                    {
+                        "type": "uri",
+                        "value": "http://dbpedia.org/resource/Puberty_Blues_(novel)"
+                    },
+                    {
+                        "type": "uri",
+                        "value": "http://dbpedia.org/resource/The_Lamplighter"
+                    },
+                    {
+                        "type": "uri",
+                        "value": "http://dbpedia.org/resource/The_Looking_Glass_Wars"
+                    },
+                    {
+                        "type": "uri",
+                        "value": "http://dbpedia.org/resource/The_Low_Road_(novel)"
+                    },
+                    {
+                        "type": "uri",
+                        "value": "http://dbpedia.org/resource/The_Rosary_(novel)"
+                    },
+                    {
+                        "type": "uri",
+                        "value": "http://dbpedia.org/resource/To_Have_and_to_Hold"
+                    },
+                    {
+                        "type": "uri",
+                        "value": "http://dbpedia.org/resource/Savage_Messiah_(novel)"
+                    },
+                    {
+                        "type": "uri",
+                        "value": "http://dbpedia.org/resource/The_Blank_Page"
+                    },
+                    {
+                        "type": "uri",
+                        "value": "http://dbpedia.org/resource/The_Girls_(novel)"
+                    },
+                    {
+                        "type": "uri",
+                        "value": "http://dbpedia.org/resource/The_Little_Book_(Edwards_novel)"
+                    },
+                    {
+                        "type": "uri",
+                        "value": "http://dbpedia.org/resource/Weight_Loss_(novel)"
+                    },
+                    {
+                        "type": "uri",
+                        "value": "http://dbpedia.org/resource/Bellwether_(novel)"
+                    },
+                    {
+                        "type": "uri",
+                        "value": "http://dbpedia.org/resource/Der_Untertan"
+                    },
+                    {
+                        "type": "uri",
+                        "value": "http://dbpedia.org/resource/The_Fortress_of_Solitude_(novel)"
+                    },
+                    {
+                        "type": "uri",
+                        "value": "http://dbpedia.org/resource/The_King_of_the_Golden_River"
+                    },
+                    {
+                        "type": "uri",
+                        "value": "http://dbpedia.org/resource/The_Man_Without_Qualities"
+                    },
+                    {
+                        "type": "uri",
+                        "value": "http://dbpedia.org/resource/City_of_Night"
+                    },
+                    {
+                        "type": "uri",
+                        "value": "http://dbpedia.org/resource/The_Female_American"
+                    },
+                    {
+                        "type": "uri",
+                        "value": "http://dbpedia.org/resource/Koolaids:_The_Art_of_War"
+                    },
+                    {
+                        "type": "uri",
+                        "value": "http://dbpedia.org/resource/Los_Sangurimas"
+                    },
+                    {
+                        "type": "uri",
+                        "value": "http://dbpedia.org/resource/Rogue_(novel)"
+                    },
+                    {
+                        "type": "uri",
+                        "value": "http://dbpedia.org/resource/Unleavened_Bread"
+                    },
+                    {
+                        "type": "uri",
+                        "value": "http://dbpedia.org/resource/Season_of_Ash"
+                    },
+                    {
+                        "type": "uri",
+                        "value": "http://dbpedia.org/resource/Mornings_in_Jenin"
+                    },
+                    {
+                        "type": "uri",
+                        "value": "http://dbpedia.org/resource/The_Forbidden_Tree"
+                    },
+                    {
+                        "type": "uri",
+                        "value": "http://dbpedia.org/resource/The_Twenty-Second_Day"
+                    },
+                    {
+                        "type": "uri",
+                        "value": "http://dbpedia.org/resource/Juan_Masili:_Ang_Pinuno_ng_Tulisan"
+                    },
+                    {
+                        "type": "uri",
+                        "value": "http://dbpedia.org/resource/Loving_Sabotage"
+                    },
+                    {
+                        "type": "uri",
+                        "value": "http://dbpedia.org/resource/Mondomanila_(novel)"
+                    },
+                    {
+                        "type": "uri",
+                        "value": "http://dbpedia.org/resource/Titser"
+                    },
+                    {
+                        "type": "uri",
+                        "value": "http://dbpedia.org/resource/%C5%BDivot_a_d%C3%ADlo_skladatele_Folt%C3%BDna"
+                    },
+                    {
+                        "type": "uri",
+                        "value": "http://dbpedia.org/resource/An_Englishwoman's_Love-letters"
+                    },
+                    {
+                        "type": "uri",
+                        "value": "http://dbpedia.org/resource/Watching_the_Climbers_on_the_Mountain"
+                    },
+                    {
+                        "type": "uri",
+                        "value": "http://dbpedia.org/resource/The_Other_(novel)"
+                    },
+                    {
+                        "type": "uri",
+                        "value": "http://dbpedia.org/resource/2_Girls"
+                    },
+                    {
+                        "type": "uri",
+                        "value": "http://dbpedia.org/resource/The_Lost_Prince_(Edwards_novel)"
+                    },
+                    {
+                        "type": "uri",
+                        "value": "http://dbpedia.org/resource/Tom_Grogan"
+                    },
+                    {
+                        "type": "uri",
+                        "value": "http://dbpedia.org/resource/An_Evening_of_Long_Goodbyes"
+                    },
+                    {
+                        "type": "uri",
+                        "value": "http://dbpedia.org/resource/New_World_Waiting"
+                    },
+                    {
+                        "type": "uri",
+                        "value": "http://dbpedia.org/resource/%C3%8Ddolos_rotos"
+                    },
+                    {
+                        "type": "uri",
+                        "value": "http://dbpedia.org/resource/The_Prince's_Act"
+                    },
+                    {
+                        "type": "uri",
+                        "value": "http://dbpedia.org/resource/Anne_of_Green_Gables"
+                    },
+                    {
+                        "type": "uri",
+                        "value": "http://dbpedia.org/resource/Imitation_of_Life_(novel)"
+                    },
+                    {
+                        "type": "uri",
+                        "value": "http://dbpedia.org/resource/The_Body_(novella)"
+                    },
+                    {
+                        "type": "uri",
+                        "value": "http://dbpedia.org/resource/The_Forsyte_Saga"
+                    },
+                    {
+                        "type": "uri",
+                        "value": "http://dbpedia.org/resource/Do%C3%B1a_B%C3%A1rbara"
+                    },
+                    {
+                        "type": "uri",
+                        "value": "http://dbpedia.org/resource/East_Liberty_(novel)"
+                    },
+                    {
+                        "type": "uri",
+                        "value": "http://dbpedia.org/resource/Eye_of_the_Storm_(Ringo_novel)"
+                    },
+                    {
+                        "type": "uri",
+                        "value": "http://dbpedia.org/resource/Fail-Safe_(novel)"
+                    },
+                    {
+                        "type": "uri",
+                        "value": "http://dbpedia.org/resource/Headlong_(Williams_novel)"
+                    },
+                    {
+                        "type": "uri",
+                        "value": "http://dbpedia.org/resource/Queens_(novel)"
+                    },
+                    {
+                        "type": "uri",
+                        "value": "http://dbpedia.org/resource/The_Devil's_Advocate_(Morris_West_novel)"
+                    },
+                    {
+                        "type": "uri",
+                        "value": "http://dbpedia.org/resource/The_Education_of_Little_Tree"
+                    },
+                    {
+                        "type": "uri",
+                        "value": "http://dbpedia.org/resource/The_Elegance_of_the_Hedgehog"
+                    },
+                    {
+                        "type": "uri",
+                        "value": "http://dbpedia.org/resource/The_Lost_Honour_of_Katharina_Blum"
+                    },
+                    {
+                        "type": "uri",
+                        "value": "http://dbpedia.org/resource/Water_(novel)"
+                    },
+                    {
+                        "type": "uri",
+                        "value": "http://dbpedia.org/resource/Albertine_(2001_novel)"
+                    },
+                    {
+                        "type": "uri",
+                        "value": "http://dbpedia.org/resource/Americana_(novel)"
+                    },
+                    {
+                        "type": "uri",
+                        "value": "http://dbpedia.org/resource/Blink_(novel)"
+                    },
+                    {
+                        "type": "uri",
+                        "value": "http://dbpedia.org/resource/Caballero:_A_Historical_Novel"
+                    },
+                    {
+                        "type": "uri",
+                        "value": "http://dbpedia.org/resource/Cosmopolis_(novel)"
+                    },
+                    {
+                        "type": "uri",
+                        "value": "http://dbpedia.org/resource/Gangster_(novel)"
+                    },
+                    {
+                        "type": "uri",
+                        "value": "http://dbpedia.org/resource/Heliopolis_(Scudamore_novel)"
+                    },
+                    {
+                        "type": "uri",
+                        "value": "http://dbpedia.org/resource/Millicent_Min,_Girl_Genius"
+                    },
+                    {
+                        "type": "uri",
+                        "value": "http://dbpedia.org/resource/Nowhere_Man_(Hemon_novel)"
+                    },
+                    {
+                        "type": "uri",
+                        "value": "http://dbpedia.org/resource/Ransom_(Steel_novel)"
+                    },
+                    {
+                        "type": "uri",
+                        "value": "http://dbpedia.org/resource/Snow_Country"
+                    },
+                    {
+                        "type": "uri",
+                        "value": "http://dbpedia.org/resource/Special_Delivery_(novel)"
+                    },
+                    {
+                        "type": "uri",
+                        "value": "http://dbpedia.org/resource/Sugar_Rush_(novel)"
+                    },
+                    {
+                        "type": "uri",
+                        "value": "http://dbpedia.org/resource/The_Ballantyne_Novels"
+                    },
+                    {
+                        "type": "uri",
+                        "value": "http://dbpedia.org/resource/The_Efficiency_Expert_(novel)"
+                    },
+                    {
+                        "type": "uri",
+                        "value": "http://dbpedia.org/resource/The_Inheritors_(William_Golding)"
+                    },
+                    {
+                        "type": "uri",
+                        "value": "http://dbpedia.org/resource/The_Young_Lions"
+                    },
+                    {
+                        "type": "uri",
+                        "value": "http://dbpedia.org/resource/Veracity_(Laura_Bynum_novel)"
+                    },
+                    {
+                        "type": "uri",
+                        "value": "http://dbpedia.org/resource/On_Beauty"
+                    },
+                    {
+                        "type": "uri",
+                        "value": "http://dbpedia.org/resource/Puttering_About_in_a_Small_Land"
+                    },
+                    {
+                        "type": "uri",
+                        "value": "http://dbpedia.org/resource/Never_Tease_a_Siamese"
+                    },
+                    {
+                        "type": "uri",
+                        "value": "http://dbpedia.org/resource/Shell_Shaker"
+                    },
+                    {
+                        "type": "uri",
+                        "value": "http://dbpedia.org/resource/The_Case_of_Jennie_Brice"
+                    },
+                    {
+                        "type": "uri",
+                        "value": "http://dbpedia.org/resource/The_Cat_Who_Played_Post_Office"
+                    },
+                    {
+                        "type": "uri",
+                        "value": "http://dbpedia.org/resource/The_Cosmology_of_Bing"
+                    },
+                    {
+                        "type": "uri",
+                        "value": "http://dbpedia.org/resource/The_Family_Fang"
+                    },
+                    {
+                        "type": "uri",
+                        "value": "http://dbpedia.org/resource/Blankety_Blank:_A_Memoir_of_Vulgaria"
+                    },
+                    {
+                        "type": "uri",
+                        "value": "http://dbpedia.org/resource/Harimau!_Harimau!"
+                    },
+                    {
+                        "type": "uri",
+                        "value": "http://dbpedia.org/resource/L.A._Confidential"
+                    },
+                    {
+                        "type": "uri",
+                        "value": "http://dbpedia.org/resource/Goals_in_the_Air"
+                    },
+                    {
+                        "type": "uri",
+                        "value": "http://dbpedia.org/resource/Nude_Men"
+                    },
+                    {
+                        "type": "uri",
+                        "value": "http://dbpedia.org/resource/Pubis_Angelical"
+                    },
+                    {
+                        "type": "uri",
+                        "value": "http://dbpedia.org/resource/The_Accounting"
+                    },
+                    {
+                        "type": "uri",
+                        "value": "http://dbpedia.org/resource/The_Confusions_of_Young_T%C3%B6rless"
+                    },
+                    {
+                        "type": "uri",
+                        "value": "http://dbpedia.org/resource/The_Man_Who_Loved_Dirty_Books"
+                    },
+                    {
+                        "type": "uri",
+                        "value": "http://dbpedia.org/resource/Then_We_Came_to_the_End"
+                    },
+                    {
+                        "type": "uri",
+                        "value": "http://dbpedia.org/resource/Upon_Some_Midnights_Clear"
+                    },
+                    {
+                        "type": "uri",
+                        "value": "http://dbpedia.org/resource/An_Episode_in_the_Life_of_a_Landscape_Painter"
+                    },
+                    {
+                        "type": "uri",
+                        "value": "http://dbpedia.org/resource/Le_Livre_des_fuites"
+                    },
+                    {
+                        "type": "uri",
+                        "value": "http://dbpedia.org/resource/Peony_in_Love"
+                    },
+                    {
+                        "type": "uri",
+                        "value": "http://dbpedia.org/resource/Steel_Ashes"
+                    },
+                    {
+                        "type": "uri",
+                        "value": "http://dbpedia.org/resource/The_Einstein_Girl"
+                    },
+                    {
+                        "type": "uri",
+                        "value": "http://dbpedia.org/resource/The_Research_Magnificent"
+                    },
+                    {
+                        "type": "uri",
+                        "value": "http://dbpedia.org/resource/Luha_ng_Babae"
+                    },
+                    {
+                        "type": "uri",
+                        "value": "http://dbpedia.org/resource/Dogsong"
+                    },
+                    {
+                        "type": "uri",
+                        "value": "http://dbpedia.org/resource/Living_Other_Lives"
+                    },
+                    {
+                        "type": "uri",
+                        "value": "http://dbpedia.org/resource/Lucinda_Pierce_Mystery_series"
+                    },
+                    {
+                        "type": "uri",
+                        "value": "http://dbpedia.org/resource/Poor_Fellow_My_Country"
+                    },
+                    {
+                        "type": "uri",
+                        "value": "http://dbpedia.org/resource/The_Cat_Who_Lived_High"
+                    },
+                    {
+                        "type": "uri",
+                        "value": "http://dbpedia.org/resource/The_Impersonators"
+                    },
+                    {
+                        "type": "uri",
+                        "value": "http://dbpedia.org/resource/The_Story_of_Egmo"
+                    },
+                    {
+                        "type": "uri",
+                        "value": "http://dbpedia.org/resource/The_Transall_Saga"
+                    },
+                    {
+                        "type": "uri",
+                        "value": "http://dbpedia.org/resource/Vespers_in_Vienna"
+                    },
+                    {
+                        "type": "uri",
+                        "value": "http://dbpedia.org/resource/Whispers_in_the_Wind"
+                    },
+                    {
+                        "type": "uri",
+                        "value": "http://dbpedia.org/resource/Yonnondio:_From_the_Thirties"
+                    },
+                    {
+                        "type": "uri",
+                        "value": "http://dbpedia.org/resource/Z%C3%BCndels_Abgang"
+                    },
+                    {
+                        "type": "uri",
+                        "value": "http://dbpedia.org/resource/A_Fraction_of_the_Whole"
+                    },
+                    {
+                        "type": "uri",
+                        "value": "http://dbpedia.org/resource/Chain_of_Evidence"
+                    },
+                    {
+                        "type": "uri",
+                        "value": "http://dbpedia.org/resource/Fifteen_(novel)"
+                    },
+                    {
+                        "type": "uri",
+                        "value": "http://dbpedia.org/resource/Love_Medicine"
+                    },
+                    {
+                        "type": "uri",
+                        "value": "http://dbpedia.org/resource/The_Last_Summer_(of_You_and_Me)"
+                    },
+                    {
+                        "type": "uri",
+                        "value": "http://dbpedia.org/resource/Woods_Runner"
+                    },
+                    {
+                        "type": "uri",
+                        "value": "http://dbpedia.org/resource/Daluyong"
+                    },
+                    {
+                        "type": "uri",
+                        "value": "http://dbpedia.org/resource/Seidman_and_Son"
+                    },
+                    {
+                        "type": "uri",
+                        "value": "http://dbpedia.org/resource/Dancing_on_Coral"
+                    },
+                    {
+                        "type": "uri",
+                        "value": "http://dbpedia.org/resource/The_Cabin_Faced_West"
+                    },
+                    {
+                        "type": "uri",
+                        "value": "http://dbpedia.org/resource/A_Room_Overlooking_the_Nile"
+                    },
+                    {
+                        "type": "uri",
+                        "value": "http://dbpedia.org/resource/Disquiet_Heart"
+                    },
+                    {
+                        "type": "uri",
+                        "value": "http://dbpedia.org/resource/Never_Sorry"
+                    },
+                    {
+                        "type": "uri",
+                        "value": "http://dbpedia.org/resource/Saheb_Bibi_Golam"
+                    },
+                    {
+                        "type": "uri",
+                        "value": "http://dbpedia.org/resource/The_Dark_Volume"
+                    },
+                    {
+                        "type": "uri",
+                        "value": "http://dbpedia.org/resource/The_End_of_Mr._Y"
+                    },
+                    {
+                        "type": "uri",
+                        "value": "http://dbpedia.org/resource/The_Retaliators"
+                    },
+                    {
+                        "type": "uri",
+                        "value": "http://dbpedia.org/resource/The_Echo_Maker"
+                    },
+                    {
+                        "type": "uri",
+                        "value": "http://dbpedia.org/resource/The_Yiddish_Policemen's_Union"
+                    },
+                    {
+                        "type": "uri",
+                        "value": "http://dbpedia.org/resource/Feeling_Sorry_for_Celia"
+                    },
+                    {
+                        "type": "uri",
+                        "value": "http://dbpedia.org/resource/Memoirs_of_Emma_Courtney"
+                    },
+                    {
+                        "type": "uri",
+                        "value": "http://dbpedia.org/resource/The_Risk_Pool"
+                    },
+                    {
+                        "type": "uri",
+                        "value": "http://dbpedia.org/resource/Bye-Bye_(novel)"
+                    },
+                    {
+                        "type": "uri",
+                        "value": "http://dbpedia.org/resource/D%C3%A9molir_Nisard"
+                    },
+                    {
+                        "type": "uri",
+                        "value": "http://dbpedia.org/resource/La_628-E8"
+                    },
+                    {
+                        "type": "uri",
+                        "value": "http://dbpedia.org/resource/Matrka:_Voices_Within"
+                    },
+                    {
+                        "type": "uri",
+                        "value": "http://dbpedia.org/resource/The_Irish_Famine_(book)"
+                    },
+                    {
+                        "type": "uri",
+                        "value": "http://dbpedia.org/resource/Ciske_de_Rat"
+                    },
+                    {
+                        "type": "uri",
+                        "value": "http://dbpedia.org/resource/Playing_for_Pizza"
+                    },
+                    {
+                        "type": "uri",
+                        "value": "http://dbpedia.org/resource/A_Gesture_Life"
+                    },
+                    {
+                        "type": "uri",
+                        "value": "http://dbpedia.org/resource/Cop_This!"
+                    },
+                    {
+                        "type": "uri",
+                        "value": "http://dbpedia.org/resource/A_Visitation_of_Spirits"
+                    },
+                    {
+                        "type": "uri",
+                        "value": "http://dbpedia.org/resource/Harpsong"
+                    },
+                    {
+                        "type": "uri",
+                        "value": "http://dbpedia.org/resource/A_Horse_of_Air"
+                    },
+                    {
+                        "type": "uri",
+                        "value": "http://dbpedia.org/resource/Flower_Net"
+                    },
+                    {
+                        "type": "uri",
+                        "value": "http://dbpedia.org/resource/Snow_Flower_and_the_Secret_Fan"
+                    },
+                    {
+                        "type": "uri",
+                        "value": "http://dbpedia.org/resource/The_Fermata"
+                    },
+                    {
+                        "type": "uri",
+                        "value": "http://dbpedia.org/resource/The_Unknown_Industrial_Prisoner"
+                    },
+                    {
+                        "type": "uri",
+                        "value": "http://dbpedia.org/resource/Benang"
+                    },
+                    {
+                        "type": "uri",
+                        "value": "http://dbpedia.org/resource/The_Glade_Within_the_Grove"
+                    },
+                    {
+                        "type": "uri",
+                        "value": "http://dbpedia.org/resource/The_Long_Trial_of_Nolan_Dugatti"
+                    },
+                    {
+                        "type": "uri",
+                        "value": "http://dbpedia.org/resource/A_Heart_So_White"
+                    },
+                    {
+                        "type": "uri",
+                        "value": "http://dbpedia.org/resource/Bing_Crosby's_Last_Song"
+                    },
+                    {
+                        "type": "uri",
+                        "value": "http://dbpedia.org/resource/Hocus_Corpus"
+                    },
+                    {
+                        "type": "uri",
+                        "value": "http://dbpedia.org/resource/Never_Preach_Past_Noon"
+                    },
+                    {
+                        "type": "uri",
+                        "value": "http://dbpedia.org/resource/Slow_Water"
+                    },
+                    {
+                        "type": "uri",
+                        "value": "http://dbpedia.org/resource/The_Diagnosis_of_Love"
+                    },
+                    {
+                        "type": "uri",
+                        "value": "http://dbpedia.org/resource/The_Submerged_Cathedral_(novel)"
+                    },
+                    {
+                        "type": "uri",
+                        "value": "http://dbpedia.org/resource/Three_Dog_Night_(novel)"
+                    },
+                    {
+                        "type": "uri",
+                        "value": "http://dbpedia.org/resource/Tragic_Wand"
+                    },
+                    {
+                        "type": "uri",
+                        "value": "http://dbpedia.org/resource/Generation_A"
+                    },
+                    {
+                        "type": "uri",
+                        "value": "http://dbpedia.org/resource/Night_Train_to_Lisbon"
+                    },
+                    {
+                        "type": "uri",
+                        "value": "http://dbpedia.org/resource/A_Faint_Cold_Fear"
+                    },
+                    {
+                        "type": "uri",
+                        "value": "http://dbpedia.org/resource/Satanas_sa_Lupa"
+                    },
+                    {
+                        "type": "uri",
+                        "value": "http://dbpedia.org/resource/Cold_in_July_(novel)"
+                    },
+                    {
+                        "type": "uri",
+                        "value": "http://dbpedia.org/resource/Autumn_Laing"
+                    },
+                    {
+                        "type": "uri",
+                        "value": "http://dbpedia.org/resource/Stories_We_Could_Tell_(novel)"
+                    },
+                    {
+                        "type": "uri",
+                        "value": "http://dbpedia.org/resource/The_Awakening_Land_trilogy"
+                    },
+                    {
+                        "type": "uri",
+                        "value": "http://dbpedia.org/resource/The_Children_of_Dynmouth"
+                    },
+                    {
+                        "type": "uri",
+                        "value": "http://dbpedia.org/resource/Mrs._Eckdorf_in_O'Neill's_Hotel"
+                    },
+                    {
+                        "type": "uri",
+                        "value": "http://dbpedia.org/resource/The_School_for_Atheists"
+                    },
+                    {
+                        "type": "uri",
+                        "value": "http://dbpedia.org/resource/Carry_Me_Across_the_Water"
+                    },
+                    {
+                        "type": "uri",
+                        "value": "http://dbpedia.org/resource/The_Time_in_Between"
+                    },
+                    {
+                        "type": "uri",
+                        "value": "http://dbpedia.org/resource/1632_(novel)"
+                    },
+                    {
+                        "type": "uri",
+                        "value": "http://dbpedia.org/resource/1633_(novel)"
+                    },
+                    {
+                        "type": "uri",
+                        "value": "http://dbpedia.org/resource/2150_AD"
+                    },
+                    {
+                        "type": "uri",
+                        "value": "http://dbpedia.org/resource/69_(novel)"
+                    },
+                    {
+                        "type": "uri",
+                        "value": "http://dbpedia.org/resource/A_Closed_Book"
+                    },
+                    {
+                        "type": "uri",
+                        "value": "http://dbpedia.org/resource/A_Dark_Night's_Passing"
+                    },
+                    {
+                        "type": "uri",
+                        "value": "http://dbpedia.org/resource/A_Day_No_Pigs_Would_Die"
+                    },
+                    {
+                        "type": "uri",
+                        "value": "http://dbpedia.org/resource/A_Frolic_of_His_Own"
+                    },
+                    {
+                        "type": "uri",
+                        "value": "http://dbpedia.org/resource/A_Gift_Upon_the_Shore"
+                    },
+                    {
+                        "type": "uri",
+                        "value": "http://dbpedia.org/resource/A_Kingdom_of_Dreams"
+                    },
+                    {
+                        "type": "uri",
+                        "value": "http://dbpedia.org/resource/A_Pale_View_of_Hills"
+                    },
+                    {
+                        "type": "uri",
+                        "value": "http://dbpedia.org/resource/A_Summons_to_Memphis"
+                    },
+                    {
+                        "type": "uri",
+                        "value": "http://dbpedia.org/resource/A_Time_for_Judas"
+                    },
+                    {
+                        "type": "uri",
+                        "value": "http://dbpedia.org/resource/A_Virtuous_Woman"
+                    },
+                    {
+                        "type": "uri",
+                        "value": "http://dbpedia.org/resource/A_Yellow_Raft_in_Blue_Water"
+                    },
+                    {
+                        "type": "uri",
+                        "value": "http://dbpedia.org/resource/Abduction_(novel)"
+                    },
+                    {
+                        "type": "uri",
+                        "value": "http://dbpedia.org/resource/All_Fall_Down_(novel)"
+                    },
+                    {
+                        "type": "uri",
+                        "value": "http://dbpedia.org/resource/All_Families_Are_Psychotic"
+                    },
+                    {
+                        "type": "uri",
+                        "value": "http://dbpedia.org/resource/Almost_Transparent_Blue"
+                    },
+                    {
+                        "type": "uri",
+                        "value": "http://dbpedia.org/resource/And_Quiet_Flows_the_Don"
+                    },
+                    {
+                        "type": "uri",
+                        "value": "http://dbpedia.org/resource/Annie_John"
+                    },
+                    {
+                        "type": "uri",
+                        "value": "http://dbpedia.org/resource/Another_Roadside_Attraction"
+                    },
+                    {
+                        "type": "uri",
+                        "value": "http://dbpedia.org/resource/At_Swim-Two-Birds"
+                    },
+                    {
+                        "type": "uri",
+                        "value": "http://dbpedia.org/resource/Autobiography_of_a_Brown_Buffalo"
+                    },
+                    {
+                        "type": "uri",
+                        "value": "http://dbpedia.org/resource/Back_in_Black_(novel)"
+                    },
+                    {
+                        "type": "uri",
+                        "value": "http://dbpedia.org/resource/Back_to_Life_(novel)"
+                    },
+                    {
+                        "type": "uri",
+                        "value": "http://dbpedia.org/resource/Beach_Music_(novel)"
+                    },
+                    {
+                        "type": "uri",
+                        "value": "http://dbpedia.org/resource/Beard's_Roman_Women"
+                    },
+                    {
+                        "type": "uri",
+                        "value": "http://dbpedia.org/resource/Bee_Season"
+                    },
+                    {
+                        "type": "uri",
+                        "value": "http://dbpedia.org/resource/Black_Alice_(novel)"
+                    },
+                    {
+                        "type": "uri",
+                        "value": "http://dbpedia.org/resource/Blackeyes"
+                    },
+                    {
+                        "type": "uri",
+                        "value": "http://dbpedia.org/resource/Bleachers_(novel)"
+                    },
+                    {
+                        "type": "uri",
+                        "value": "http://dbpedia.org/resource/Blindness_(novel)"
+                    },
+                    {
+                        "type": "uri",
+                        "value": "http://dbpedia.org/resource/Blonde_Ambition_(novel)"
+                    },
+                    {
+                        "type": "uri",
+                        "value": "http://dbpedia.org/resource/Brain_(novel)"
+                    },
+                    {
+                        "type": "uri",
+                        "value": "http://dbpedia.org/resource/Brave_New_Girl_(novel)"
+                    },
+                    {
+                        "type": "uri",
+                        "value": "http://dbpedia.org/resource/Breakfast_on_Pluto"
+                    },
+                    {
+                        "type": "uri",
+                        "value": "http://dbpedia.org/resource/Buck_Rogers:_A_Life_in_the_Future"
+                    },
+                    {
+                        "type": "uri",
+                        "value": "http://dbpedia.org/resource/Cat's_Eye_(novel)"
+                    },
+                    {
+                        "type": "uri",
+                        "value": "http://dbpedia.org/resource/Charlie_Chan_Carries_On"
+                    },
+                    {
+                        "type": "uri",
+                        "value": "http://dbpedia.org/resource/Children_of_Gebelawi"
+                    },
+                    {
+                        "type": "uri",
+                        "value": "http://dbpedia.org/resource/Cities_of_the_Red_Night"
+                    },
+                    {
+                        "type": "uri",
+                        "value": "http://dbpedia.org/resource/Clotel"
+                    },
+                    {
+                        "type": "uri",
+                        "value": "http://dbpedia.org/resource/Comfort_Food_(novel)"
+                    },
+                    {
+                        "type": "uri",
+                        "value": "http://dbpedia.org/resource/Company_(novel)"
+                    },
+                    {
+                        "type": "uri",
+                        "value": "http://dbpedia.org/resource/Cracking_India"
+                    },
+                    {
+                        "type": "uri",
+                        "value": "http://dbpedia.org/resource/Crusade_in_Jeans"
+                    },
+                    {
+                        "type": "uri",
+                        "value": "http://dbpedia.org/resource/Dandelion_Wine"
+                    },
+                    {
+                        "type": "uri",
+                        "value": "http://dbpedia.org/resource/Das_falsche_Buch"
+                    },
+                    {
+                        "type": "uri",
+                        "value": "http://dbpedia.org/resource/Deafening"
+                    },
+                    {
+                        "type": "uri",
+                        "value": "http://dbpedia.org/resource/Death_of_a_Whaler"
+                    },
+                    {
+                        "type": "uri",
+                        "value": "http://dbpedia.org/resource/Decipher_(novel)"
+                    },
+                    {
+                        "type": "uri",
+                        "value": "http://dbpedia.org/resource/Dicey's_Song"
+                    },
+                    {
+                        "type": "uri",
+                        "value": "http://dbpedia.org/resource/Disgrace_(novel)"
+                    },
+                    {
+                        "type": "uri",
+                        "value": "http://dbpedia.org/resource/Doctor_Sax"
+                    },
+                    {
+                        "type": "uri",
+                        "value": "http://dbpedia.org/resource/Dorothea_Dreams"
+                    },
+                    {
+                        "type": "uri",
+                        "value": "http://dbpedia.org/resource/Dream_Story"
+                    },
+                    {
+                        "type": "uri",
+                        "value": "http://dbpedia.org/resource/Dred:_A_Tale_of_the_Great_Dismal_Swamp"
+                    },
+                    {
+                        "type": "uri",
+                        "value": "http://dbpedia.org/resource/Drowning_Ruth"
+                    },
+                    {
+                        "type": "uri",
+                        "value": "http://dbpedia.org/resource/Effi_Briest"
+                    },
+                    {
+                        "type": "uri",
+                        "value": "http://dbpedia.org/resource/Electric_Brae_(novel)"
+                    },
+                    {
+                        "type": "uri",
+                        "value": "http://dbpedia.org/resource/Ellen_Foster"
+                    },
+                    {
+                        "type": "uri",
+                        "value": "http://dbpedia.org/resource/Emperor_of_America"
+                    },
+                    {
+                        "type": "uri",
+                        "value": "http://dbpedia.org/resource/End_of_Term"
+                    },
+                    {
+                        "type": "uri",
+                        "value": "http://dbpedia.org/resource/English,_August"
+                    },
+                    {
+                        "type": "uri",
+                        "value": "http://dbpedia.org/resource/Everything_Is_Illuminated"
+                    },
+                    {
+                        "type": "uri",
+                        "value": "http://dbpedia.org/resource/Extremely_Loud_and_Incredibly_Close"
+                    },
+                    {
+                        "type": "uri",
+                        "value": "http://dbpedia.org/resource/Falconer's_Lure"
+                    },
+                    {
+                        "type": "uri",
+                        "value": "http://dbpedia.org/resource/Fever_(novel)"
+                    },
+                    {
+                        "type": "uri",
+                        "value": "http://dbpedia.org/resource/Fierce_Invalids_Home_from_Hot_Climates"
+                    },
+                    {
+                        "type": "uri",
+                        "value": "http://dbpedia.org/resource/Finding_Cassie_Crazy"
+                    },
+                    {
+                        "type": "uri",
+                        "value": "http://dbpedia.org/resource/Flight_of_Eagles"
+                    },
+                    {
+                        "type": "uri",
+                        "value": "http://dbpedia.org/resource/Foreign_Affairs_(novel)"
+                    },
+                    {
+                        "type": "uri",
+                        "value": "http://dbpedia.org/resource/Gai-Jin_(novel)"
+                    },
+                    {
+                        "type": "uri",
+                        "value": "http://dbpedia.org/resource/Generation_X:_Tales_for_an_Accelerated_Culture"
+                    },
+                    {
+                        "type": "uri",
+                        "value": "http://dbpedia.org/resource/Geomancer_(Well_of_Echoes)"
+                    },
+                    {
+                        "type": "uri",
+                        "value": "http://dbpedia.org/resource/George_Passant"
+                    },
+                    {
+                        "type": "uri",
+                        "value": "http://dbpedia.org/resource/Girlfriend_in_a_Coma_(novel)"
+                    },
+                    {
+                        "type": "uri",
+                        "value": "http://dbpedia.org/resource/Godplayer_(novel)"
+                    },
+                    {
+                        "type": "uri",
+                        "value": "http://dbpedia.org/resource/Gun,_with_Occasional_Music"
+                    },
+                    {
+                        "type": "uri",
+                        "value": "http://dbpedia.org/resource/Half-Life_(novel)"
+                    },
+                    {
+                        "type": "uri",
+                        "value": "http://dbpedia.org/resource/Half_Asleep_in_Frog_Pajamas"
+                    },
+                    {
+                        "type": "uri",
+                        "value": "http://dbpedia.org/resource/Hannibal's_Children"
+                    },
+                    {
+                        "type": "uri",
+                        "value": "http://dbpedia.org/resource/Harmful_Intent_(novel)"
+                    },
+                    {
+                        "type": "uri",
+                        "value": "http://dbpedia.org/resource/High_Society_(novel)"
+                    },
+                    {
+                        "type": "uri",
+                        "value": "http://dbpedia.org/resource/Hope_and_Other_Dangerous_Pursuits"
+                    },
+                    {
+                        "type": "uri",
+                        "value": "http://dbpedia.org/resource/Hotel_du_Lac"
+                    },
+                    {
+                        "type": "uri",
+                        "value": "http://dbpedia.org/resource/I,_Fatty"
+                    },
+                    {
+                        "type": "uri",
+                        "value": "http://dbpedia.org/resource/I_Know_This_Much_Is_True"
+                    },
+                    {
+                        "type": "uri",
+                        "value": "http://dbpedia.org/resource/I_Married_a_Communist"
+                    },
+                    {
+                        "type": "uri",
+                        "value": "http://dbpedia.org/resource/Icelander_(novel)"
+                    },
+                    {
+                        "type": "uri",
+                        "value": "http://dbpedia.org/resource/Icy_Sparks"
+                    },
+                    {
+                        "type": "uri",
+                        "value": "http://dbpedia.org/resource/Idiots_in_the_Machine"
+                    },
+                    {
+                        "type": "uri",
+                        "value": "http://dbpedia.org/resource/In_Another_Light"
+                    },
+                    {
+                        "type": "uri",
+                        "value": "http://dbpedia.org/resource/Interface_(novel)"
+                    },
+                    {
+                        "type": "uri",
+                        "value": "http://dbpedia.org/resource/Invisible_Monsters"
+                    },
+                    {
+                        "type": "uri",
+                        "value": "http://dbpedia.org/resource/Jasmine_(novel)"
+                    },
+                    {
+                        "type": "uri",
+                        "value": "http://dbpedia.org/resource/Jewel_(novel)"
+                    },
+                    {
+                        "type": "uri",
+                        "value": "http://dbpedia.org/resource/Jim_the_Boy"
+                    },
+                    {
+                        "type": "uri",
+                        "value": "http://dbpedia.org/resource/Jitterbug_Perfume"
+                    },
+                    {
+                        "type": "uri",
+                        "value": "http://dbpedia.org/resource/John_Macnab"
+                    },
+                    {
+                        "type": "uri",
+                        "value": "http://dbpedia.org/resource/Join_My_Cult"
+                    },
+                    {
+                        "type": "uri",
+                        "value": "http://dbpedia.org/resource/Journey_by_Moonlight_(novel)"
+                    },
+                    {
+                        "type": "uri",
+                        "value": "http://dbpedia.org/resource/Joy_(novel)"
+                    },
+                    {
+                        "type": "uri",
+                        "value": "http://dbpedia.org/resource/Kalimantaan"
+                    },
+                    {
+                        "type": "uri",
+                        "value": "http://dbpedia.org/resource/Katrina_(novel)"
+                    },
+                    {
+                        "type": "uri",
+                        "value": "http://dbpedia.org/resource/Killshot"
+                    },
+                    {
+                        "type": "uri",
+                        "value": "http://dbpedia.org/resource/King's_Gold"
+                    },
+                    {
+                        "type": "uri",
+                        "value": "http://dbpedia.org/resource/King_of_the_Wind"
+                    },
+                    {
+                        "type": "uri",
+                        "value": "http://dbpedia.org/resource/Kira-Kira"
+                    },
+                    {
+                        "type": "uri",
+                        "value": "http://dbpedia.org/resource/Kushiel's_Avatar"
+                    },
+                    {
+                        "type": "uri",
+                        "value": "http://dbpedia.org/resource/Larry's_Party"
+                    },
+                    {
+                        "type": "uri",
+                        "value": "http://dbpedia.org/resource/Life_&_Times_of_Michael_K"
+                    },
+                    {
+                        "type": "uri",
+                        "value": "http://dbpedia.org/resource/Little_Boy_Lost_(novel)"
+                    },
+                    {
+                        "type": "uri",
+                        "value": "http://dbpedia.org/resource/Lost_City"
+                    },
+                    {
+                        "type": "uri",
+                        "value": "http://dbpedia.org/resource/Lucky_Wander_Boy"
+                    },
+                    {
+                        "type": "uri",
+                        "value": "http://dbpedia.org/resource/Marker_(novel)"
+                    },
+                    {
+                        "type": "uri",
+                        "value": "http://dbpedia.org/resource/Mazes_and_Monsters_(novel)"
+                    },
+                    {
+                        "type": "uri",
+                        "value": "http://dbpedia.org/resource/Midwives_(novel)"
+                    },
+                    {
+                        "type": "uri",
+                        "value": "http://dbpedia.org/resource/Mistress_of_Spices"
+                    },
+                    {
+                        "type": "uri",
+                        "value": "http://dbpedia.org/resource/Molloy_(novel)"
+                    },
+                    {
+                        "type": "uri",
+                        "value": "http://dbpedia.org/resource/Molon_Labe!"
+                    },
+                    {
+                        "type": "uri",
+                        "value": "http://dbpedia.org/resource/Morning_Star_(novel)"
+                    },
+                    {
+                        "type": "uri",
+                        "value": "http://dbpedia.org/resource/Mortal_Fear_(novel)"
+                    },
+                    {
+                        "type": "uri",
+                        "value": "http://dbpedia.org/resource/Morvern_Callar"
+                    },
+                    {
+                        "type": "uri",
+                        "value": "http://dbpedia.org/resource/Mother_of_Pearl_(novel)"
+                    },
+                    {
+                        "type": "uri",
+                        "value": "http://dbpedia.org/resource/Mrs._Kimble"
+                    },
+                    {
+                        "type": "uri",
+                        "value": "http://dbpedia.org/resource/My_Ishmael"
+                    },
+                    {
+                        "type": "uri",
+                        "value": "http://dbpedia.org/resource/My_Present_Age"
+                    },
+                    {
+                        "type": "uri",
+                        "value": "http://dbpedia.org/resource/Mystic_River_(novel)"
+                    },
+                    {
+                        "type": "uri",
+                        "value": "http://dbpedia.org/resource/Native_Son"
+                    },
+                    {
+                        "type": "uri",
+                        "value": "http://dbpedia.org/resource/Neanderthal_(novel)"
+                    },
+                    {
+                        "type": "uri",
+                        "value": "http://dbpedia.org/resource/Not_Without_Laughter"
+                    },
+                    {
+                        "type": "uri",
+                        "value": "http://dbpedia.org/resource/Notable_American_Women"
+                    },
+                    {
+                        "type": "uri",
+                        "value": "http://dbpedia.org/resource/One_Hundred_Years_of_Solitude"
+                    },
+                    {
+                        "type": "uri",
+                        "value": "http://dbpedia.org/resource/Open_House_(novel)"
+                    },
+                    {
+                        "type": "uri",
+                        "value": "http://dbpedia.org/resource/Out_of_This_Furnace"
+                    },
+                    {
+                        "type": "uri",
+                        "value": "http://dbpedia.org/resource/Palace_Walk"
+                    },
+                    {
+                        "type": "uri",
+                        "value": "http://dbpedia.org/resource/Payasos_en_la_lavadora"
+                    },
+                    {
+                        "type": "uri",
+                        "value": "http://dbpedia.org/resource/Peace_Breaks_Out"
+                    },
+                    {
+                        "type": "uri",
+                        "value": "http://dbpedia.org/resource/Peculiar_Chris"
+                    },
+                    {
+                        "type": "uri",
+                        "value": "http://dbpedia.org/resource/Plain_Truth"
+                    },
+                    {
+                        "type": "uri",
+                        "value": "http://dbpedia.org/resource/Politics_(novel)"
+                    },
+                    {
+                        "type": "uri",
+                        "value": "http://dbpedia.org/resource/PopCo"
+                    },
+                    {
+                        "type": "uri",
+                        "value": "http://dbpedia.org/resource/Porno_(novel)"
+                    },
+                    {
+                        "type": "uri",
+                        "value": "http://dbpedia.org/resource/Portrait_of_Lozana:_The_Lusty_Andalusian_Woman"
+                    },
+                    {
+                        "type": "uri",
+                        "value": "http://dbpedia.org/resource/Power_Without_Glory"
+                    },
+                    {
+                        "type": "uri",
+                        "value": "http://dbpedia.org/resource/Primal_Fear_(novel)"
+                    },
+                    {
+                        "type": "uri",
+                        "value": "http://dbpedia.org/resource/Princess_Diana's_Revenge"
+                    },
+                    {
+                        "type": "uri",
+                        "value": "http://dbpedia.org/resource/Psycho_II_(novel)"
+                    },
+                    {
+                        "type": "uri",
+                        "value": "http://dbpedia.org/resource/Rainbow_Six_(novel)"
+                    },
+                    {
+                        "type": "uri",
+                        "value": "http://dbpedia.org/resource/Rant_(novel)"
+                    },
+                    {
+                        "type": "uri",
+                        "value": "http://dbpedia.org/resource/Read_Between_the_Lies"
+                    },
+                    {
+                        "type": "uri",
+                        "value": "http://dbpedia.org/resource/Reading_in_the_Dark"
+                    },
+                    {
+                        "type": "uri",
+                        "value": "http://dbpedia.org/resource/Reaper's_Gale"
+                    },
+                    {
+                        "type": "uri",
+                        "value": "http://dbpedia.org/resource/Rebecca's_Tale"
+                    },
+                    {
+                        "type": "uri",
+                        "value": "http://dbpedia.org/resource/Retribution_(novel)"
+                    },
+                    {
+                        "type": "uri",
+                        "value": "http://dbpedia.org/resource/River,_Cross_My_Heart"
+                    },
+                    {
+                        "type": "uri",
+                        "value": "http://dbpedia.org/resource/Roots:_The_Saga_of_an_American_Family"
+                    },
+                    {
+                        "type": "uri",
+                        "value": "http://dbpedia.org/resource/Ruled_Britannia"
+                    },
+                    {
+                        "type": "uri",
+                        "value": "http://dbpedia.org/resource/Salvage_for_the_Saint"
+                    },
+                    {
+                        "type": "uri",
+                        "value": "http://dbpedia.org/resource/Sarah_(novel)"
+                    },
+                    {
+                        "type": "uri",
+                        "value": "http://dbpedia.org/resource/Season_of_the_Jew"
+                    },
+                    {
+                        "type": "uri",
+                        "value": "http://dbpedia.org/resource/Shampoo_Planet"
+                    },
+                    {
+                        "type": "uri",
+                        "value": "http://dbpedia.org/resource/Shantaram_(novel)"
+                    },
+                    {
+                        "type": "uri",
+                        "value": "http://dbpedia.org/resource/Shock_(novel)"
+                    },
+                    {
+                        "type": "uri",
+                        "value": "http://dbpedia.org/resource/Shohola_Falls"
+                    },
+                    {
+                        "type": "uri",
+                        "value": "http://dbpedia.org/resource/Sideways_(novel)"
+                    },
+                    {
+                        "type": "uri",
+                        "value": "http://dbpedia.org/resource/Slow_Man"
+                    },
+                    {
+                        "type": "uri",
+                        "value": "http://dbpedia.org/resource/So_Long_a_Letter"
+                    },
+                    {
+                        "type": "uri",
+                        "value": "http://dbpedia.org/resource/Socialite_Evenings"
+                    },
+                    {
+                        "type": "uri",
+                        "value": "http://dbpedia.org/resource/Songs_in_Ordinary_Time"
+                    },
+                    {
+                        "type": "uri",
+                        "value": "http://dbpedia.org/resource/Specimen_Days"
+                    },
+                    {
+                        "type": "uri",
+                        "value": "http://dbpedia.org/resource/Sphinx_(novel)"
+                    },
+                    {
+                        "type": "uri",
+                        "value": "http://dbpedia.org/resource/Still_Life_with_Woodpecker"
+                    },
+                    {
+                        "type": "uri",
+                        "value": "http://dbpedia.org/resource/Stones_from_the_River"
+                    },
+                    {
+                        "type": "uri",
+                        "value": "http://dbpedia.org/resource/Stray_(novel)"
+                    },
+                    {
+                        "type": "uri",
+                        "value": "http://dbpedia.org/resource/Sula_(novel)"
+                    },
+                    {
+                        "type": "uri",
+                        "value": "http://dbpedia.org/resource/Swami_and_Friends"
+                    },
+                    {
+                        "type": "uri",
+                        "value": "http://dbpedia.org/resource/Tandia"
+                    },
+                    {
+                        "type": "uri",
+                        "value": "http://dbpedia.org/resource/Tara_Road"
+                    },
+                    {
+                        "type": "uri",
+                        "value": "http://dbpedia.org/resource/Ten_Men"
+                    },
+                    {
+                        "type": "uri",
+                        "value": "http://dbpedia.org/resource/The_Abortion:_An_Historical_Romance_1966"
+                    },
+                    {
+                        "type": "uri",
+                        "value": "http://dbpedia.org/resource/The_Bedroom_Secrets_of_the_Master_Chefs"
+                    },
+                    {
+                        "type": "uri",
+                        "value": "http://dbpedia.org/resource/The_Bishop's_Mantle"
+                    },
+                    {
+                        "type": "uri",
+                        "value": "http://dbpedia.org/resource/The_Black_Dahlia_(novel)"
+                    },
+                    {
+                        "type": "uri",
+                        "value": "http://dbpedia.org/resource/The_Blackwater_Lightship"
+                    },
+                    {
+                        "type": "uri",
+                        "value": "http://dbpedia.org/resource/The_Boy_Who_Kicked_Pigs"
+                    },
+                    {
+                        "type": "uri",
+                        "value": "http://dbpedia.org/resource/The_Bunce"
+                    },
+                    {
+                        "type": "uri",
+                        "value": "http://dbpedia.org/resource/The_Clayhanger_Family"
+                    },
+                    {
+                        "type": "uri",
+                        "value": "http://dbpedia.org/resource/The_Deep_End_of_the_Ocean"
+                    },
+                    {
+                        "type": "uri",
+                        "value": "http://dbpedia.org/resource/The_Dissolution_of_Nicholas_Dee"
+                    },
+                    {
+                        "type": "uri",
+                        "value": "http://dbpedia.org/resource/The_Door_(novel)"
+                    },
+                    {
+                        "type": "uri",
+                        "value": "http://dbpedia.org/resource/The_Fourth_K"
+                    },
+                    {
+                        "type": "uri",
+                        "value": "http://dbpedia.org/resource/The_Gang_That_Couldn't_Shoot_Straight"
+                    },
+                    {
+                        "type": "uri",
+                        "value": "http://dbpedia.org/resource/The_Garden_of_Unearthly_Delights"
+                    },
+                    {
+                        "type": "uri",
+                        "value": "http://dbpedia.org/resource/The_Gospel_According_to_Adam"
+                    },
+                    {
+                        "type": "uri",
+                        "value": "http://dbpedia.org/resource/The_Grave_(novel)"
+                    },
+                    {
+                        "type": "uri",
+                        "value": "http://dbpedia.org/resource/The_Great_Gatsby"
+                    },
+                    {
+                        "type": "uri",
+                        "value": "http://dbpedia.org/resource/The_Harafish"
+                    },
+                    {
+                        "type": "uri",
+                        "value": "http://dbpedia.org/resource/The_Healthy_Dead"
+                    },
+                    {
+                        "type": "uri",
+                        "value": "http://dbpedia.org/resource/The_Heather_Blazing"
+                    },
+                    {
+                        "type": "uri",
+                        "value": "http://dbpedia.org/resource/The_Hollywood_Takes"
+                    },
+                    {
+                        "type": "uri",
+                        "value": "http://dbpedia.org/resource/The_Holy"
+                    },
+                    {
+                        "type": "uri",
+                        "value": "http://dbpedia.org/resource/The_Hours_(novel)"
+                    },
+                    {
+                        "type": "uri",
+                        "value": "http://dbpedia.org/resource/The_Human_Stain"
+                    },
+                    {
+                        "type": "uri",
+                        "value": "http://dbpedia.org/resource/The_Inheritance_of_Loss"
+                    },
+                    {
+                        "type": "uri",
+                        "value": "http://dbpedia.org/resource/The_Insult"
+                    },
+                    {
+                        "type": "uri",
+                        "value": "http://dbpedia.org/resource/The_Journey_of_Ibn_Fattouma"
+                    },
+                    {
+                        "type": "uri",
+                        "value": "http://dbpedia.org/resource/The_Known_World"
+                    },
+                    {
+                        "type": "uri",
+                        "value": "http://dbpedia.org/resource/The_Last_Burden"
+                    },
+                    {
+                        "type": "uri",
+                        "value": "http://dbpedia.org/resource/The_Last_Open_Road"
+                    },
+                    {
+                        "type": "uri",
+                        "value": "http://dbpedia.org/resource/The_Leopard"
+                    },
+                    {
+                        "type": "uri",
+                        "value": "http://dbpedia.org/resource/The_Lovely_Bones"
+                    },
+                    {
+                        "type": "uri",
+                        "value": "http://dbpedia.org/resource/The_Mahdi"
+                    },
+                    {
+                        "type": "uri",
+                        "value": "http://dbpedia.org/resource/The_Mammaries_of_the_Welfare_State"
+                    },
+                    {
+                        "type": "uri",
+                        "value": "http://dbpedia.org/resource/The_Master_(novel)"
+                    },
+                    {
+                        "type": "uri",
+                        "value": "http://dbpedia.org/resource/The_Mermaid_Chair"
+                    },
+                    {
+                        "type": "uri",
+                        "value": "http://dbpedia.org/resource/The_Moth_Diaries"
+                    },
+                    {
+                        "type": "uri",
+                        "value": "http://dbpedia.org/resource/The_Neon_Bible"
+                    },
+                    {
+                        "type": "uri",
+                        "value": "http://dbpedia.org/resource/The_Old_Man_and_the_Sea"
+                    },
+                    {
+                        "type": "uri",
+                        "value": "http://dbpedia.org/resource/The_People_of_Paper"
+                    },
+                    {
+                        "type": "uri",
+                        "value": "http://dbpedia.org/resource/The_Pilot's_Wife"
+                    },
+                    {
+                        "type": "uri",
+                        "value": "http://dbpedia.org/resource/The_Posthumous_Memoirs_of_Bras_Cubas"
+                    },
+                    {
+                        "type": "uri",
+                        "value": "http://dbpedia.org/resource/The_Process_(novel)"
+                    },
+                    {
+                        "type": "uri",
+                        "value": "http://dbpedia.org/resource/The_Pyramid_(Kadare)"
+                    },
+                    {
+                        "type": "uri",
+                        "value": "http://dbpedia.org/resource/The_Rapture_of_Canaan"
+                    },
+                    {
+                        "type": "uri",
+                        "value": "http://dbpedia.org/resource/The_Rebel_Angels"
+                    },
+                    {
+                        "type": "uri",
+                        "value": "http://dbpedia.org/resource/The_Return_of_John_MacNab"
+                    },
+                    {
+                        "type": "uri",
+                        "value": "http://dbpedia.org/resource/The_Royal_Family_(novel)"
+                    },
+                    {
+                        "type": "uri",
+                        "value": "http://dbpedia.org/resource/The_Rule_of_Four"
+                    },
+                    {
+                        "type": "uri",
+                        "value": "http://dbpedia.org/resource/The_Sand_Child"
+                    },
+                    {
+                        "type": "uri",
+                        "value": "http://dbpedia.org/resource/The_Sea_(novel)"
+                    },
+                    {
+                        "type": "uri",
+                        "value": "http://dbpedia.org/resource/The_Search_for_the_Dice_Man"
+                    },
+                    {
+                        "type": "uri",
+                        "value": "http://dbpedia.org/resource/The_Season_of_the_Witch"
+                    },
+                    {
+                        "type": "uri",
+                        "value": "http://dbpedia.org/resource/The_Shipping_News"
+                    },
+                    {
+                        "type": "uri",
+                        "value": "http://dbpedia.org/resource/The_South_(novel)"
+                    },
+                    {
+                        "type": "uri",
+                        "value": "http://dbpedia.org/resource/The_Steep_Approach_to_Garbadale"
+                    },
+                    {
+                        "type": "uri",
+                        "value": "http://dbpedia.org/resource/The_Stones_of_Summer"
+                    },
+                    {
+                        "type": "uri",
+                        "value": "http://dbpedia.org/resource/The_Story_of_B"
+                    },
+                    {
+                        "type": "uri",
+                        "value": "http://dbpedia.org/resource/The_Story_of_the_Night"
+                    },
+                    {
+                        "type": "uri",
+                        "value": "http://dbpedia.org/resource/The_Taqwacores"
+                    },
+                    {
+                        "type": "uri",
+                        "value": "http://dbpedia.org/resource/The_Tenor_Wore_Tapshoes"
+                    },
+                    {
+                        "type": "uri",
+                        "value": "http://dbpedia.org/resource/The_Third_Witch"
+                    },
+                    {
+                        "type": "uri",
+                        "value": "http://dbpedia.org/resource/The_Twins_(novel)"
+                    },
+                    {
+                        "type": "uri",
+                        "value": "http://dbpedia.org/resource/The_Two_Deaths_of_Quincas_Wateryell"
+                    },
+                    {
+                        "type": "uri",
+                        "value": "http://dbpedia.org/resource/The_Uncomfortable_Dead"
+                    },
+                    {
+                        "type": "uri",
+                        "value": "http://dbpedia.org/resource/The_Well_of_Loneliness"
+                    },
+                    {
+                        "type": "uri",
+                        "value": "http://dbpedia.org/resource/The_Wind-Up_Bird_Chronicle"
+                    },
+                    {
+                        "type": "uri",
+                        "value": "http://dbpedia.org/resource/The_Wives_of_Bath"
+                    },
+                    {
+                        "type": "uri",
+                        "value": "http://dbpedia.org/resource/The_Yacoubian_Building"
+                    },
+                    {
+                        "type": "uri",
+                        "value": "http://dbpedia.org/resource/Things_My_Girlfriend_and_I_Have_Argued_About"
+                    },
+                    {
+                        "type": "uri",
+                        "value": "http://dbpedia.org/resource/Toxin_(novel)"
+                    },
+                    {
+                        "type": "uri",
+                        "value": "http://dbpedia.org/resource/Trans-Atlantyk"
+                    },
+                    {
+                        "type": "uri",
+                        "value": "http://dbpedia.org/resource/Trojan_Odyssey"
+                    },
+                    {
+                        "type": "uri",
+                        "value": "http://dbpedia.org/resource/Truth_and_Bright_Water"
+                    },
+                    {
+                        "type": "uri",
+                        "value": "http://dbpedia.org/resource/Valley_of_the_Squinting_Windows"
+                    },
+                    {
+                        "type": "uri",
+                        "value": "http://dbpedia.org/resource/Villa_Incognito"
+                    },
+                    {
+                        "type": "uri",
+                        "value": "http://dbpedia.org/resource/Vinegar_Hill_(novel)"
+                    },
+                    {
+                        "type": "uri",
+                        "value": "http://dbpedia.org/resource/Vinland_(novel)"
+                    },
+                    {
+                        "type": "uri",
+                        "value": "http://dbpedia.org/resource/Vital_Signs_(novel)"
+                    },
+                    {
+                        "type": "uri",
+                        "value": "http://dbpedia.org/resource/Waiting_for_the_Barbarians"
+                    },
+                    {
+                        "type": "uri",
+                        "value": "http://dbpedia.org/resource/Watch_Your_Mouth"
+                    },
+                    {
+                        "type": "uri",
+                        "value": "http://dbpedia.org/resource/Whale_Song_(novel)"
+                    },
+                    {
+                        "type": "uri",
+                        "value": "http://dbpedia.org/resource/What_Happened_to_Mr._Forster%3F"
+                    },
+                    {
+                        "type": "uri",
+                        "value": "http://dbpedia.org/resource/What_Looks_Like_Crazy_on_an_Ordinary_Day"
+                    },
+                    {
+                        "type": "uri",
+                        "value": "http://dbpedia.org/resource/When_They_Lay_Bare"
+                    },
+                    {
+                        "type": "uri",
+                        "value": "http://dbpedia.org/resource/Where_Rainbows_End"
+                    },
+                    {
+                        "type": "uri",
+                        "value": "http://dbpedia.org/resource/While_I_Was_Gone"
+                    },
+                    {
+                        "type": "uri",
+                        "value": "http://dbpedia.org/resource/Without_Remorse"
+                    },
+                    {
+                        "type": "uri",
+                        "value": "http://dbpedia.org/resource/Year_of_the_Intern_(novel)"
+                    },
+                    {
+                        "type": "uri",
+                        "value": "http://dbpedia.org/resource/You_Shall_Know_Our_Velocity"
+                    },
+                    {
+                        "type": "uri",
+                        "value": "http://dbpedia.org/resource/The_White_Peacock"
+                    },
+                    {
+                        "type": "uri",
+                        "value": "http://dbpedia.org/resource/And_Ladies_of_the_Club"
+                    },
+                    {
+                        "type": "uri",
+                        "value": "http://dbpedia.org/resource/Pinball,_1973"
+                    },
+                    {
+                        "type": "uri",
+                        "value": "http://dbpedia.org/resource/Running_Dog_(novel)"
+                    },
+                    {
+                        "type": "uri",
+                        "value": "http://dbpedia.org/resource/Bachelors_Anonymous"
+                    },
+                    {
+                        "type": "uri",
+                        "value": "http://dbpedia.org/resource/Bracebridge_Hall"
+                    },
+                    {
+                        "type": "uri",
+                        "value": "http://dbpedia.org/resource/Metal_F%C4%B1rt%C4%B1na"
+                    },
+                    {
+                        "type": "uri",
+                        "value": "http://dbpedia.org/resource/Le_Contrat_de_mariage"
+                    },
+                    {
+                        "type": "uri",
+                        "value": "http://dbpedia.org/resource/The_Family_of_Pascual_Duarte"
+                    },
+                    {
+                        "type": "uri",
+                        "value": "http://dbpedia.org/resource/Der_Wehrwolf"
+                    },
+                    {
+                        "type": "uri",
+                        "value": "http://dbpedia.org/resource/Keziah_Dane"
+                    },
+                    {
+                        "type": "uri",
+                        "value": "http://dbpedia.org/resource/Ledfeather"
+                    },
+                    {
+                        "type": "uri",
+                        "value": "http://dbpedia.org/resource/The_Spring_to_Come"
+                    },
+                    {
+                        "type": "uri",
+                        "value": "http://dbpedia.org/resource/The_Witch_of_Portobello"
+                    },
+                    {
+                        "type": "uri",
+                        "value": "http://dbpedia.org/resource/Your_Face_Tomorrow_Volume_1:_Fever_and_Spear"
+                    },
+                    {
+                        "type": "uri",
+                        "value": "http://dbpedia.org/resource/The_Delectable_Country"
+                    },
+                    {
+                        "type": "uri",
+                        "value": "http://dbpedia.org/resource/The_Glass_Room"
+                    },
+                    {
+                        "type": "uri",
+                        "value": "http://dbpedia.org/resource/The_Rocksburg_Railroad_Murders"
+                    },
+                    {
+                        "type": "uri",
+                        "value": "http://dbpedia.org/resource/Bealby"
+                    },
+                    {
+                        "type": "uri",
+                        "value": "http://dbpedia.org/resource/Bottom_Liner_Blues"
+                    },
+                    {
+                        "type": "uri",
+                        "value": "http://dbpedia.org/resource/Elegy_for_Sam_Emerson"
+                    },
+                    {
+                        "type": "uri",
+                        "value": "http://dbpedia.org/resource/Felicia's_Journey"
+                    },
+                    {
+                        "type": "uri",
+                        "value": "http://dbpedia.org/resource/That_Deadman_Dance"
+                    },
+                    {
+                        "type": "uri",
+                        "value": "http://dbpedia.org/resource/The_Day_We_Had_Hitler_Home"
+                    },
+                    {
+                        "type": "uri",
+                        "value": "http://dbpedia.org/resource/Under_Western_Eyes"
+                    },
+                    {
+                        "type": "uri",
+                        "value": "http://dbpedia.org/resource/The_Dark_Room_(Narayan_novel)"
+                    },
+                    {
+                        "type": "uri",
+                        "value": "http://dbpedia.org/resource/The_Place_of_Dead_Roads"
+                    },
+                    {
+                        "type": "uri",
+                        "value": "http://dbpedia.org/resource/The_Western_Lands"
+                    },
+                    {
+                        "type": "uri",
+                        "value": "http://dbpedia.org/resource/Dating_Hamlet"
+                    },
+                    {
+                        "type": "uri",
+                        "value": "http://dbpedia.org/resource/The_Slow_Natives"
+                    }
+                ]
+            }
+        ]
+    }
+}

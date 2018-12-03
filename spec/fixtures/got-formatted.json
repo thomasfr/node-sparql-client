@@ -1,0 +1,39 @@
+{
+    "head": {
+        "link": [],
+        "vars": [
+            "genre"
+        ]
+    },
+    "results": {
+        "distinct": false,
+        "ordered": true,
+        "bindings": [
+            {
+                "book": {
+                    "type": "uri",
+                    "value": "http://dbpedia.org/resource/A_Game_of_Thrones"
+                },
+                "genre": [
+                    {
+                        "type": "uri",
+                        "value": "http://dbpedia.org/resource/Political_strategy"
+                    },
+                    {
+                        "type": "uri",
+                        "value": "http://dbpedia.org/resource/High_fantasy"
+                    },
+                    {
+                        "type": "uri",
+                        "value": "http://dbpedia.org/resource/Fantasy"
+                    }
+                ]
+            }
+        ]
+    },
+    "request": {
+        "query": "SELECT ?book ?genre { }",
+        "format": "application/sparql-results+json",
+        "content-type": "application/sparql-results+json"
+    }
+}
